@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercises: Lists (7–12) — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Exercises: Lists (7–12)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html" class="active" aria-current="page"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Exercises: Lists (7–12)</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-7-exercise7">Exercise 7 — exercise7</a></li><li><a href="#exercise-8-exercise8">Exercise 8 — exercise8</a></li><li><a href="#exercise-9-exercise9">Exercise 9 — exercise9</a></li><li><a href="#exercise-10-exercise10">Exercise 10 — exercise10</a></li><li><a href="#exercise-11-exercise11">Exercise 11 — exercise11</a></li><li><a href="#exercise-12-exercise12">Exercise 12 — exercise12</a></li></ul></nav><h2 id="exercise-7-exercise7">Exercise 7 — exercise7</h2>
+<p>Write a program that:</p>
+<ul><li>creates a first list <code>[2, 8, 5, 4, 6, 7, 8, 5]</code>;</li><li>creates a second list <code>[3.5, 'coucou', 8, 'hello', 6.2]</code>;</li><li>inserts the value <code>3</code> in the first list between the values <code>2</code> and <code>8</code>;</li><li>adds the value <code>72</code> at the end of the second list;</li><li>removes <code>'coucou'</code> from the second list;</li><li>combines both lists using the <code>extend</code> method;</li><li>prints the final list;</li><li>prints the value at index <code>5</code> of the list;</li><li>prints the 4 first elements of the list;</li><li>prints the 3 last elements of the list;</li><li>prints the elements from index <code>2</code> to index <code>5</code> <strong>included</strong>.</li></ul>
+<p>You should get this output:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>[2, 3, 8, 5, 4, 6, 7, 8, 5, 3.5, 8, 'hello', 6.2, 72]
+6
+[2, 3, 8, 5]
+['hello', 6.2, 72]
+[8, 5, 4, 6]</code></pre></div>
+<h2 id="exercise-8-exercise8">Exercise 8 — exercise8</h2>
+<p>Write a function <code>total(list_number)</code> that receives a list of numbers and returns their sum. For <code>[1, 2, 3]</code> it returns <code>6</code>. Then write a program that:</p>
+<ul><li>repeatedly asks numbers to the user and adds them to a list until the user enters <code>stop</code>;</li><li>calls <code>total</code> with the list;</li><li>prints the result.</li></ul>
+<div class="callout tip"><strong>Tip:</strong> This is the pattern to repeatedly ask numbers until <code>stop</code> (you will reuse it in the next exercises):</div>
+<div class="codeblock"><pre><code>listOfNumbers = []
+askAgain = <span class="tk">True</span>
+<span class="tk">while</span> askAgain == <span class="tk">True</span>:
+    answer = <span class="tb">input</span>(<span class="ts">"Give me a number (or write stop if you are done): "</span>)
+    <span class="tk">if</span> answer == <span class="ts">"stop"</span>:
+        askAgain = <span class="tk">False</span>
+    <span class="tk">else</span>:
+        listOfNumbers.append(<span class="tb">int</span>(answer))</code></pre></div>
+<h2 id="exercise-9-exercise9">Exercise 9 — exercise9</h2>
+<p>Write a function <code>largestNumber(list_number)</code> that returns the largest number of a list. For <code>[1, 2, 10, 3]</code> it returns <code>10</code>. Then write a program that asks numbers until <code>stop</code>, calls the function, and prints the result.</p>
+<div class="callout tip"><strong>Tip:</strong> Start with a variable for the largest value found so far, go through the list with a <code>for</code> loop, and replace the variable whenever the current item is bigger.</div>
+<h2 id="exercise-10-exercise10">Exercise 10 — exercise10</h2>
+<p>Write a function <code>size(list_strings)</code> that receives a list of strings and returns how many of them have <strong>5 or more letters</strong>. For <code>['abcdef', 'xyz', 'aba', '1221221221']</code> it returns <code>2</code>. Then write a program that asks words until <code>stop</code>, calls the function and prints the result.</p>
+<div class="callout tip"><strong>Tip:</strong> Use <code>len()</code> to check the length of a string.</div>
+<h2 id="exercise-11-exercise11">Exercise 11 — exercise11</h2>
+<p>Write a function <code>checkZero(list_number)</code> that returns <code>True</code> if there is a zero in the list and <code>False</code> otherwise. For <code>[1, 2, 3]</code> it returns <code>False</code>; for <code>[3, 6, 9, 0, 3]</code> it returns <code>True</code>. Then write a program that asks numbers until <code>stop</code>, calls the function and prints the result.</p>
+<h2 id="exercise-12-exercise12">Exercise 12 — exercise12</h2>
+<p>Write a function <code>occurrences(list_letters, letter)</code> that receives a list of letters and one letter, and returns <strong>two things</strong>: how many times the letter appears and a list of the indexes where it appears. For <code>["a", "e", "b", "a"]</code> and <code>"a"</code> it returns <code>2</code> and <code>[0, 3]</code>. Then write a program that:</p>
+<ul><li>repeatedly asks letters and adds them to a list until the user enters <code>stop</code>;</li><li>asks the user to pick one letter;</li><li>calls <code>occurrences</code> with the list and the letter;</li><li>prints the following:</li></ul>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>The letter appears 2 times.
+It appears at the following index: [0, 3].</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> To return several values write <code>return (variable1, variable2)</code>. When you call the function, keep the result in a variable such as <code>result</code>, then read <code>result[0]</code> and <code>result[1]</code> (see section 1.2).</div>
+<p><em>Solutions: <a class="appref" href="21-appendix-a-solutions-to-the-exercises.html#a-3">Appendix A.3</a></em></p>
+<div class="pager"><a class="prev" href="08-warm-up-3-lists.html" rel="prev"><small>← Previous</small>Warm-up 3: Lists</a><a class="next" href="10-4-split-and-join.html" rel="next"><small>Next →</small>4. Split &amp; Join</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

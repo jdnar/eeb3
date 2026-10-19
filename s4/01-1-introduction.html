@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Introduction — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — 1. Introduction">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html" class="active" aria-current="page"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>1. Introduction</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#1-1-some-definitions">1.1 Some definitions</a></li><li><a href="#1-2-tools">1.2 Tools</a></li><li><a href="#1-3-first-use">1.3 First use</a></li></ul></nav><p>Python is a popular programming language first created by Guido van Rossum in 1991 and named after the British comedy group Monty Python. It is widely used, including by famous companies and organizations such as Google, YouTube, BitTorrent, Intel, Cisco, Hewlett-Packard, NASA and iRobot.</p>
+<h2 id="1-1-some-definitions">1.1 Some definitions</h2>
+<div class="tablewrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>Algorithm</strong></td><td>A process, or list of steps, to follow in order to solve a particular problem. An algorithm can be implemented on a computer.</td></tr><tr><td><strong>Program</strong></td><td>A set of instructions which, when executed on a computer, performs a defined process. A program is the translation into computer-understandable code of an algorithm that solves a problem.</td></tr><tr><td><strong>Programming language</strong></td><td>A language such as Python that defines the rules a program must respect to be understood and executed by a computer.</td></tr><tr><td><strong>Interpreter vs compiler</strong></td><td>A program called an interpreter or a compiler "translates" the programming language into machine code. Python uses an <strong>interpreter</strong>: your code is read, translated and executed line by line. C++ uses a <strong>compiler</strong>: the whole code is first translated and only then executed.</td></tr></tbody></table></div>
+<h2 id="1-2-tools">1.2 Tools</h2>
+<p>Two tools are essential:</p>
+<ul><li>a <strong>Python 3 interpreter</strong> (the <code>&gt;&gt;&gt;</code> prompt), which lets you run your code on your computer;</li><li>a <strong>text editor</strong> to type and save your programs.</li></ul>
+<p>The software used in this course is the <strong>Thonny IDE</strong>. Thonny comes with Python built in, so a single installer is all you need. To install it at home, download the latest version from https://thonny.org/ and install it like any other application.</p>
+<h2 id="1-3-first-use">1.3 First use</h2>
+<p>Let us test the interpreter. The prompt <code>&gt;&gt;&gt;</code> means the interpreter is ready to receive your instructions. Programming languages follow a very specific <strong>syntax</strong>: if you type random things, or do not respect the syntax, Python returns an error.</p>
+<p><strong>Exercise.</strong> In the Thonny shell (or in any online Python interpreter), type each of the following lines and observe the results:</p>
+<ul><li><code>Hello</code></li><li><code>"Hello"</code></li><li><code>7</code></li><li><code>9.5 + 2</code></li><li><code>2 * 3</code></li><li><code>10 / 5</code></li><li><code>"Hello" * 10</code></li><li><code>"He" + "llo"</code></li></ul>
+<div class="callout note"><strong>Note:</strong> The first line gives an error because Python reads <code>Hello</code> as the name of a variable that does not exist. The same word between quotes is a piece of text. You will see why in the next chapters.</div>
+<div class="pager"><a class="prev" href="index.html" rel="prev"><small>← Previous</small>Start here</a><a class="next" href="02-warm-up-1-introduction.html" rel="next"><small>Next →</small>Warm-up 1: Introduction</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

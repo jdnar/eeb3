@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warm-up 1: Functions — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Warm-up 1: Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html" class="active" aria-current="page"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Warm-up 1: Functions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#step-1-1-create-and-call-a-function">Step 1.1 — Create and call a function</a></li><li><a href="#step-1-2-give-the-function-an-input">Step 1.2 — Give the function an input</a></li><li><a href="#step-1-3-two-parameters-and-a-return-value">Step 1.3 — Two parameters and a return value</a></li><li><a href="#step-1-4-use-the-returned-value">Step 1.4 — Use the returned value</a></li><li><a href="#step-1-5-local-variables-predict-the-error">Step 1.5 — Local variables: predict the error</a></li><li><a href="#step-1-6-return-two-values">Step 1.6 — Return two values</a></li></ul></nav><p>These small steps follow the theory of Chapter 1 one idea at a time. Do them before the main exercises.</p>
+<div class="callout tip"><strong>Tip:</strong> Type every example yourself instead of copying it, and run it after each step. Solutions: <a class="appref" href="22-appendix-b-solutions-to-the-warm-up-practice.html#b-1">Appendix B.1</a>.</div>
+<h2 id="step-1-1-create-and-call-a-function">Step 1.1 — Create and call a function</h2>
+<p>Define a function <code>say_hello()</code> that prints <code>Hello!</code>. Then call it three times.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Hello!
+Hello!
+Hello!</code></pre></div>
+<h2 id="step-1-2-give-the-function-an-input">Step 1.2 — Give the function an input</h2>
+<p>Define a function <code>greet(name)</code> that prints <code>Hello, </code> followed by the name and <code>!</code>. Call it with two different names, for example <code>"Ana"</code> and <code>"Luis"</code>.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Hello, Ana!
+Hello, Luis!</code></pre></div>
+<h2 id="step-1-3-two-parameters-and-a-return-value">Step 1.3 — Two parameters and a return value</h2>
+<p>Define a function <code>rectangle_area(width, height)</code> that <strong>returns</strong> the area of a rectangle. Print the result of <code>rectangle_area(3, 5)</code>.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>15</code></pre></div>
+<h2 id="step-1-4-use-the-returned-value">Step 1.4 — Use the returned value</h2>
+<p>Define a function <code>double(n)</code> that returns <code>n * 2</code>. Save <code>double(4)</code> in a variable <code>x</code>, then print <code>x + 1</code>.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>9</code></pre></div>
+<h2 id="step-1-5-local-variables-predict-the-error">Step 1.5 — Local variables: predict the error</h2>
+<p>What happens when you run this code? Explain why, then fix it so it prints 5.</p>
+<div class="codeblock"><pre><code><span class="tk">def</span> make_total(a, b):
+    total = a + b
+    <span class="tk">return</span> total
+
+make_total(<span class="tn">2</span>, <span class="tn">3</span>)
+<span class="tb">print</span>(total)</code></pre></div>
+<h2 id="step-1-6-return-two-values">Step 1.6 — Return two values</h2>
+<p>Define a function <code>min_max(a, b)</code> that returns the smaller number first and the larger number second. Call it with <code>9</code> and <code>4</code>, save the result in <code>r</code> and print <code>r[0]</code> and <code>r[1]</code>.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>4 9</code></pre></div>
+<div class="pager"><a class="prev" href="01-1-functions.html" rel="prev"><small>← Previous</small>1. Functions</a><a class="next" href="03-exercises-functions-1-4.html" rel="next"><small>Next →</small>Exercises: Functions (1–4)</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

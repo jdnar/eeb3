@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. Strings — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — 2. Strings">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html" class="active" aria-current="page"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>2. Strings</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#2-1-methods">2.1 Methods</a></li><li><a href="#2-2-concatenation">2.2 Concatenation</a></li><li><a href="#2-3-length">2.3 Length</a></li><li><a href="#2-4-selecting-characters">2.4 Selecting characters</a></li></ul></nav><p>The string is the first <strong>object</strong> we study. An object comes from a <em>class</em> and is a data structure, like a variable, that can contain other variables and functions.</p>
+<h2 id="2-1-methods">2.1 Methods</h2>
+<p>Some functions are defined specifically for one kind of object. A function defined for an object is called a <strong>method</strong> of that object. The syntax to use it is <code>object.method()</code>. There are many predefined methods for strings:</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>text = <span class="ts">"STOP YELLING !"</span>
+<span class="tp">&gt;&gt;&gt; </span>newText = text.lower()
+<span class="tp">&gt;&gt;&gt; </span>newText
+<span class="ts">'stop yelling !'</span>
+<span class="tp">&gt;&gt;&gt; </span>newText = text.capitalize()
+<span class="tp">&gt;&gt;&gt; </span>newText
+<span class="ts">'Stop yelling !'</span>
+<span class="tp">&gt;&gt;&gt; </span>newText = text.upper()
+<span class="tp">&gt;&gt;&gt; </span>newText
+<span class="ts">'STOP YELLING !'</span></code></pre></div>
+<h2 id="2-2-concatenation">2.2 Concatenation</h2>
+<p>The <code>+</code> sign concatenates two strings:</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>name = <span class="ts">"Marc"</span>
+<span class="tp">&gt;&gt;&gt; </span>message = <span class="ts">"Hello"</span>
+<span class="tp">&gt;&gt;&gt; </span>welcome = message + name
+<span class="tp">&gt;&gt;&gt; </span>welcome
+<span class="ts">'HelloMarc'</span>
+<span class="tp">&gt;&gt;&gt; </span>welcome = message + <span class="ts">" "</span> + name
+<span class="tp">&gt;&gt;&gt; </span>welcome
+<span class="ts">'Hello Marc'</span>
+<span class="tp">&gt;&gt;&gt; </span>age = <span class="tn">21</span>
+<span class="tp">&gt;&gt;&gt; </span>welcome = message + <span class="ts">" "</span> + name + <span class="ts">" you are "</span> + <span class="tb">str</span>(<span class="tn">21</span>)
+<span class="tp">&gt;&gt;&gt; </span>welcome
+<span class="ts">'Hello Marc you are 21'</span></code></pre></div>
+<div class="callout note"><strong>Note:</strong> You can only concatenate strings with strings. To add a number, convert it first with <code>str()</code>.</div>
+<h2 id="2-3-length">2.3 Length</h2>
+<p>The function <code>len()</code> returns the number of characters in a string:</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>text = <span class="ts">"Hello"</span>
+<span class="tp">&gt;&gt;&gt; </span><span class="tb">len</span>(text)
+<span class="tn">5</span></code></pre></div>
+<h2 id="2-4-selecting-characters">2.4 Selecting characters</h2>
+<p>A string is made of characters, and you can select each one by its <strong>index</strong> between <code>[]</code>. Indexes start at 0, and negative indexes count from the end. To select part of a string, give the start and end index separated by <code>:</code>.</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>text = <span class="ts">"Hello students"</span>
+<span class="tp">&gt;&gt;&gt; </span>text[<span class="tn">0</span>]      <span class="tc"># first character</span>
+<span class="ts">'H'</span>
+<span class="tp">&gt;&gt;&gt; </span>text[<span class="tn">2</span>]      <span class="tc"># third character</span>
+<span class="ts">'l'</span>
+<span class="tp">&gt;&gt;&gt; </span>text[-<span class="tn">1</span>]     <span class="tc"># last character</span>
+<span class="ts">'s'</span>
+<span class="tp">&gt;&gt;&gt; </span>text = <span class="ts">"hello, how are you?"</span>
+<span class="tp">&gt;&gt;&gt; </span>text[<span class="tn">7</span>:<span class="tn">10</span>]
+<span class="ts">'how'</span>
+<span class="tp">&gt;&gt;&gt; </span>text[<span class="tn">11</span>:<span class="tn">14</span>]
+<span class="ts">'are'</span>
+<span class="tp">&gt;&gt;&gt; </span>text[:<span class="tn">5</span>]
+<span class="ts">'hello'</span>
+<span class="tp">&gt;&gt;&gt; </span>text[<span class="tn">7</span>:]
+<span class="ts">'how are you?'</span></code></pre></div>
+<h3 id="summary">Summary</h3>
+<ul><li>A string is an object and has its own functions, called methods: <code>object.method()</code>.</li><li>The <code>+</code> sign concatenates two strings.</li><li><code>len()</code> returns how many characters a string has.</li><li>You can access a character directly with its index: <code>text[position]</code>.</li><li>You can select part of a string with <code>my_text[start_index:end_index]</code>. The <code>end_index</code> is <strong>not</strong> included; if you omit <code>start_index</code> Python assumes 0; if you omit <code>end_index</code> Python goes to the end.</li></ul>
+<div class="pager"><a class="prev" href="03-exercises-functions-1-4.html" rel="prev"><small>← Previous</small>Exercises: Functions (1–4)</a><a class="next" href="05-warm-up-2-strings.html" rel="next"><small>Next →</small>Warm-up 2: Strings</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

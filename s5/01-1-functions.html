@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Functions — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — 1. Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html" class="active" aria-current="page"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>1. Functions</h1>
+<p>A <strong>function</strong> is a block of organized, reusable code that performs a single, related action. Functions make your application more modular and let you reuse code instead of copying it.</p>
+<p>Think of a function as a <strong>tool</strong> that solves one problem. Other parts of the program can use this tool without worrying about how it works inside: they only need to know its name, the values it requires, and how it returns its result(s).</p>
+<h2 id="1-1-creating-a-function">1.1 Creating a function</h2>
+<p>To define a function you write the keyword <code>def</code>, the function name, the parameters in parentheses separated by commas, and a colon. The instructions of the function follow, <strong>indented</strong>. An optional <code>return</code> sends a value back.</p>
+<div class="codeblock"><pre><code><span class="tk">def</span> name(parameters_separated_by_comma):
+    instructions
+    <span class="tk">return</span> something   <span class="tc"># optional</span></code></pre></div>
+<p>Example:</p>
+<div class="codeblock"><pre><code><span class="tk">def</span> sum_of_numbers(a, b):
+    result = a + b
+    <span class="tk">return</span> result</code></pre></div>
+<p>We define a function called <code>sum_of_numbers</code> that receives two parameters, <code>a</code> and <code>b</code>. It calculates their sum and returns the result.</p>
+<div class="callout note"><strong>Note:</strong> All the instructions that belong to a function are indented.</div>
+<h2 id="1-2-using-calling-a-function">1.2 Using (calling) a function</h2>
+<p>To use a function you write its name followed by the values (called <strong>arguments</strong>) in parentheses:</p>
+<div class="codeblock"><pre><code>name(parameters_separated_by_comma)</code></pre></div>
+<p>When you call a function, it behaves like a <strong>black box</strong>: it takes some input, processes it, and gives an output.</p>
+<h3 id="input-parameters">Input: parameters</h3>
+<p>Variables are most of the time <strong>local</strong>: a function is not aware of variables defined outside its body. To give information to a function, you use parameters.</p>
+<div class="codeblock"><pre><code><span class="tk">def</span> sum_of_numbers(a, b):
+    result = a + b
+    <span class="tk">return</span> result
+
+sum_of_numbers(<span class="tn">4</span>, <span class="tn">8</span>)</code></pre></div>
+<p>Here we call the function with 4 and 8. Python automatically assigns the value 4 to <code>a</code> and 8 to <code>b</code>.</p>
+<h3 id="output-what-a-function-can-do">Output: what a function can do</h3>
+<p>A function has three possibilities when it comes to output. It can:</p>
+<ul><li>print something on the screen;</li><li>change data in memory (for example, change the content of a file);</li><li>return a value.</li></ul>
+<p>Variables defined inside a function exist only inside that function. If you want to give the content of a variable back at the end, use <code>return</code>. When you use <code>return</code>, the call to the function is <strong>replaced</strong> by the returned value.</p>
+<div class="codeblock"><pre><code><span class="tk">def</span> sum_of_numbers(a, b):
+    result = a + b
+    <span class="tk">return</span> result
+
+x = sum_of_numbers(<span class="tn">4</span>, <span class="tn">8</span>)</code></pre></div>
+<p>The call <code>sum_of_numbers(4, 8)</code> is replaced by the value of <code>result</code>, so <code>x</code> is 12.</p>
+<h3 id="returning-several-values">Returning several values</h3>
+<p>A function can return more than one value by separating them with commas (Python packs them in a <strong>tuple</strong>). You save the returned value in a variable and read each part by its index:</p>
+<div class="codeblock"><pre><code><span class="tk">def</span> example():
+    a = <span class="tn">8</span>
+    b = <span class="ts">"coucou"</span>
+    <span class="tk">return</span> (a, b)
+
+x = example()
+<span class="tb">print</span>(x[<span class="tn">0</span>])   <span class="tc"># prints 8</span>
+<span class="tb">print</span>(x[<span class="tn">1</span>])   <span class="tc"># prints "coucou"</span></code></pre></div>
+<div class="pager"><a class="prev" href="index.html" rel="prev"><small>← Previous</small>Start here</a><a class="next" href="02-warm-up-1-functions.html" rel="next"><small>Next →</small>Warm-up 1: Functions</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

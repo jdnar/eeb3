@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercises: Functions (1–4) — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Exercises: Functions (1–4)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html" class="active" aria-current="page"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Exercises: Functions (1–4)</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-1-exercise1">Exercise 1 — exercise1</a></li><li><a href="#exercise-2-exercise2">Exercise 2 — exercise2</a></li><li><a href="#exercise-3-exercise3">Exercise 3 — exercise3</a></li><li><a href="#exercise-4-exercise4">Exercise 4 — exercise4</a></li></ul></nav><p>Save each exercise in your <code>Python</code> folder under the name indicated.</p>
+<h2 id="exercise-1-exercise1">Exercise 1 — exercise1</h2>
+<p>Define a function called <code>multiplication</code> that takes two numbers as parameters and returns their product. Then write a program that:</p>
+<ul><li>asks two numbers to the user;</li><li>calls <code>multiplication</code> with those numbers and saves the returned value in a variable <code>result</code>;</li><li>prints <code>result</code>.</li></ul>
+<div class="callout tip"><strong>Tip:</strong> Ask a number with <code>number = int(input("question"))</code>. Call the function with <code>multiplication(number1, number2)</code> and keep its result with <code>result = multiplication(number1, number2)</code>.</div>
+<h2 id="exercise-2-exercise2">Exercise 2 — exercise2</h2>
+<p>Define a function <code>draw</code> that draws a structure based on its parameter. If the parameter is 4 the output is:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>*
+**
+***
+****</code></pre></div>
+<p>With parameter 2 it prints:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>*
+**</code></pre></div>
+<p>Then write a program that asks the user how big the drawing should be and calls <code>draw</code> with that number.</p>
+<div class="callout tip"><strong>Tip:</strong> Create a <code>for</code> loop with <code>range</code> inside <code>draw</code>; at each iteration print the right number of <code>*</code>.</div>
+<h2 id="exercise-3-exercise3">Exercise 3 — exercise3</h2>
+<p>Define a function <code>two_equals(a, b, c)</code> that receives three numbers and returns <code>True</code> if <strong>at least two</strong> of them have the same value, <code>False</code> otherwise. Then write a program that reads three integers <code>x</code>, <code>y</code>, <code>z</code> and shows the result of <code>two_equals(x, y, z)</code>.</p>
+<h2 id="exercise-4-exercise4">Exercise 4 — exercise4</h2>
+<p>Define a function <code>divisible(a, b)</code> that returns <code>True</code> if <code>a</code> is divisible by <code>b</code>, <code>False</code> otherwise. Then write a program that reads two integers <code>x</code>, <code>y</code> and shows the result of <code>divisible(x, y)</code>.</p>
+<div class="callout tip"><strong>Tip:</strong> Use the modulus operator <code>%</code>, which gives the remainder of a division. If there is no remainder, the number is divisible: <code>if a % b == 0:</code>.</div>
+<p><em>Solutions: <a class="appref" href="21-appendix-a-solutions-to-the-exercises.html#a-1">Appendix A.1</a></em></p>
+<div class="pager"><a class="prev" href="02-warm-up-1-functions.html" rel="prev"><small>← Previous</small>Warm-up 1: Functions</a><a class="next" href="04-2-strings.html" rel="next"><small>Next →</small>2. Strings</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

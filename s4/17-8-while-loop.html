@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8. While Loop — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — 8. While Loop">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html" class="active" aria-current="page"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>8. While Loop</h1>
+<p>In programming, <strong>loops</strong> let you execute instructions repetitively. The <code>while</code> loop repeats its instructions <strong>as long as a certain condition is true</strong>. The syntax is:</p>
+<div class="codeblock"><pre><code><span class="tk">while</span> condition:
+    instructions</code></pre></div>
+<p>The condition is a boolean expression and the instructions are indented.</p>
+<h2 id="8-1-the-four-parts-of-a-while-loop">8.1 The four parts of a while loop</h2>
+<p>A typical <code>while</code> statement has four parts: initialisation, condition, processing and change.</p>
+<div class="codeblock"><pre><code>initialisation
+<span class="tk">while</span> condition:
+    processing
+    change</code></pre></div>
+<div class="tablewrap"><table><thead><tr><th>Part</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initialisation</strong></td><td>Where you initialise all the variables you need for the loop.</td></tr><tr><td><strong>Condition</strong></td><td>Defines whether the instructions of the loop body are executed.</td></tr><tr><td><strong>Processing</strong></td><td>The work done in the body of the loop.</td></tr><tr><td><strong>Change</strong></td><td>At the end of the body, modifies the variables used in the condition, so the loop can eventually stop.</td></tr></tbody></table></div>
+<p>A <code>while</code> loop is usually used for two reasons:</p>
+<ul><li><strong>Processing until a condition is met:</strong></li></ul>
+<div class="codeblock"><pre><code>n = <span class="ts">"first value"</span>
+<span class="tk">while</span> n <span class="tk">is</span> <span class="tk">not</span> equal to the value to stop:
+    processing
+    n = <span class="ts">"new value"</span></code></pre></div>
+<ul><li><strong>Reading a sequence of data:</strong></li></ul>
+<div class="codeblock"><pre><code>x = <span class="tb">input</span>(<span class="ts">'First data: '</span>)
+<span class="tk">while</span> x != <span class="ts">'F'</span>:
+    processing
+    x = <span class="tb">input</span>(<span class="ts">'Next data: '</span>)</code></pre></div>
+<h2 id="8-2-examples">8.2 Examples</h2>
+<h3 id="example-1-counting">Example 1: counting</h3>
+<div class="codeblock"><pre><code>n = <span class="tn">5</span>
+i = <span class="tn">0</span>
+<span class="tk">while</span> i &lt; n:
+    <span class="tb">print</span>(i)
+    i += <span class="tn">1</span></code></pre></div>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>0
+1
+2
+3
+4</code></pre></div>
+<p>The code initialises two variables, <code>n</code> and <code>i</code> (initialisation). Then it checks whether <code>i</code> is smaller than <code>n</code> (condition); if so, it prints <code>i</code> (processing) and adds 1 to <code>i</code> (change). <code>i += 1</code> is a short way of writing <code>i = i + 1</code>.</p>
+<h3 id="example-2-playing-again">Example 2: playing again</h3>
+<div class="codeblock"><pre><code>n = <span class="ts">"yes"</span>
+<span class="tk">while</span> n == <span class="ts">"yes"</span>:
+    <span class="tb">print</span>(<span class="ts">"This is my game."</span>)
+    <span class="tb">print</span>(<span class="ts">"My game is now over."</span>)
+    n = <span class="tb">input</span>(<span class="ts">"Do you want to play again? (yes/no)"</span>)</code></pre></div>
+<p>The variable <code>n</code> starts at <code>"yes"</code> (initialisation). While <code>n</code> equals <code>"yes"</code> (condition), two messages are printed (processing) and the user is asked whether to play again (change).</p>
+<h3 id="example-3-adding-numbers-until-stop">Example 3: adding numbers until "stop"</h3>
+<div class="codeblock"><pre><code>total = <span class="tn">0</span>
+x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+<span class="tk">while</span> x != <span class="ts">"stop"</span>:
+    total += <span class="tb">int</span>(x)
+    x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+<span class="tb">print</span>(total)</code></pre></div>
+<p>This code adds together the numbers given by the user and then prints the result. It first initialises <code>total</code> and <code>x</code>. As long as <code>x</code> is not the word <code>"stop"</code>, it adds the number to <code>total</code> (processing) and asks for another number (change). Once the user writes <code>stop</code>, the loop ends and the total is printed.</p>
+<div class="callout important"><strong>Important:</strong> The <code>print(total)</code> is executed <strong>only once, at the end</strong>, because it is not indented: it is not part of the <code>while</code>.</div>
+<div class="callout important"><strong>Important:</strong> You do not know whether the user will give a number or the word <code>stop</code>. So first read the answer as a string and, only if it is not <code>stop</code>, convert it with <code>int(x)</code>.</div>
+<div class="callout warn"><strong>Watch out:</strong> if you forget the <strong>change</strong> part, the condition never becomes false and the program loops forever (an <strong>infinite loop</strong>). In Thonny, press the red Stop button to interrupt it.</div>
+<div class="pager"><a class="prev" href="16-exercises-6-8-conditionals.html" rel="prev"><small>← Previous</small>Exercises 6–8: Conditionals</a><a class="next" href="18-warm-up-8-while-loop.html" rel="next"><small>Next →</small>Warm-up 8: While Loop</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

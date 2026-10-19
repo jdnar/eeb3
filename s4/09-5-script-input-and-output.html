@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. Script, Input &amp; Output — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — 5. Script, Input &amp; Output">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html" class="active" aria-current="page"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>5. Script, Input &amp; Output</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#5-1-script">5.1 Script</a></li><li><a href="#5-2-output-print">5.2 Output: print()</a></li><li><a href="#5-3-input-input">5.3 Input: input()</a></li></ul></nav><p>Until now we have interacted directly with the Python interpreter. You can keep using it from time to time to test some specific code, but from now on we will <strong>program in the text editor</strong> and only then run the program in the interpreter.</p>
+<h2 id="5-1-script">5.1 Script</h2>
+<p>Let us create a script that calculates the perimeter and the area of a rectangle from its length and width.</p>
+<ol><li>Open Thonny.</li><li>Write the code below in the script window (the upper part, above the interpreter).</li></ol>
+<div class="codeblock"><pre><code>length = <span class="tn">5</span>
+width = <span class="tn">3</span>
+perimeter = <span class="tn">2</span> * width + <span class="tn">2</span> * length
+area = width * length
+(area, perimeter)</code></pre></div>
+<ol start="3"><li>Save your file and name it <code>rectangle.py</code>.</li><li>Open the <code>Run</code> menu and click <code>Run current script</code>. The interpreter shows:</li></ol>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>&gt;&gt;&gt; %Run rectangle.py
+&gt;&gt;&gt;</code></pre></div>
+<p>There is no error: everything worked. But there is also no result.</p>
+<p><strong>Question.</strong> Why do we not see any result? Should we not see the perimeter and the area of the rectangle?</p>
+<p><strong>Answer.</strong> As soon as we use scripts, if we want to communicate with the user and show results on the screen, we need an output function: <code>print()</code>.</p>
+<h2 id="5-2-output-print">5.2 Output: print()</h2>
+<p>The <code>print()</code> function shows on the screen whatever is written between the parentheses. Let us improve the script.</p>
+<ol><li>Update your code: just add <code>print</code> at the beginning of the last line.</li></ol>
+<div class="codeblock"><pre><code>length = <span class="tn">5</span>
+width = <span class="tn">3</span>
+perimeter = <span class="tn">2</span> * width + <span class="tn">2</span> * length
+area = width * length
+<span class="tb">print</span>(area, perimeter)</code></pre></div>
+<ol start="2"><li>Run the current script again. The interpreter now shows:</li></ol>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>&gt;&gt;&gt; %Run rectangle.py
+15 16
+&gt;&gt;&gt;</code></pre></div>
+<ol start="3"><li>Add some text in the <code>print</code> so the message is clearer:</li></ol>
+<div class="codeblock"><pre><code>length = <span class="tn">5</span>
+width = <span class="tn">3</span>
+perimeter = <span class="tn">2</span> * width + <span class="tn">2</span> * length
+area = width * length
+<span class="tb">print</span>(<span class="ts">"Area:"</span>, area, <span class="ts">"Perimeter:"</span>, perimeter)</code></pre></div>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Area: 15 Perimeter: 16</code></pre></div>
+<p>You can now easily share information with the user. Items separated by commas in <code>print</code> are displayed separated by a space.</p>
+<p><strong>Question.</strong> What if we want the user to choose the length and the width of the rectangle?</p>
+<p><strong>Answer.</strong> If we want the user to give information to the computer, we need an input function: <code>input()</code>.</p>
+<h2 id="5-3-input-input">5.3 Input: input()</h2>
+<p>The function <code>input()</code> lets your script <strong>ask a question to the user</strong>. It interrupts the execution of the program and waits for the user's answer. You can then save the answer in a variable and reuse it later. <code>input()</code> accepts one optional parameter: the message shown to the user.</p>
+<div class="callout important"><strong>Important:</strong> The data returned by <code>input()</code> is <strong>always a string</strong>. If you want an integer or a float, you have to convert it with <code>int()</code> or <code>float()</code>.</div>
+<div class="tablewrap"><table><thead><tr><th>Type wanted</th><th>Example</th></tr></thead><tbody><tr><td>Integer</td><td><code>numberOfChildren = int(input("How many children do you have? "))</code></td></tr><tr><td>Float</td><td><code>temperature = float(input("What is the temperature? "))</code></td></tr><tr><td>String</td><td><code>name = input("What is your name? ")</code></td></tr></tbody></table></div>
+<p>Let us improve the rectangle script by asking the width and the length to the user. Add the <code>input</code> on the right side of the <code>=</code> for <code>length</code> and <code>width</code>:</p>
+<div class="codeblock"><pre><code>length = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"Give me a length: "</span>))
+width = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"Give me a width: "</span>))
+perimeter = <span class="tn">2</span> * width + <span class="tn">2</span> * length
+area = width * length
+<span class="tb">print</span>(<span class="ts">"Area:"</span>, area, <span class="ts">"Perimeter:"</span>, perimeter)</code></pre></div>
+<p>Run it. The interpreter shows (the user typed <code>8</code> and <code>9</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>&gt;&gt;&gt; %Run rectangle.py
+Give me a length: 8
+Give me a width: 9
+Area: 72.0 Perimeter: 34.0
+&gt;&gt;&gt;</code></pre></div>
+<div class="pager"><a class="prev" href="08-warm-up-4-operators.html" rel="prev"><small>← Previous</small>Warm-up 4: Operators</a><a class="next" href="10-warm-up-5-script-input-and-output.html" rel="next"><small>Next →</small>Warm-up 5: Script, Input &amp; Output</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix A: Solutions to the Exercises — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Appendix A: Solutions to the Exercises">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html" class="active" aria-current="page"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Appendix A: Solutions to the Exercises</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#a-1">A.1 Exercises 1–4</a></li><li><a href="#a-2">A.2 Exercises 5–6</a></li><li><a href="#a-3">A.3 Exercises 7–12</a></li><li><a href="#a-4">A.4 Exercise 13</a></li><li><a href="#a-5">A.5 Exercises 14–15</a></li><li><a href="#a-6">A.6 Exercises 16–18</a></li><li><a href="#a-7">A.7 Project: The Hangman</a></li></ul></nav><p>Try every exercise before reading its solution. There is usually more than one correct way to solve a problem, and these are only one possibility. All the solutions below were run and checked against the expected outputs of the exercises.</p>
+<h2 id="a-1">A.1 Exercises 1–4</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise1</span>
+<span class="tk">def</span> multiplication(a, b):
+    c = a * b
+    <span class="tk">return</span> c
+
+number1 = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a first number: "</span>))
+number2 = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a second number: "</span>))
+
+result = multiplication(number1, number2)
+<span class="tb">print</span>(result)
+
+<span class="tc"># exercise2</span>
+<span class="tk">def</span> draw(n):
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, n + <span class="tn">1</span>):
+        <span class="tb">print</span>(<span class="ts">"*"</span> * i)
+
+size = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"How big do you want the drawing? "</span>))
+draw(size)
+
+<span class="tc"># exercise3</span>
+<span class="tk">def</span> two_equals(a, b, c):
+    <span class="tk">return</span> a == b <span class="tk">or</span> a == c <span class="tk">or</span> b == c
+
+x = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"First number: "</span>))
+y = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Second number: "</span>))
+z = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Third number: "</span>))
+<span class="tb">print</span>(two_equals(x, y, z))
+
+<span class="tc"># exercise4</span>
+<span class="tk">def</span> divisible(a, b):
+    <span class="tk">return</span> a % b == <span class="tn">0</span>
+
+x = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"First number: "</span>))
+y = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Second number: "</span>))
+<span class="tb">print</span>(divisible(x, y))</code></pre></div>
+<h2 id="a-2">A.2 Exercises 5–6</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise5</span>
+<span class="tk">def</span> concatUpper(a, b):
+    <span class="tk">return</span> (a + b).upper()
+
+first = <span class="tb">input</span>(<span class="ts">"Give me a first sentence: "</span>)
+second = <span class="tb">input</span>(<span class="ts">"Give me a second sentence: "</span>)
+<span class="tb">print</span>(concatUpper(first, second))
+
+<span class="tc"># exercise6</span>
+<span class="tk">def</span> ingly(word):
+    <span class="tk">if</span> <span class="tb">len</span>(word) &gt; <span class="tn">3</span>:
+        <span class="tk">if</span> word[-<span class="tn">3</span>:] == <span class="ts">"ing"</span>:
+            <span class="tk">return</span> word + <span class="ts">"ly"</span>
+        <span class="tk">else</span>:
+            <span class="tk">return</span> word + <span class="ts">"ing"</span>
+    <span class="tk">return</span> word
+
+word = <span class="tb">input</span>(<span class="ts">"Give me a word: "</span>)
+<span class="tb">print</span>(ingly(word))</code></pre></div>
+<div class="callout note"><strong>Note:</strong> The exercise text says "more than 3 letters" for the first two rules and "less than three letters" for the last one, which leaves words of exactly 3 letters undefined. The solution returns them unchanged.</div>
+<h2 id="a-3">A.3 Exercises 7–12</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise7</span>
+first = [<span class="tn">2</span>, <span class="tn">8</span>, <span class="tn">5</span>, <span class="tn">4</span>, <span class="tn">6</span>, <span class="tn">7</span>, <span class="tn">8</span>, <span class="tn">5</span>]
+second = [<span class="tn">3.5</span>, <span class="ts">'coucou'</span>, <span class="tn">8</span>, <span class="ts">'hello'</span>, <span class="tn">6.2</span>]
+first.insert(<span class="tn">1</span>, <span class="tn">3</span>)
+second.append(<span class="tn">72</span>)
+second.remove(<span class="ts">'coucou'</span>)
+first.extend(second)
+<span class="tb">print</span>(first)
+<span class="tb">print</span>(first[<span class="tn">5</span>])
+<span class="tb">print</span>(first[:<span class="tn">4</span>])
+<span class="tb">print</span>(first[-<span class="tn">3</span>:])
+<span class="tb">print</span>(first[<span class="tn">2</span>:<span class="tn">6</span>])
+
+<span class="tc"># exercise8</span>
+<span class="tk">def</span> total(list_numbers):
+    total = <span class="tn">0</span>
+    <span class="tk">for</span> number <span class="tk">in</span> list_numbers:
+        total += number
+    <span class="tk">return</span> total
+
+listOfNumbers = []
+askAgain = <span class="tk">True</span>
+<span class="tk">while</span> askAgain == <span class="tk">True</span>:
+    answer = <span class="tb">input</span>(<span class="ts">"Give me a number (or write stop if you are done): "</span>)
+    <span class="tk">if</span> answer == <span class="ts">"stop"</span>:
+        askAgain = <span class="tk">False</span>
+    <span class="tk">else</span>:
+        listOfNumbers.append(<span class="tb">int</span>(answer))
+
+<span class="tb">print</span>(total(listOfNumbers))
+
+<span class="tc"># exercise9  (reads the numbers with the same loop as exercise8)</span>
+<span class="tk">def</span> largestNumber(list_number):
+    largest = list_number[<span class="tn">0</span>]
+    <span class="tk">for</span> number <span class="tk">in</span> list_number:
+        <span class="tk">if</span> number &gt; largest:
+            largest = number
+    <span class="tk">return</span> largest
+
+<span class="tc"># exercise10</span>
+<span class="tk">def</span> size(list_strings):
+    count = <span class="tn">0</span>
+    <span class="tk">for</span> word <span class="tk">in</span> list_strings:
+        <span class="tk">if</span> <span class="tb">len</span>(word) &gt;= <span class="tn">5</span>:
+            count += <span class="tn">1</span>
+    <span class="tk">return</span> count
+
+<span class="tc"># exercise11</span>
+<span class="tk">def</span> checkZero(list_number):
+    <span class="tk">return</span> <span class="tn">0</span> <span class="tk">in</span> list_number
+
+<span class="tc"># exercise12</span>
+<span class="tk">def</span> occurrences(list_letters, letter):
+    count = <span class="tn">0</span>
+    indexes = []
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tb">len</span>(list_letters)):
+        <span class="tk">if</span> list_letters[i] == letter:
+            count += <span class="tn">1</span>
+            indexes.append(i)
+    <span class="tk">return</span> (count, indexes)
+
+letters = []
+askAgain = <span class="tk">True</span>
+<span class="tk">while</span> askAgain == <span class="tk">True</span>:
+    answer = <span class="tb">input</span>(<span class="ts">"Give me a letter (or write stop if you are done): "</span>)
+    <span class="tk">if</span> answer == <span class="ts">"stop"</span>:
+        askAgain = <span class="tk">False</span>
+    <span class="tk">else</span>:
+        letters.append(answer)
+
+chosen = <span class="tb">input</span>(<span class="ts">"Which letter do you want to count? "</span>)
+result = occurrences(letters, chosen)
+<span class="tb">print</span>(<span class="ts">"The letter appears"</span>, result[<span class="tn">0</span>], <span class="ts">"times."</span>)
+<span class="tb">print</span>(<span class="ts">"It appears at the following index:"</span>, result[<span class="tn">1</span>])</code></pre></div>
+<div class="callout note"><strong>Note:</strong> In Exercise 9 the hint suggests starting the "largest" variable at 0, which fails for lists with only negative numbers. Starting from the first element, as above, works for any non-empty list. Exercises 9, 10 and 11 read their lists with the same <code>while</code> loop as Exercise 8 and then print the value returned by their function.</div>
+<h2 id="a-4">A.4 Exercise 13</h2>
+<div class="codeblock"><pre><code>text = <span class="ts">"Hello,everybody,how,are,you,doing?"</span>
+result = text.split(<span class="ts">","</span>)
+<span class="tb">print</span>(result)
+result2 = <span class="ts">" "</span>.join(result)
+<span class="tb">print</span>(result2)</code></pre></div>
+<h2 id="a-5">A.5 Exercises 14–15</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise14</span>
+grades = {<span class="ts">"Alice"</span>: <span class="tn">92</span>, <span class="ts">"Bob"</span>: <span class="tn">85</span>, <span class="ts">"Charlie"</span>: <span class="tn">78</span>, <span class="ts">"David"</span>: <span class="tn">95</span>, <span class="ts">"Eve"</span>: <span class="tn">88</span>}
+
+<span class="tb">print</span>(grades[<span class="ts">"Alice"</span>])
+<span class="tb">print</span>(grades[<span class="ts">"Charlie"</span>])
+
+grades[<span class="ts">"Franck"</span>] = <span class="tn">89</span>
+grades[<span class="ts">"Bob"</span>] = <span class="tn">87</span>
+del grades[<span class="ts">"Eve"</span>]
+
+<span class="tk">for</span> name <span class="tk">in</span> grades:
+    <span class="tb">print</span>(name, <span class="ts">":"</span>, grades[name])
+
+<span class="tc"># exercise15</span>
+text = <span class="tb">input</span>(<span class="ts">"give me some words seperated by space: "</span>)
+words = text.split(<span class="ts">" "</span>)
+
+frequencies = {}
+<span class="tk">for</span> word <span class="tk">in</span> words:
+    <span class="tk">if</span> word <span class="tk">in</span> frequencies:
+        frequencies[word] += <span class="tn">1</span>
+    <span class="tk">else</span>:
+        frequencies[word] = <span class="tn">1</span>
+
+<span class="tk">for</span> word <span class="tk">in</span> frequencies:
+    <span class="tb">print</span>(<span class="ts">"'"</span> + word + <span class="ts">"':"</span>, frequencies[word])</code></pre></div>
+<h2 id="a-6">A.6 Exercises 16–18</h2>
+<div class="callout note"><strong>Note:</strong> Replace the file paths by the real location of your files. If <code>words.txt</code> is in the same folder as your program, just use <code>"words.txt"</code>.</div>
+<div class="codeblock"><pre><code><span class="tc"># exercise16</span>
+my_file = <span class="tb">open</span>(<span class="ts">"words.txt"</span>, <span class="ts">"r"</span>)
+content = my_file.read()
+<span class="tb">print</span>(content)
+my_file.close()
+
+<span class="tc"># exercise17</span>
+my_file = <span class="tb">open</span>(<span class="ts">"my_notes.txt"</span>, <span class="ts">"a"</span>)
+my_file.write(<span class="ts">"Some content written with Python!\n"</span>)
+my_file.close()
+
+<span class="tc"># exercise18</span>
+<span class="tk">import</span> random
+
+<span class="tk">def</span> getWord(file):
+    my_file = <span class="tb">open</span>(file, <span class="ts">"r"</span>)
+    content = my_file.read()
+    my_file.close()
+    words = content.split(<span class="ts">"\n"</span>)
+    <span class="tk">return</span> words[random.randint(<span class="tn">0</span>, <span class="tb">len</span>(words) - <span class="tn">1</span>)]
+
+file = <span class="ts">"words.txt"</span>
+<span class="tb">print</span>(getWord(file))</code></pre></div>
+<div class="callout note"><strong>Note:</strong> If your <code>words.txt</code> ends with an empty last line, <code>split("\n")</code> produces an empty string at the end and the program could occasionally pick it. The Hangman solution below removes empty lines to avoid this.</div>
+<h2 id="a-7">A.7 Project: The Hangman</h2>
+<p>One possible solution following the four functions of the project:</p>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> getWord(file):
+    my_file = <span class="tb">open</span>(file, <span class="ts">"r"</span>)
+    content = my_file.read()
+    my_file.close()
+    words = content.split(<span class="ts">"\n"</span>)
+    words = [w <span class="tk">for</span> w <span class="tk">in</span> words <span class="tk">if</span> w != <span class="ts">""</span>]      <span class="tc"># ignore empty lines</span>
+    <span class="tk">return</span> words[random.randint(<span class="tn">0</span>, <span class="tb">len</span>(words) - <span class="tn">1</span>)]
+
+<span class="tk">def</span> addLetter(letter, userWord, word):
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tb">len</span>(word)):
+        <span class="tk">if</span> word[i] == letter:
+            userWord[i] = letter
+    <span class="tk">return</span> userWord
+
+<span class="tk">def</span> displayWord(userWord):
+    <span class="tk">return</span> <span class="ts">" "</span>.join(userWord)
+
+<span class="tk">def</span> mainGame():
+    name = <span class="tb">input</span>(<span class="ts">"What is your name? "</span>)
+    word = getWord(<span class="ts">"words.txt"</span>)
+    userWord = [<span class="ts">"_"</span>] * <span class="tb">len</span>(word)
+    chances = <span class="tn">8</span>
+    alreadyTried = []
+
+    <span class="tk">while</span> chances &gt; <span class="tn">0</span> <span class="tk">and</span> <span class="ts">"_"</span> <span class="tk">in</span> userWord:
+        <span class="tb">print</span>()
+        <span class="tb">print</span>(displayWord(userWord))
+        letter = <span class="tb">input</span>(<span class="ts">"Choose a letter: "</span>).lower()
+
+        <span class="tk">if</span> <span class="tb">len</span>(letter) != <span class="tn">1</span>:
+            <span class="tb">print</span>(<span class="ts">"Please type exactly one letter."</span>)
+        <span class="tk">elif</span> letter <span class="tk">in</span> alreadyTried:
+            <span class="tb">print</span>(<span class="ts">"You already tried this letter."</span>)
+        <span class="tk">else</span>:
+            alreadyTried.append(letter)
+            <span class="tk">if</span> letter <span class="tk">in</span> word:
+                userWord = addLetter(letter, userWord, word)
+                <span class="tb">print</span>(<span class="ts">"Good one!"</span>)
+            <span class="tk">else</span>:
+                chances -= <span class="tn">1</span>
+                <span class="tb">print</span>(<span class="ts">"Not in the word."</span>, chances, <span class="ts">"chance(s) left."</span>)
+
+    <span class="tb">print</span>()
+    <span class="tk">if</span> <span class="ts">"_"</span> <span class="tk">not</span> <span class="tk">in</span> userWord:
+        <span class="tb">print</span>(<span class="ts">"Congratulations"</span>, name + <span class="ts">"! The word was"</span>, word + <span class="ts">"."</span>)
+        <span class="tb">print</span>(<span class="ts">"Your score:"</span>, chances)
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"Sorry"</span>, name + <span class="ts">", you lost. The word was"</span>, word + <span class="ts">"."</span>)
+
+mainGame()</code></pre></div>
+<p>Ideas to go further: show the letters already tried at each turn, store the best scores in a file (Chapter 6), let the player replay without restarting the program, or keep a dictionary of player names and scores (Chapter 5).</p>
+<div class="pager"><a class="prev" href="20-summary.html" rel="prev"><small>← Previous</small>Summary</a><a class="next" href="22-appendix-b-solutions-to-the-warm-up-practice.html" rel="next"><small>Next →</small>Appendix B: Solutions to the Warm-up Practice</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

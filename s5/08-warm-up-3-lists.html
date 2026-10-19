@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warm-up 3: Lists — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Warm-up 3: Lists">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html" class="active" aria-current="page"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Warm-up 3: Lists</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#step-3-1-create-a-list">Step 3.1 — Create a list</a></li><li><a href="#step-3-2-insert-elements">Step 3.2 — Insert elements</a></li><li><a href="#step-3-3-delete-elements">Step 3.3 — Delete elements</a></li><li><a href="#step-3-4-select-and-modify">Step 3.4 — Select and modify</a></li><li><a href="#step-3-5-for-and-in">Step 3.5 — for and in</a></li></ul></nav><p>Follow the theory of Chapter 3 step by step; keep working on the same list when it says so.</p>
+<div class="callout tip"><strong>Tip:</strong> Type every example yourself instead of copying it, and run it after each step. Solutions: <a class="appref" href="22-appendix-b-solutions-to-the-warm-up-practice.html#b-3">Appendix B.3</a>.</div>
+<h2 id="step-3-1-create-a-list">Step 3.1 — Create a list</h2>
+<p>Create an empty list called <code>numbers</code> using <code>[]</code>, then create a list <code>fruits</code> containing three fruit names. Print both.</p>
+<h2 id="step-3-2-insert-elements">Step 3.2 — Insert elements</h2>
+<p>Start with <code>numbers = []</code>. Use <code>append</code> to add 10 and 20, then <code>insert</code> to put 15 between them, and print the list. Finally use <code>extend</code> to add <code>[30, 40]</code> and print again.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>[10, 15, 20]
+[10, 15, 20, 30, 40]</code></pre></div>
+<h2 id="step-3-3-delete-elements">Step 3.3 — Delete elements</h2>
+<p>Continue with the list <code>[10, 15, 20, 30, 40]</code>. Delete the first element with <code>del</code>, then remove the value <code>30</code> with <code>remove</code>. Print the list after each step.</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>[15, 20, 30, 40]
+[15, 20, 40]</code></pre></div>
+<h2 id="step-3-4-select-and-modify">Step 3.4 — Select and modify</h2>
+<p>Continue with <code>[15, 20, 40]</code>. Change the first element to <code>99</code>, then print the whole list and the slice from index 1 to 3 (end not included).</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>[99, 20, 40] [20, 40]</code></pre></div>
+<h2 id="step-3-5-for-and-in">Step 3.5 — for and in</h2>
+<p>With the list <code>[99, 20, 40]</code>, use a <code>for</code> loop to print each element multiplied by 2. Then use <code>in</code> to print <code>True</code> or <code>False</code> depending on whether <code>20</code> is in the list.</p>
+<div class="pager"><a class="prev" href="07-3-lists.html" rel="prev"><small>← Previous</small>3. Lists</a><a class="next" href="09-exercises-lists-7-12.html" rel="next"><small>Next →</small>Exercises: Lists (7–12)</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

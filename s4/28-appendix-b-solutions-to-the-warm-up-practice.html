@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix B: Solutions to the Warm-up Practice — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — Appendix B: Solutions to the Warm-up Practice">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html" class="active" aria-current="page"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Appendix B: Solutions to the Warm-up Practice</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#b-1">B.1 Introduction</a></li><li><a href="#b-2">B.2 Data Types</a></li><li><a href="#b-3">B.3 Variables</a></li><li><a href="#b-4">B.4 Operators</a></li><li><a href="#b-5">B.5 Script, Input &amp; Output</a></li><li><a href="#b-6">B.6 Booleans</a></li><li><a href="#b-7">B.7 Conditionals</a></li><li><a href="#b-8">B.8 While Loop</a></li><li><a href="#b-9">B.9 For Loop</a></li><li><a href="#b-10">B.10 Random</a></li></ul></nav><p>Model answers to all the warm-up steps. Every program was run and the outputs shown in the warm-ups come from these programs.</p>
+<h2 id="b-1">B.1 Introduction</h2>
+<p><strong>1.1.</strong> Example algorithm: 1. Boil water. 2. Put a tea bag in a cup. 3. Pour the water into the cup. 4. Wait three minutes. 5. Remove the tea bag. An algorithm is a list of steps that solves a problem, independent of any language; a program is the translation of an algorithm into code a computer understands.</p>
+<p><strong>1.2.</strong> An interpreter translates and executes the code line by line, as it reads it. A compiler first translates the whole program and only then executes it. Python (the interpreter) works line by line.</p>
+<p><strong>1.3.</strong> Results: <code>6</code>, <code>2.0</code> (a division always gives a float), <code>'HelloHelloHello'</code>, <code>'Hello'</code>, <code>11.5</code>.</p>
+<h2 id="b-2">B.2 Data Types</h2>
+<p><strong>2.1.</strong> <code>42</code> int; <code>3.14</code> float; <code>"42"</code> str (it is in quotes); <code>'hello'</code> str; <code>-8</code> int; <code>7.0</code> float (it has a decimal point); <code>"7.5"</code> str.</p>
+<p><strong>2.2.</strong> <code>type(42)</code> shows <code>&lt;class 'int'&gt;</code>, <code>type(3.14)</code> shows <code>&lt;class 'float'&gt;</code>, and <code>type("42")</code> shows <code>&lt;class 'str'&gt;</code>: the quotes make it text, even if it looks like a number.</p>
+<p><strong>2.3.</strong> <code>8 + 2</code> gives <code>10</code> (two integers are added); <code>"8" + "2"</code> gives <code>'82'</code> (two strings are joined). The quotes change the data type, so they change the operation.</p>
+<h2 id="b-3">B.3 Variables</h2>
+<p><strong>3.1.</strong> The shell shows <code>'Ana'</code> and <code>15</code>.</p>
+<p><strong>3.2.</strong> Valid: <code>my_var</code>, <code>Age</code>, <code>total_2</code>, <code>_x</code>. Invalid: <code>2cool</code> (starts with a number), <code>my-var</code> (a hyphen is not allowed) and <code>my var</code> (a space is not allowed).</p>
+<p><strong>3.3.</strong></p>
+<div class="codeblock"><pre><code>x = <span class="tn">5</span>
+X = <span class="tn">10</span>
+<span class="tb">print</span>(x + X)</code></pre></div>
+<p><strong>3.4.</strong></p>
+<div class="codeblock"><pre><code>score = <span class="tn">10</span>
+score = score + <span class="tn">5</span>
+<span class="tb">print</span>(score)
+score = score * <span class="tn">2</span>
+<span class="tb">print</span>(score)</code></pre></div>
+<p><strong>3.5.</strong> <code>colour</code> displays <code>'red'</code> (the value saved in the variable) and <code>"colour"</code> displays <code>'colour'</code> (just the text).</p>
+<h2 id="b-4">B.4 Operators</h2>
+<p><strong>4.1.</strong> <code>13</code> (multiplication first), <code>20</code> (parentheses first), <code>32</code>, <code>3.75</code>.</p>
+<p><strong>4.2.</strong> <code>5</code> (29 = 4 × 6 + 5), <code>0</code> (40 is divisible by 8), <code>7</code> (10 does not fit in 7, so the whole number remains).</p>
+<p><strong>4.3.</strong> <code>4</code>, <code>5</code>, <code>0</code>.</p>
+<p><strong>4.4.</strong> <code>%</code>: a number <code>n</code> is even when <code>n % 2</code> equals <code>0</code>. <code>14 % 2</code> is <code>0</code> (even) and <code>15 % 2</code> is <code>1</code> (odd).</p>
+<p><strong>4.5.</strong></p>
+<div class="codeblock"><pre><code>width = <span class="tn">4</span>
+height = <span class="tn">6</span>
+area = width * height
+perimeter = <span class="tn">2</span> * (width + height)
+<span class="tb">print</span>(area, perimeter)</code></pre></div>
+<h2 id="b-5">B.5 Script, Input &amp; Output</h2>
+<p><strong>5.1.</strong></p>
+<div class="codeblock"><pre><code><span class="tb">print</span>(<span class="ts">"Hello, world!"</span>)</code></pre></div>
+<p><strong>5.2.</strong></p>
+<div class="codeblock"><pre><code>name = <span class="ts">"Ana"</span>
+age = <span class="tn">15</span>
+<span class="tb">print</span>(<span class="ts">"My name is"</span>, name, <span class="ts">"and I am"</span>, age, <span class="ts">"years old."</span>)</code></pre></div>
+<p><strong>5.3.</strong></p>
+<div class="codeblock"><pre><code>name = <span class="tb">input</span>(<span class="ts">"What is your name? "</span>)
+<span class="tb">print</span>(<span class="ts">"Hello,"</span>, name + <span class="ts">"!"</span>)</code></pre></div>
+<p><strong>5.4.</strong></p>
+<div class="codeblock"><pre><code>age = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"How old are you? "</span>))
+<span class="tb">print</span>(<span class="ts">"Next year you will be"</span>, age + <span class="tn">1</span>)</code></pre></div>
+<p><strong>5.5.</strong></p>
+<div class="codeblock"><pre><code>price = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"Give me a price: "</span>))
+<span class="tb">print</span>(<span class="ts">"Double price:"</span>, price * <span class="tn">2</span>)</code></pre></div>
+<p><strong>5.6.</strong></p>
+<div class="codeblock"><pre><code>a = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"First number: "</span>))
+b = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Second number: "</span>))
+<span class="tb">print</span>(<span class="ts">"The sum is"</span>, a + b)</code></pre></div>
+<h2 id="b-6">B.6 Booleans</h2>
+<p><strong>6.1.</strong> <code>True</code>, <code>True</code>, <code>False</code>, <code>False</code>.</p>
+<p><strong>6.2.</strong> <code>False</code>, <code>True</code>, <code>False</code>, <code>True</code>.</p>
+<p><strong>6.3.</strong> <code>a = 3</code> assigns; <code>a == 3</code> compares; <code>a != 3</code> compares; <code>a = a + 1</code> assigns.</p>
+<p><strong>6.4.</strong> <code>age &gt;= 12 and age &lt; 18</code> gives <code>True</code> for 15 and <code>False</code> for 20.</p>
+<p><strong>6.5.</strong> <code>True</code>, <code>False</code>, <code>False</code>.</p>
+<h2 id="b-7">B.7 Conditionals</h2>
+<p><strong>7.1.</strong></p>
+<div class="codeblock"><pre><code>number = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a number: "</span>))
+<span class="tk">if</span> number &gt; <span class="tn">0</span>:
+    <span class="tb">print</span>(<span class="ts">"positive"</span>)</code></pre></div>
+<p><strong>7.2.</strong></p>
+<div class="codeblock"><pre><code>number = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a number: "</span>))
+<span class="tk">if</span> number % <span class="tn">2</span> == <span class="tn">0</span>:
+    <span class="tb">print</span>(<span class="ts">"even"</span>)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"odd"</span>)</code></pre></div>
+<p><strong>7.3.</strong></p>
+<div class="codeblock"><pre><code>score = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Your score: "</span>))
+<span class="tk">if</span> score &gt;= <span class="tn">16</span>:
+    <span class="tb">print</span>(<span class="ts">"Excellent"</span>)
+<span class="tk">elif</span> score &gt;= <span class="tn">10</span>:
+    <span class="tb">print</span>(<span class="ts">"Pass"</span>)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"Fail"</span>)</code></pre></div>
+<p><strong>7.4.</strong> Script 1 prints <code>done</code> (the last line is not part of the <code>if</code>, so it always runs). Script 2 prints nothing, because both prints belong to the <code>if</code> and <code>5 &gt; 10</code> is false.</p>
+<p><strong>7.5.</strong></p>
+<div class="codeblock"><pre><code>password = <span class="tb">input</span>(<span class="ts">"Password: "</span>)
+<span class="tk">if</span> password == <span class="ts">"python"</span>:
+    <span class="tb">print</span>(<span class="ts">"Welcome"</span>)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"Access denied"</span>)</code></pre></div>
+<h2 id="b-8">B.8 While Loop</h2>
+<p><strong>8.1.</strong></p>
+<div class="codeblock"><pre><code>i = <span class="tn">1</span>
+<span class="tk">while</span> i &lt;= <span class="tn">5</span>:
+    <span class="tb">print</span>(i)
+    i += <span class="tn">1</span></code></pre></div>
+<p><strong>8.2.</strong></p>
+<div class="codeblock"><pre><code>i = <span class="tn">10</span>
+<span class="tk">while</span> i &gt;= <span class="tn">1</span>:
+    <span class="tb">print</span>(i)
+    i -= <span class="tn">1</span>
+<span class="tb">print</span>(<span class="ts">"Liftoff!"</span>)</code></pre></div>
+<p><strong>8.3.</strong> It prints <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code> and <code>16</code>, one per line. Then <code>i</code> becomes 32, which is not smaller than 20, so the loop stops.</p>
+<p><strong>8.4.</strong></p>
+<div class="codeblock"><pre><code>password = <span class="tb">input</span>(<span class="ts">"Password: "</span>)
+<span class="tk">while</span> password != <span class="ts">"python"</span>:
+    <span class="tb">print</span>(<span class="ts">"Wrong password"</span>)
+    password = <span class="tb">input</span>(<span class="ts">"Password: "</span>)
+<span class="tb">print</span>(<span class="ts">"Welcome"</span>)</code></pre></div>
+<p><strong>8.5.</strong></p>
+<div class="codeblock"><pre><code>total = <span class="tn">0</span>
+x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+<span class="tk">while</span> x != <span class="ts">"stop"</span>:
+    total += <span class="tb">int</span>(x)
+    x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+<span class="tb">print</span>(total)</code></pre></div>
+<p><strong>8.6.</strong> The <strong>change</strong> part is missing: <code>i</code> never changes, so <code>i &lt; 5</code> stays true forever. Fix it by adding <code>i += 1</code> (indented) at the end of the loop body.</p>
+<h2 id="b-9">B.9 For Loop</h2>
+<p><strong>9.1.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">for</span> letter <span class="tk">in</span> <span class="ts">"python"</span>:
+    <span class="tb">print</span>(letter)</code></pre></div>
+<p><strong>9.2.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">for</span> x <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">5</span>):
+    <span class="tb">print</span>(x)</code></pre></div>
+<p><strong>9.3.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">for</span> x <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">2</span>, <span class="tn">11</span>, <span class="tn">2</span>):
+    <span class="tb">print</span>(x)</code></pre></div>
+<p><strong>9.4.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">for</span> x <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">5</span>, <span class="tn">0</span>, -<span class="tn">1</span>):
+    <span class="tb">print</span>(x)</code></pre></div>
+<p><strong>9.5.</strong></p>
+<div class="codeblock"><pre><code>total = <span class="tn">0</span>
+<span class="tk">for</span> n <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, <span class="tn">11</span>):
+    total += n
+<span class="tb">print</span>(total)</code></pre></div>
+<p><strong>9.6.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">for</span> row <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">4</span>):
+    <span class="tb">print</span>(<span class="ts">"*"</span> * (row + <span class="tn">1</span>))</code></pre></div>
+<p><strong>9.7.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">for</span> name <span class="tk">in</span> [<span class="ts">"Ana"</span>, <span class="ts">"Luis"</span>, <span class="ts">"Sofia"</span>]:
+    <span class="tb">print</span>(<span class="ts">"Hello"</span>, name)</code></pre></div>
+<h2 id="b-10">B.10 Random</h2>
+<p><strong>10.1.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+roll = random.randint(<span class="tn">1</span>, <span class="tn">6</span>)
+<span class="tb">print</span>(<span class="ts">"You rolled"</span>, roll)</code></pre></div>
+<p><strong>10.2.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tb">print</span>(random.choice([<span class="ts">"heads"</span>, <span class="ts">"tails"</span>]))</code></pre></div>
+<p><strong>10.3.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tb">print</span>(random.uniform(<span class="tn">0</span>, <span class="tn">1</span>))</code></pre></div>
+<p><strong>10.4.</strong></p>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">5</span>):
+    <span class="tb">print</span>(random.randint(<span class="tn">1</span>, <span class="tn">6</span>))</code></pre></div>
+<p><strong>10.5.</strong> It can return 3, 4, 5, 6 or 7. Both limits are included.</p>
+<div class="pager"><a class="prev" href="27-appendix-a-answers-and-solutions.html" rel="prev"><small>← Previous</small>Appendix A: Answers and Solutions</a><span class="gap"></span></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

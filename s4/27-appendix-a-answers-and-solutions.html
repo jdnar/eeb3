@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix A: Answers and Solutions — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — Appendix A: Answers and Solutions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html" class="active" aria-current="page"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Appendix A: Answers and Solutions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#a-1">A.1 Answers to the questions of the theory</a></li><li><a href="#a-2">A.2 Exercises 1–5</a></li><li><a href="#a-3">A.3 Exercises 6–8</a></li><li><a href="#a-4">A.4 Exercises 9–11</a></li><li><a href="#a-5">A.5 Exercises 12–15</a></li><li><a href="#a-6">A.6 Projects</a></li></ul></nav><p>Try every exercise before reading its solution. There is usually more than one correct way to write a program; these are only one possibility. All programs below were run and checked against the expected results of the exercises.</p>
+<h2 id="a-1">A.1 Answers to the questions of the theory</h2>
+<h3 id="chapter-1-first-use">Chapter 1: first use</h3>
+<p><code>Hello</code> (without quotes) gives an error because Python looks for a variable called Hello that does not exist. <code>"Hello"</code> is text. <code>7</code> is an integer, <code>9.5 + 2</code> gives <code>11.5</code>, <code>2 * 3</code> gives <code>6</code>, <code>10 / 5</code> gives <code>2.0</code> (a division always returns a float), <code>"Hello" * 10</code> repeats the word ten times and <code>"He" + "llo"</code> joins the two pieces into <code>'Hello'</code>.</p>
+<h3 id="chapter-3-variables">Chapter 3: variables</h3>
+<p><strong>Question 1.</strong> The first time, <code>age + 2</code> only <strong>calculates and displays</strong> 16: the result is not saved anywhere, so <code>age</code> is still 14. With <code>age = age + 2</code> the result is <strong>assigned</strong> back to the variable, so <code>age</code> now holds 16.</p>
+<p><strong>Question 2.</strong> <code>"age" * 2</code> is a <strong>string</strong> multiplied by 2, which repeats the text: the result is <code>'ageage'</code>. That text is then assigned to the variable <code>age</code>, replacing the number it held before.</p>
+<h3 id="chapter-6-guess-the-result">Chapter 6: guess the result</h3>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>Expression</th><th>Result</th></tr></thead><tbody><tr><td>1</td><td><code>1 == 1</code></td><td><code>True</code></td></tr><tr><td>2</td><td><code>"hello" == "bye"</code></td><td><code>False</code></td></tr><tr><td>3</td><td><code>2 != 8</code></td><td><code>True</code></td></tr><tr><td>4</td><td><code>3 &gt; 8 and 2 &gt; 3</code></td><td><code>False</code></td></tr><tr><td>5</td><td><code>2 &lt; 5 or 5 &gt; 10</code></td><td><code>True</code></td></tr><tr><td>6</td><td><code>"hello" != "world" and 3 &gt;= 2</code></td><td><code>True</code></td></tr><tr><td>7</td><td><code>not 3 &gt; 5</code></td><td><code>True</code></td></tr><tr><td>8</td><td><code>not (2 == 2 and 3 != 4)</code></td><td><code>False</code></td></tr><tr><td>9</td><td><code>2 &gt;= 2 or (5 &lt; 4 and 3 &gt; 1)</code></td><td><code>True</code></td></tr></tbody></table></div>
+<h2 id="a-2">A.2 Exercises 1–5</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise1</span>
+daysPerWeek = <span class="tn">7</span>
+hoursPerDay = <span class="tn">24</span>
+minutesPerHour = <span class="tn">60</span>
+
+minutesPerWeek = daysPerWeek * hoursPerDay * minutesPerHour
+<span class="tb">print</span>(minutesPerWeek)
+
+<span class="tc"># exercise2</span>
+a = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a first integer: "</span>))
+b = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a second integer: "</span>))
+c = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a third integer: "</span>))
+
+result = (a + b) ** <span class="tn">2</span> - c
+<span class="tb">print</span>(result)
+
+<span class="tc"># exercise3</span>
+first = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a first number: "</span>))
+second = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a second number: "</span>))
+
+<span class="tb">print</span>(first, <span class="ts">":"</span>, second, <span class="ts">"="</span>, first / second)
+<span class="tb">print</span>(<span class="ts">"The quotient of the division is"</span>, first // second)
+<span class="tb">print</span>(<span class="ts">"The remainder of the division is"</span>, first % second)
+
+<span class="tc"># exercise4</span>
+name = <span class="tb">input</span>(<span class="ts">"What is your name? "</span>)
+food = <span class="tb">input</span>(<span class="ts">"What is your favorite food? "</span>)
+
+<span class="tb">print</span>(<span class="ts">"The favorite food of"</span>, name, <span class="ts">"is"</span>, food)
+
+<span class="tc"># exercise5</span>
+name = <span class="tb">input</span>(<span class="ts">"What is your name? "</span>)
+age = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"How old are you? "</span>))
+
+<span class="tb">print</span>(name, <span class="ts">"is a really nice name."</span>)
+<span class="tb">print</span>(<span class="ts">"I am one year older than you: I am"</span>, age + <span class="tn">1</span>, <span class="ts">"years old."</span>)</code></pre></div>
+<h2 id="a-3">A.3 Exercises 6–8</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise6</span>
+age = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"How old are you? "</span>))
+
+<span class="tk">if</span> age &gt; <span class="tn">12</span>:
+    <span class="tb">print</span>(<span class="ts">"You are getting old..."</span>)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"You are a child."</span>)
+
+<span class="tc"># exercise7</span>
+ct = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"What is the current temperature? "</span>))
+it = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"What is your ideal temperature? "</span>))
+
+<span class="tk">if</span> ct &gt; it:
+    <span class="tb">print</span>(<span class="ts">"It is too hot: please decrease the temperature."</span>)
+<span class="tk">elif</span> ct &lt; it:
+    <span class="tb">print</span>(<span class="ts">"It is too cold: please increase the temperature."</span>)
+
+<span class="tc"># exercise8</span>
+money = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"How much money do you have? "</span>))
+item = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"How much does the item cost? "</span>))
+
+<span class="tk">if</span> money &gt;= item:
+    <span class="tb">print</span>(<span class="ts">"You can buy it! Money left:"</span>, money - item)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"You cannot buy it yet. You need"</span>, item - money, <span class="ts">"more."</span>)</code></pre></div>
+<h2 id="a-4">A.4 Exercises 9–11</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise9</span>
+i = <span class="tn">0</span>
+<span class="tk">while</span> i &lt;= <span class="tn">100</span>:
+    <span class="tb">print</span>(i)
+    i += <span class="tn">1</span>
+
+<span class="tc"># exercise10</span>
+count = <span class="tn">100</span>
+total = <span class="tn">0</span>
+
+<span class="tk">while</span> count &lt;= <span class="tn">200</span>:
+    total += count
+    count += <span class="tn">1</span>
+
+<span class="tb">print</span>(total)
+
+<span class="tc"># exercise11</span>
+answer = <span class="tb">input</span>(<span class="ts">"How are you doing? (write stop to quit) "</span>)
+<span class="tk">while</span> answer != <span class="ts">"stop"</span>:
+    <span class="tb">print</span>(<span class="ts">"Thank you for telling me:"</span>, answer)
+    answer = <span class="tb">input</span>(<span class="ts">"How are you doing? (write stop to quit) "</span>)
+<span class="tb">print</span>(<span class="ts">"Goodbye!"</span>)</code></pre></div>
+<h2 id="a-5">A.5 Exercises 12–15</h2>
+<div class="codeblock"><pre><code><span class="tc"># exercise12</span>
+<span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">101</span>):
+    <span class="tb">print</span>(i)
+
+<span class="tc"># exercise13</span>
+total = <span class="tn">0</span>
+<span class="tk">for</span> number <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">100</span>, <span class="tn">201</span>):
+    total += number
+<span class="tb">print</span>(total)
+
+<span class="tc"># exercise14</span>
+<span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, <span class="tn">11</span>):
+    <span class="tb">print</span>(i, <span class="ts">" * "</span>, <span class="tn">3</span>, <span class="ts">" = "</span>, i * <span class="tn">3</span>)
+
+<span class="tc"># exercise15</span>
+n = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"What is the size of the square? "</span>))
+
+<span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(n):
+    <span class="tb">print</span>(n * <span class="ts">"X"</span>)</code></pre></div>
+<h2 id="a-6">A.6 Projects</h2>
+<div class="codeblock"><pre><code><span class="tc"># project1</span>
+<span class="tk">import</span> random
+
+number = random.randint(<span class="tn">1</span>, <span class="tn">10</span>)
+guess = <span class="tn">3</span>
+found = <span class="tk">False</span>
+
+<span class="tk">while</span> found == <span class="tk">False</span> <span class="tk">and</span> guess &gt; <span class="tn">0</span>:
+    user_number = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Guess a number between 1 and 10: "</span>))
+    <span class="tk">if</span> user_number == number:
+        <span class="tb">print</span>(<span class="ts">"Congratulations, you found the number!"</span>)
+        found = <span class="tk">True</span>
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"Wrong answer"</span>)
+        guess = guess - <span class="tn">1</span>
+
+<span class="tk">if</span> found == <span class="tk">False</span>:
+    <span class="tb">print</span>(<span class="ts">"You have no guesses left. The number was"</span>, number)
+
+<span class="tc"># project2</span>
+<span class="tk">import</span> random
+
+play = <span class="tk">True</span>
+
+<span class="tk">while</span> play == <span class="tk">True</span>:
+    door = random.randint(<span class="tn">1</span>, <span class="tn">3</span>)
+    choice = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Which door do you open? (1, 2 or 3) "</span>))
+
+    <span class="tk">if</span> choice == door:
+        <span class="tb">print</span>(<span class="ts">"You found the treasure! You are rich!"</span>)
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"Oh no... behind this door there were starving tigers!"</span>)
+        <span class="tb">print</span>(<span class="ts">"The treasure was behind door"</span>, door)
+
+    answer = <span class="tb">input</span>(<span class="ts">"Do you want to play again? (yes/no) "</span>)
+    <span class="tk">if</span> answer != <span class="ts">"yes"</span>:
+        play = <span class="tk">False</span>
+
+<span class="tb">print</span>(<span class="ts">"Thanks for playing!"</span>)
+
+<span class="tc"># project3</span>
+<span class="tk">import</span> random
+
+moves = [<span class="ts">"rock"</span>, <span class="ts">"paper"</span>, <span class="ts">"scissors"</span>]
+player_score = <span class="tn">0</span>
+computer_score = <span class="tn">0</span>
+play = <span class="tk">True</span>
+
+<span class="tk">while</span> play == <span class="tk">True</span>:
+    computer = random.choice(moves)
+    player = <span class="tb">input</span>(<span class="ts">"Rock, paper or scissors? "</span>).lower()
+
+    <span class="tk">if</span> player <span class="tk">not</span> <span class="tk">in</span> moves:
+        <span class="tb">print</span>(<span class="ts">"Please type rock, paper or scissors."</span>)
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"The computer chose"</span>, computer)
+        <span class="tk">if</span> player == computer:
+            <span class="tb">print</span>(<span class="ts">"It's a draw!"</span>)
+        <span class="tk">elif</span> (player == <span class="ts">"rock"</span> <span class="tk">and</span> computer == <span class="ts">"scissors"</span>) <span class="tk">or</span> (player == <span class="ts">"scissors"</span> <span class="tk">and</span> computer == <span class="ts">"paper"</span>) <span class="tk">or</span> (player == <span class="ts">"paper"</span> <span class="tk">and</span> computer == <span class="ts">"rock"</span>):
+            <span class="tb">print</span>(<span class="ts">"You win!"</span>)
+            player_score += <span class="tn">1</span>
+        <span class="tk">else</span>:
+            <span class="tb">print</span>(<span class="ts">"The computer wins!"</span>)
+            computer_score += <span class="tn">1</span>
+        <span class="tb">print</span>(<span class="ts">"Score - You:"</span>, player_score, <span class="ts">"Computer:"</span>, computer_score)
+
+    answer = <span class="tb">input</span>(<span class="ts">"Play again? (yes/no) "</span>)
+    <span class="tk">if</span> answer != <span class="ts">"yes"</span>:
+        play = <span class="tk">False</span>
+
+<span class="tb">print</span>(<span class="ts">"Final score - You:"</span>, player_score, <span class="ts">"Computer:"</span>, computer_score)</code></pre></div>
+<div class="callout note"><strong>Note:</strong> Exercise 9 prints 0 to 100 with <code>i &lt;= 100</code>; Exercise 12 does the same with <code>range(101)</code> because the end value of <code>range</code> is not included. Exercises 10 and 13 both give 15150.</div>
+<div class="callout note"><strong>Note:</strong> In the projects, the numbers and moves are random, so your program will behave differently each time you run it. Run it several times to check every case (win, lose, play again).</div>
+<div class="pager"><a class="prev" href="26-12-summary.html" rel="prev"><small>← Previous</small>12. Summary</a><a class="next" href="28-appendix-b-solutions-to-the-warm-up-practice.html" rel="next"><small>Next →</small>Appendix B: Solutions to the Warm-up Practice</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

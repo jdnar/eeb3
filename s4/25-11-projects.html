@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11. Projects — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — 11. Projects">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html" class="active" aria-current="page"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>11. Projects</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#project-1-project1-guess-the-number">Project 1 — project1: Guess the number</a></li><li><a href="#project-2-project2-three-doors">Project 2 — project2: Three doors</a></li><li><a href="#project-3-project3-rock-paper-scissors">Project 3 — project3: Rock, Paper, Scissors</a></li></ul></nav><p>Three small games to combine everything you have learned: variables, input/output, conditionals, loops and the <code>random</code> module. Save each one in your <code>Python</code> folder with the name given.</p>
+<h2 id="project-1-project1-guess-the-number">Project 1 — project1: Guess the number</h2>
+<p>Write a program asking the user to find a number between 1 and 10. The user can have <strong>up to three guesses</strong>. Your program should:</p>
+<ul><li>randomly select a number between 1 and 10 and save it in a variable;</li><li>create a loop with <strong>two conditions</strong>: the user still has guesses left <em>and</em> has not found the correct answer yet.</li></ul>
+<p>Inside the loop, it should ask the user for their guess with <code>input</code>, then check with a conditional whether the guess is correct. If it is, congratulate the user and get out of the loop; if not, remove one guess.</p>
+<h3 id="help">Help</h3>
+<ul><li>Create a variable <code>number</code> with a random number between 1 and 10: the number to guess.</li><li>Create a variable <code>guess</code> set to 3. Decrease it by one each time the user gives a wrong number.</li><li>Create a variable <code>found</code> set to <code>False</code>. Change it to <code>True</code> when the user finds the right number.</li><li>Write your <code>while</code> loop with the two conditions: <code>found == False and guess &gt; 0</code>.</li><li>Ask for a number between 1 and 10 and save the answer in <code>user_number</code>.</li><li>Compare <code>number</code> and <code>user_number</code>: if they are the same, congratulate the user and set <code>found</code> to <code>True</code>; otherwise decrease <code>guess</code> by 1.</li></ul>
+<div class="codeblock"><pre><code>number = ...
+guess = ...
+found = ...
+<span class="tk">while</span> condition:
+    user_number = ...
+    <span class="tk">if</span> condition:
+        <span class="tb">print</span>(<span class="ts">"Congratulations, you found the number!"</span>)
+        found = ...
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"Wrong answer"</span>)
+        guess = ...</code></pre></div>
+<h2 id="project-2-project2-three-doors">Project 2 — project2: Three doors</h2>
+<p>Write a program that asks the user to choose between <strong>three doors</strong>. Behind two doors there are starving tigers; behind one door there is a treasure. The user has to guess the door hiding the treasure, and must be able to <strong>play again</strong>. Your program should create a loop with the condition "the user wants to play". Inside the loop, it should:</p>
+<ul><li>randomly select a number between 1 and 3;</li><li>ask the user for their guess with <code>input</code>;</li><li>check with a conditional whether the guess is correct and print an appropriate message;</li><li>ask the user whether they want to play again.</li></ul>
+<h3 id="help-2">Help</h3>
+<ul><li>Initialise a variable <code>play</code> to <code>True</code>. If the user does not want to play any more, change it to <code>False</code>.</li><li>Write a loop whose condition is <code>play == True</code>.</li><li>Create a variable <code>door</code> and randomly assign it a number between 1 and 3.</li><li>Ask the user which door they want to open and save the answer in a variable.</li><li>Write a conditional to check whether the treasure was found and print a message.</li><li>Ask whether the user wants to play again.</li></ul>
+<h2 id="project-3-project3-rock-paper-scissors">Project 3 — project3: Rock, Paper, Scissors</h2>
+<p>Code a <strong>Rock, Paper, Scissors</strong> game. This one is yours to design. Some ideas to get started:</p>
+<ul><li>The computer picks its move at random with <code>random.choice(["rock", "paper", "scissors"])</code>.</li><li>The user types their move with <code>input</code>.</li><li>Compare the two moves with <code>if</code> / <code>elif</code> / <code>else</code>: rock beats scissors, scissors beats paper, paper beats rock; the same move is a draw.</li><li>Show both moves and announce who won.</li><li>Let the user play again, and keep a score for each player using a loop.</li></ul>
+<p><em>Reference solutions: <a class="appref" href="27-appendix-a-answers-and-solutions.html#a-6">Appendix A.6</a></em></p>
+<div class="pager"><a class="prev" href="24-warm-up-10-random.html" rel="prev"><small>← Previous</small>Warm-up 10: Random</a><a class="next" href="26-12-summary.html" rel="next"><small>Next →</small>12. Summary</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

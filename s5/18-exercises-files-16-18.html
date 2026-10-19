@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercises: Files (16–18) — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Exercises: Files (16–18)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html" class="active" aria-current="page"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Exercises: Files (16–18)</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-16-exercise16">Exercise 16 — exercise16</a></li><li><a href="#exercise-17-exercise17">Exercise 17 — exercise17</a></li><li><a href="#exercise-18-exercise18">Exercise 18 — exercise18</a></li></ul></nav><h2 id="exercise-16-exercise16">Exercise 16 — exercise16</h2>
+<p>Write a program that opens the file <code>words.txt</code>, reads its content, prints it, and closes it.</p>
+<div class="codeblock"><pre><code>my_file = <span class="tb">open</span>(r<span class="ts">"pathToYourFile\file.txt"</span>, <span class="ts">"r"</span>)
+content = my_file.read()
+<span class="tb">print</span>(content)
+my_file.close()</code></pre></div>
+<h2 id="exercise-17-exercise17">Exercise 17 — exercise17</h2>
+<p>Write a program that opens a text file located on your computer, writes some content in it, and closes it.</p>
+<div class="callout tip"><strong>Tip:</strong> You can open in <code>"a"</code> (append) or <code>"w"</code> (write) mode. Write mode erases the previous content; append mode adds the new content at the end.</div>
+<h2 id="exercise-18-exercise18">Exercise 18 — exercise18</h2>
+<p>Write a function <code>getWord(file)</code> that receives the path to a file and returns <strong>one word randomly selected</strong> from that file. Then write a program that sets the <code>file</code> variable to the path of <code>words.txt</code>, calls <code>getWord(file)</code> and prints the selected word.</p>
+<div class="callout tip"><strong>Tip:</strong> When you read a file you get one big string. Split it on <code>"\n"</code> (the line break) to get a list with one element per line: <code>content = content.split("\n")</code>. To pick a random element, <code>import random</code> and use <code>my_list[random.randint(0, len(my_list) - 1)]</code>.</div>
+<p><em>Solutions: <a class="appref" href="21-appendix-a-solutions-to-the-exercises.html#a-6">Appendix A.6</a></em></p>
+<div class="pager"><a class="prev" href="17-warm-up-6-files.html" rel="prev"><small>← Previous</small>Warm-up 6: Files</a><a class="next" href="19-project-the-hangman.html" rel="next"><small>Next →</small>Project: The Hangman</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project: The Hangman — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Project: The Hangman">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html" class="active" aria-current="page"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Project: The Hangman</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#rules">Rules</a></li><li><a href="#technical-side">Technical side</a></li><li><a href="#suggested-steps">Suggested steps</a></li></ul></nav><h2 id="rules">Rules</h2>
+<p>The computer chooses a random word of up to eight letters from a file. The player tries to find the letters of the word. At each turn the player chooses a letter. If the letter is in the word, the computer displays the word with the letters already found; letters not yet found are replaced by an underscore <code>_</code>. The player has <strong>8 chances</strong>; after that, they lose.</p>
+<p>At the beginning of the game, ask the player their name. The player's <strong>score</strong> is the number of chances remaining when they find the word: if three chances are left, they win three points.</p>
+<h2 id="technical-side">Technical side</h2>
+<p>Divide your program into at least four functions:</p>
+<ol><li><code>getWord()</code></li><li><code>addLetter(letter, userWord, word)</code></li><li><code>displayWord(word)</code></li><li><code>mainGame()</code></li></ol>
+<p>Feel free to split these into smaller functions: it is your program, and this is just one way to do it. Think before you start; a piece of paper and a pen can help you organize your thoughts.</p>
+<h2 id="suggested-steps">Suggested steps</h2>
+<ol><li>Start with <code>getWord()</code>. Randomly select one word from <code>words.txt</code> and print it to make sure it works.</li><li>Start <code>mainGame()</code>: initialise all your variables (including <code>word</code> and <code>userWord</code>) and make sure <code>userWord</code> has as many <code>"_"</code> as the word has letters. Print both to check.</li><li>Write the loop of <code>mainGame()</code>: ask a letter, add it to <code>alreadyTried</code> if it has not been tried yet, and check whether the letter is in the word. Print specific messages to check that your code works.</li><li>Create <code>addLetter(letter, userWord, word)</code>: go through the word and, every time the letter appears, replace the <code>_</code> in <code>userWord</code> at the correct position by the letter. Test it before going further.</li><li>Update <code>mainGame()</code> to call <code>addLetter</code> each time the player finds a new letter.</li><li>Finish the game: outside of the loop, check whether the player won or lost and print the appropriate message.</li><li>When you print the <code>userWord</code> list it does not look nice (<code>['_', 'y', '_']</code>). Code <code>displayWord</code> so it prints something like <code>_ y _</code>.</li><li>Make sure you understand everything and that everything works. Then improve your code and add new features (for example, show the letters already tried, keep a best score, or let the player play again).</li></ol>
+<p><em>A reference solution is in <a class="appref" href="21-appendix-a-solutions-to-the-exercises.html#a-7">Appendix A.7</a>.</em></p>
+<div class="pager"><a class="prev" href="18-exercises-files-16-18.html" rel="prev"><small>← Previous</small>Exercises: Files (16–18)</a><a class="next" href="20-summary.html" rel="next"><small>Next →</small>Summary</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix B: Solutions to the Warm-up Practice — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Appendix B: Solutions to the Warm-up Practice">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html" class="active" aria-current="page"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Appendix B: Solutions to the Warm-up Practice</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#b-1">B.1 Functions</a></li><li><a href="#b-2">B.2 Strings</a></li><li><a href="#b-3">B.3 Lists</a></li><li><a href="#b-4">B.4 Split &amp; Join</a></li><li><a href="#b-5">B.5 Dictionaries</a></li><li><a href="#b-6">B.6 Files</a></li></ul></nav><p>These are short model answers to the warm-up steps. Run them and compare with your own code; as always there is more than one correct way.</p>
+<h2 id="b-1">B.1 Functions</h2>
+<div class="codeblock"><pre><code><span class="tc"># 1.1</span>
+<span class="tk">def</span> say_hello():
+    <span class="tb">print</span>(<span class="ts">"Hello!"</span>)
+
+say_hello()
+say_hello()
+say_hello()
+
+<span class="tc"># 1.2</span>
+<span class="tk">def</span> greet(name):
+    <span class="tb">print</span>(<span class="ts">"Hello, "</span> + name + <span class="ts">"!"</span>)
+
+greet(<span class="ts">"Ana"</span>)
+greet(<span class="ts">"Luis"</span>)
+
+<span class="tc"># 1.3</span>
+<span class="tk">def</span> rectangle_area(width, height):
+    <span class="tk">return</span> width * height
+
+<span class="tb">print</span>(rectangle_area(<span class="tn">3</span>, <span class="tn">5</span>))
+
+<span class="tc"># 1.4</span>
+<span class="tk">def</span> double(n):
+    <span class="tk">return</span> n * <span class="tn">2</span>
+
+x = double(<span class="tn">4</span>)
+<span class="tb">print</span>(x + <span class="tn">1</span>)
+
+<span class="tc"># 1.5  The variable total only exists inside make_total, so print(total)</span>
+<span class="tc">#      raises a NameError. Print the returned value instead:</span>
+<span class="tk">def</span> make_total(a, b):
+    total = a + b
+    <span class="tk">return</span> total
+
+<span class="tb">print</span>(make_total(<span class="tn">2</span>, <span class="tn">3</span>))
+
+<span class="tc"># 1.6</span>
+<span class="tk">def</span> min_max(a, b):
+    <span class="tk">if</span> a &lt; b:
+        <span class="tk">return</span> (a, b)
+    <span class="tk">return</span> (b, a)
+
+r = min_max(<span class="tn">9</span>, <span class="tn">4</span>)
+<span class="tb">print</span>(r[<span class="tn">0</span>], r[<span class="tn">1</span>])</code></pre></div>
+<h2 id="b-2">B.2 Strings</h2>
+<div class="codeblock"><pre><code><span class="tc"># 2.1</span>
+t = <span class="ts">"hello world"</span>
+<span class="tb">print</span>(t.upper())
+<span class="tb">print</span>(t.lower())
+<span class="tb">print</span>(t.capitalize())
+
+<span class="tc"># 2.2</span>
+name = <span class="ts">"Marc"</span>
+age = <span class="tn">21</span>
+<span class="tb">print</span>(<span class="ts">"Hello "</span> + name + <span class="ts">" you are "</span> + <span class="tb">str</span>(age))
+
+<span class="tc"># 2.3</span>
+<span class="tb">print</span>(<span class="tb">len</span>(<span class="ts">"Python"</span>))
+
+<span class="tc"># 2.4  Predicted output for w = "Python"</span>
+<span class="tc"># w[0]   -&gt; P</span>
+<span class="tc"># w[-1]  -&gt; n</span>
+<span class="tc"># w[:3]  -&gt; Pyt</span>
+<span class="tc"># w[2:]  -&gt; thon</span>
+<span class="tc"># w[1:4] -&gt; yth</span></code></pre></div>
+<h2 id="b-3">B.3 Lists</h2>
+<div class="codeblock"><pre><code><span class="tc"># 3.1</span>
+numbers = []
+fruits = [<span class="ts">"apple"</span>, <span class="ts">"banana"</span>, <span class="ts">"cherry"</span>]
+<span class="tb">print</span>(numbers)
+<span class="tb">print</span>(fruits)
+
+<span class="tc"># 3.2</span>
+numbers = []
+numbers.append(<span class="tn">10</span>)
+numbers.append(<span class="tn">20</span>)
+numbers.insert(<span class="tn">1</span>, <span class="tn">15</span>)
+<span class="tb">print</span>(numbers)              <span class="tc"># [10, 15, 20]</span>
+numbers.extend([<span class="tn">30</span>, <span class="tn">40</span>])
+<span class="tb">print</span>(numbers)              <span class="tc"># [10, 15, 20, 30, 40]</span>
+
+<span class="tc"># 3.3</span>
+del numbers[<span class="tn">0</span>]
+<span class="tb">print</span>(numbers)              <span class="tc"># [15, 20, 30, 40]</span>
+numbers.remove(<span class="tn">30</span>)
+<span class="tb">print</span>(numbers)              <span class="tc"># [15, 20, 40]</span>
+
+<span class="tc"># 3.4</span>
+numbers[<span class="tn">0</span>] = <span class="tn">99</span>
+<span class="tb">print</span>(numbers, numbers[<span class="tn">1</span>:<span class="tn">3</span>])   <span class="tc"># [99, 20, 40] [20, 40]</span>
+
+<span class="tc"># 3.5</span>
+<span class="tk">for</span> n <span class="tk">in</span> numbers:
+    <span class="tb">print</span>(n * <span class="tn">2</span>)
+<span class="tb">print</span>(<span class="tn">20</span> <span class="tk">in</span> numbers)        <span class="tc"># True</span></code></pre></div>
+<h2 id="b-4">B.4 Split &amp; Join</h2>
+<div class="codeblock"><pre><code><span class="tc"># 4.1</span>
+words = <span class="ts">"I love Python"</span>.split(<span class="ts">" "</span>)
+<span class="tb">print</span>(words)
+<span class="tb">print</span>(<span class="tb">len</span>(words))
+
+<span class="tc"># 4.2</span>
+<span class="tb">print</span>(<span class="ts">"-"</span>.join(words))</code></pre></div>
+<h2 id="b-5">B.5 Dictionaries</h2>
+<div class="codeblock"><pre><code><span class="tc"># 5.1</span>
+pet = {<span class="ts">"name"</span>: <span class="ts">"Rex"</span>, <span class="ts">"age"</span>: <span class="tn">3</span>}
+<span class="tb">print</span>(pet[<span class="ts">"name"</span>])
+
+<span class="tc"># 5.2</span>
+pet[<span class="ts">"age"</span>] = <span class="tn">4</span>
+pet[<span class="ts">"color"</span>] = <span class="ts">"brown"</span>
+del pet[<span class="ts">"age"</span>]
+<span class="tb">print</span>(pet)                  <span class="tc"># {'name': 'Rex', 'color': 'brown'}</span>
+
+<span class="tc"># 5.3</span>
+<span class="tb">print</span>(<span class="ts">"color"</span> <span class="tk">in</span> pet)       <span class="tc"># True</span>
+
+<span class="tc"># 5.4</span>
+<span class="tk">for</span> key <span class="tk">in</span> pet:
+    <span class="tb">print</span>(key, pet[key])</code></pre></div>
+<h2 id="b-6">B.6 Files</h2>
+<div class="codeblock"><pre><code><span class="tc"># 6.1</span>
+my_file = <span class="tb">open</span>(<span class="ts">"practice.txt"</span>, <span class="ts">"w"</span>)
+my_file.write(<span class="ts">"line one\n"</span>)
+my_file.close()
+
+<span class="tc"># 6.2  (write mode "w" would have erased "line one")</span>
+my_file = <span class="tb">open</span>(<span class="ts">"practice.txt"</span>, <span class="ts">"a"</span>)
+my_file.write(<span class="ts">"line two\n"</span>)
+my_file.close()
+
+<span class="tc"># 6.3</span>
+my_file = <span class="tb">open</span>(<span class="ts">"practice.txt"</span>, <span class="ts">"r"</span>)
+content = my_file.read()
+my_file.close()
+<span class="tb">print</span>(content)
+
+<span class="tc"># 6.4  split gives ['line one', 'line two', ''], so remove 1 for the empty end</span>
+lines = content.split(<span class="ts">"\n"</span>)
+<span class="tb">print</span>(<span class="tb">len</span>(lines) - <span class="tn">1</span>)</code></pre></div>
+<div class="pager"><a class="prev" href="21-appendix-a-solutions-to-the-exercises.html" rel="prev"><small>← Previous</small>Appendix A: Solutions to the Exercises</a><span class="gap"></span></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

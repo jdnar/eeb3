@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Files — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — 6. Files">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="k-theory"><a href="04-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="05-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="06-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="07-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="09-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="10-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="11-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="12-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="13-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="14-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="15-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="16-6-files.html" class="active" aria-current="page"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="17-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="18-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="19-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="20-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="21-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="22-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>6. Files</h1>
+<p>Sometimes you want your program to get information from a file, or to save information in a file. Whether you read or write, remember the rule: <strong>you always start by opening the file and you end by closing it.</strong></p>
+<p>To open a file you use the function <code>open</code>, which takes two parameters:</p>
+<ul><li>the <strong>path</strong> to the file (put an <code>r</code> in front of the string if it is an absolute path, e.g. <code>r"C:\Users\me\file.txt"</code>);</li><li>the <strong>opening mode</strong>.</li></ul>
+<div class="tablewrap"><table><thead><tr><th>Mode</th><th>Meaning</th></tr></thead><tbody><tr><td><code>"r"</code></td><td>Read only.</td></tr><tr><td><code>"w"</code></td><td>Write mode. If the file exists, its content is <strong>deleted</strong>; if it does not exist, it is created.</td></tr><tr><td><code>"a"</code></td><td>Append mode. Writes at the <strong>end</strong> of the file without deleting the previous content; creates the file if it does not exist.</td></tr></tbody></table></div>
+<p>Once a file is open for reading, <code>read()</code> returns its content. Once it is open for writing, <code>write()</code> writes into it. When you are done, <code>close()</code> closes it.</p>
+<div class="callout important"><strong>Important:</strong> To add content, choose the <code>"a"</code> mode. The <code>"w"</code> mode overwrites the content and you start with an empty file.</div>
+<div class="callout important"><strong>Important:</strong> Always close your file at the end. A file that stays open is locked, and other programs cannot use it.</div>
+<h3 id="write">Write</h3>
+<div class="codeblock"><pre><code>my_file = <span class="tb">open</span>(r<span class="ts">"C:\Python\file.txt"</span>, <span class="ts">"w"</span>)
+my_file.write(<span class="ts">"First time writing in a file using Python!"</span>)
+my_file.close()</code></pre></div>
+<h3 id="append">Append</h3>
+<div class="codeblock"><pre><code>my_file = <span class="tb">open</span>(r<span class="ts">"C:\Python\file.txt"</span>, <span class="ts">"a"</span>)
+my_file.write(<span class="ts">"Not the first time anymore..."</span>)
+my_file.close()</code></pre></div>
+<h3 id="read">Read</h3>
+<div class="codeblock"><pre><code>my_file = <span class="tb">open</span>(r<span class="ts">"C:\Python\file.txt"</span>, <span class="ts">"r"</span>)
+content = my_file.read()
+<span class="tb">print</span>(content)    <span class="tc"># prints the content of the file</span>
+my_file.close()</code></pre></div>
+<div class="callout note"><strong>Note:</strong> The paths above are examples (Windows style). Use the real path of your own file, or just the file name if it is in the same folder as your program.</div>
+<div class="pager"><a class="prev" href="15-exercises-dictionaries-14-15.html" rel="prev"><small>← Previous</small>Exercises: Dictionaries (14–15)</a><a class="next" href="17-warm-up-6-files.html" rel="next"><small>Next →</small>Warm-up 6: Files</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

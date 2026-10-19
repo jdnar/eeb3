@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warm-up 7: Conditionals — Python S4</title>
+<meta name="description" content="Python — The Fundamentals — Warm-up 7: Conditionals">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — The Fundamentals</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-introduction.html"><span>1. Introduction</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li>
+<li class="k-theory"><a href="03-2-data-types.html"><span>2. Data Types</span></a></li>
+<li class="k-warmup"><a href="04-warm-up-2-data-types.html"><span>Warm-up 2: Data Types</span></a></li>
+<li class="k-theory"><a href="05-3-variables.html"><span>3. Variables</span></a></li>
+<li class="k-warmup"><a href="06-warm-up-3-variables.html"><span>Warm-up 3: Variables</span></a></li>
+<li class="k-theory"><a href="07-4-operators.html"><span>4. Operators</span></a></li>
+<li class="k-warmup"><a href="08-warm-up-4-operators.html"><span>Warm-up 4: Operators</span></a></li>
+<li class="k-theory"><a href="09-5-script-input-and-output.html"><span>5. Script, Input &amp; Output</span></a></li>
+<li class="k-warmup"><a href="10-warm-up-5-script-input-and-output.html"><span>Warm-up 5: Script, Input &amp; Output</span></a></li>
+<li class="k-exercises"><a href="11-exercises-1-5-variables-operators-input-and-output.html"><span>Exercises 1–5: Variables, Operators, Input and Output</span></a></li>
+<li class="k-theory"><a href="12-6-booleans.html"><span>6. Booleans</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-6-booleans.html"><span>Warm-up 6: Booleans</span></a></li>
+<li class="k-theory"><a href="14-7-conditionals.html"><span>7. Conditionals</span></a></li>
+<li class="k-warmup"><a href="15-warm-up-7-conditionals.html" class="active" aria-current="page"><span>Warm-up 7: Conditionals</span></a></li>
+<li class="k-exercises"><a href="16-exercises-6-8-conditionals.html"><span>Exercises 6–8: Conditionals</span></a></li>
+<li class="k-theory"><a href="17-8-while-loop.html"><span>8. While Loop</span></a></li>
+<li class="k-warmup"><a href="18-warm-up-8-while-loop.html"><span>Warm-up 8: While Loop</span></a></li>
+<li class="k-exercises"><a href="19-exercises-9-11-while-loops.html"><span>Exercises 9–11: While Loops</span></a></li>
+<li class="k-theory"><a href="20-9-for-loop.html"><span>9. For Loop</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-9-for-loop.html"><span>Warm-up 9: For Loop</span></a></li>
+<li class="k-exercises"><a href="22-exercises-12-15-for-loops.html"><span>Exercises 12–15: For Loops</span></a></li>
+<li class="k-theory"><a href="23-10-random.html"><span>10. Random</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-10-random.html"><span>Warm-up 10: Random</span></a></li>
+<li class="k-project"><a href="25-11-projects.html"><span class="badge">Project</span><span>11. Projects</span></a></li>
+<li class="k-summary"><a href="26-12-summary.html"><span class="badge">Summary</span><span>12. Summary</span></a></li>
+<li class="k-appendix"><a href="27-appendix-a-answers-and-solutions.html"><span class="badge">Appendix</span><span>Appendix A: Answers and Solutions</span></a></li>
+<li class="k-appendix"><a href="28-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Warm-up 7: Conditionals</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#step-7-1-simple-if">Step 7.1 — Simple if</a></li><li><a href="#step-7-2-if-else">Step 7.2 — if / else</a></li><li><a href="#step-7-3-if-elif-else">Step 7.3 — if / elif / else</a></li><li><a href="#step-7-4-indentation-predict">Step 7.4 — Indentation: predict</a></li><li><a href="#step-7-5-password">Step 7.5 — Password</a></li></ul></nav><p>One tiny program for each form of the conditional statement.</p>
+<div class="callout tip"><strong>Tip:</strong> Do each step yourself before looking at the answer. Solutions: <a class="appref" href="28-appendix-b-solutions-to-the-warm-up-practice.html#b-7">Appendix B.7</a>.</div>
+<h2 id="step-7-1-simple-if">Step 7.1 — Simple if</h2>
+<p>Ask a number. If it is greater than 0, print <code>positive</code>. Example (the user typed <code>5</code>):</p>
+<p>Expected output:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a number: 5
+positive</code></pre></div>
+<h2 id="step-7-2-if-else">Step 7.2 — if / else</h2>
+<p>Ask a number and print <code>even</code> or <code>odd</code>. Example (the user typed <code>8</code>):</p>
+<p>Expected output:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a number: 8
+even</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> A number is even when <code>number % 2 == 0</code>.</div>
+<h2 id="step-7-3-if-elif-else">Step 7.3 — if / elif / else</h2>
+<p>Ask a score. Print <code>Excellent</code> if it is 16 or more, <code>Pass</code> if it is 10 or more, and <code>Fail</code> otherwise. Example (the user typed <code>12</code>):</p>
+<p>Expected output:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Your score: 12
+Pass</code></pre></div>
+<h2 id="step-7-4-indentation-predict">Step 7.4 — Indentation: predict</h2>
+<p>With <code>x = 5</code>, what does each of these two scripts print?</p>
+<div class="codeblock"><pre><code><span class="tc"># Script 1</span>
+x = <span class="tn">5</span>
+<span class="tk">if</span> x &gt; <span class="tn">10</span>:
+    <span class="tb">print</span>(<span class="ts">"big"</span>)
+<span class="tb">print</span>(<span class="ts">"done"</span>)
+
+<span class="tc"># Script 2</span>
+x = <span class="tn">5</span>
+<span class="tk">if</span> x &gt; <span class="tn">10</span>:
+    <span class="tb">print</span>(<span class="ts">"big"</span>)
+    <span class="tb">print</span>(<span class="ts">"done"</span>)</code></pre></div>
+<h2 id="step-7-5-password">Step 7.5 — Password</h2>
+<p>Ask for a password. If it is <code>python</code>, print <code>Welcome</code>, otherwise print <code>Access denied</code>. Example (the user typed <code>python</code>):</p>
+<p>Expected output:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Password: python
+Welcome</code></pre></div>
+<div class="pager"><a class="prev" href="14-7-conditionals.html" rel="prev"><small>← Previous</small>7. Conditionals</a><a class="next" href="16-exercises-6-8-conditionals.html" rel="next"><small>Next →</small>Exercises 6–8: Conditionals</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
