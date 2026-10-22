@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercises: Files (16–18) — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Exercises: Files (16–18)">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">EEB3 ICT</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="group"><details><summary>Functions Practice</summary><ol><li class="k-theory"><a href="04-functions-practice.html"><span>Overview</span></a></li>
+<li class="k-level"><a href="05-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="06-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="07-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="08-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="09-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="10-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="11-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li></ol></details></li>
+<li class="k-theory"><a href="12-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="13-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="14-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="15-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="16-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="17-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="18-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="19-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="20-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="21-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="22-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="23-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="24-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="25-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="26-exercises-files-16-18.html" class="active" aria-current="page"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="27-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="28-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Exercises: Files (16–18)</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-16-exercise16">Exercise 16 — exercise16</a></li><li><a href="#exercise-17-exercise17">Exercise 17 — exercise17</a></li><li><a href="#exercise-18-exercise18">Exercise 18 — exercise18</a></li></ul></nav><h2 id="exercise-16-exercise16">Exercise 16 — exercise16</h2>
+<p>Write a program that opens the file <code>words.txt</code>, reads its content, prints it, and closes it.</p>
+<div class="codeblock"><pre><code>my_file = <span class="tb">open</span>(r<span class="ts">"pathToYourFile\file.txt"</span>, <span class="ts">"r"</span>)
+content = my_file.read()
+<span class="tb">print</span>(content)
+my_file.close()</code></pre></div>
+<h2 id="exercise-17-exercise17">Exercise 17 — exercise17</h2>
+<p>Write a program that opens a text file located on your computer, writes some content in it, and closes it.</p>
+<div class="callout tip"><strong>Tip:</strong> You can open in <code>"a"</code> (append) or <code>"w"</code> (write) mode. Write mode erases the previous content; append mode adds the new content at the end.</div>
+<h2 id="exercise-18-exercise18">Exercise 18 — exercise18</h2>
+<p>Write a function <code>getWord(file)</code> that receives the path to a file and returns <strong>one word randomly selected</strong> from that file. Then write a program that sets the <code>file</code> variable to the path of <code>words.txt</code>, calls <code>getWord(file)</code> and prints the selected word.</p>
+<div class="callout tip"><strong>Tip:</strong> When you read a file you get one big string. Split it on <code>"\n"</code> (the line break) to get a list with one element per line: <code>content = content.split("\n")</code>. To pick a random element, <code>import random</code> and use <code>my_list[random.randint(0, len(my_list) - 1)]</code>.</div>
+
+<div class="pager"><a class="prev" href="25-warm-up-6-files.html" rel="prev"><small>← Previous</small>Warm-up 6: Files</a><a class="next" href="27-project-the-hangman.html" rel="next"><small>Next →</small>Project: The Hangman</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
