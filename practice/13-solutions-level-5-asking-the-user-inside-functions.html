@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions: Level 5 — Asking the User Inside Functions — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Solutions: Level 5 — Asking the User Inside Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html" class="active" aria-current="page"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Solutions: Level 5 — Asking the User Inside Functions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-35-ask-an-integer">Exercise 35 — Ask an integer</a></li><li><a href="#exercise-36-ask-until-positive">Exercise 36 — Ask until positive</a></li><li><a href="#exercise-37-sum-until-stop">Exercise 37 — Sum until stop</a></li><li><a href="#exercise-38-average-until-stop">Exercise 38 — Average until stop</a></li><li><a href="#exercise-39-password-with-attempts">Exercise 39 — Password with attempts</a></li><li><a href="#exercise-40-yes-or-no">Exercise 40 — Yes or no</a></li></ul></nav><h2 id="exercise-35-ask-an-integer">Exercise 35 — Ask an integer</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> ask_integer(question):
+    <span class="tk">return</span> <span class="tb">int</span>(<span class="tb">input</span>(question))
+
+<span class="tc"># Main program</span>
+a = ask_integer(<span class="ts">"First number: "</span>)
+b = ask_integer(<span class="ts">"Second number: "</span>)
+<span class="tb">print</span>(a + b)</code></pre></div>
+<h2 id="exercise-36-ask-until-positive">Exercise 36 — Ask until positive</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> ask_positive():
+    number = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a positive number: "</span>))
+    <span class="tk">while</span> number &lt;= <span class="tn">0</span>:
+        <span class="tb">print</span>(<span class="ts">"That is not positive. Try again."</span>)
+        number = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Give me a positive number: "</span>))
+    <span class="tk">return</span> number
+
+<span class="tc"># Main program</span>
+n = ask_positive()
+<span class="tb">print</span>(<span class="ts">"Thanks! You gave me"</span>, n)</code></pre></div>
+<h2 id="exercise-37-sum-until-stop">Exercise 37 — Sum until stop</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> sum_until_stop():
+    total = <span class="tn">0</span>
+    x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+    <span class="tk">while</span> x != <span class="ts">"stop"</span>:
+        total += <span class="tb">int</span>(x)
+        x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+    <span class="tk">return</span> total
+
+<span class="tc"># Main program</span>
+<span class="tb">print</span>(<span class="ts">"Total:"</span>, sum_until_stop())</code></pre></div>
+<h2 id="exercise-38-average-until-stop">Exercise 38 — Average until stop</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> average_until_stop():
+    total = <span class="tn">0</span>
+    count = <span class="tn">0</span>
+    x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+    <span class="tk">while</span> x != <span class="ts">"stop"</span>:
+        total += <span class="tb">int</span>(x)
+        count += <span class="tn">1</span>
+        x = <span class="tb">input</span>(<span class="ts">"Give me a number or write stop: "</span>)
+    <span class="tk">if</span> count == <span class="tn">0</span>:
+        <span class="tk">return</span> <span class="tn">0</span>
+    <span class="tk">return</span> total / count
+
+<span class="tc"># Main program</span>
+<span class="tb">print</span>(<span class="ts">"Average:"</span>, average_until_stop())</code></pre></div>
+<h2 id="exercise-39-password-with-attempts">Exercise 39 — Password with attempts</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> ask_password(correct):
+    attempts = <span class="tn">1</span>
+    answer = <span class="tb">input</span>(<span class="ts">"Password: "</span>)
+    <span class="tk">while</span> answer != correct:
+        <span class="tb">print</span>(<span class="ts">"Wrong password"</span>)
+        attempts += <span class="tn">1</span>
+        answer = <span class="tb">input</span>(<span class="ts">"Password: "</span>)
+    <span class="tk">return</span> attempts
+
+<span class="tc"># Main program</span>
+n = ask_password(<span class="ts">"python"</span>)
+<span class="tb">print</span>(<span class="ts">"Welcome! It took you"</span>, n, <span class="ts">"attempt(s)."</span>)</code></pre></div>
+<h2 id="exercise-40-yes-or-no">Exercise 40 — Yes or no</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> yes_or_no(question):
+    answer = <span class="tb">input</span>(question + <span class="ts">" (yes/no) "</span>)
+    <span class="tk">while</span> answer != <span class="ts">"yes"</span> <span class="tk">and</span> answer != <span class="ts">"no"</span>:
+        <span class="tb">print</span>(<span class="ts">"Please answer yes or no."</span>)
+        answer = <span class="tb">input</span>(question + <span class="ts">" (yes/no) "</span>)
+    <span class="tk">return</span> answer == <span class="ts">"yes"</span>
+
+<span class="tc"># Main program</span>
+<span class="tk">if</span> yes_or_no(<span class="ts">"Do you like Python?"</span>):
+    <span class="tb">print</span>(<span class="ts">"Great!"</span>)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"Keep trying, it gets better!"</span>)</code></pre></div>
+<div class="pager"><a class="prev" href="12-solutions-level-4-loops-inside-functions.html" rel="prev"><small>← Previous</small>Solutions: Level 4 — Loops Inside Functions</a><a class="next" href="14-solutions-level-6-random-numbers-and-games.html" rel="next"><small>Next →</small>Solutions: Level 6 — Random Numbers and Games</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 5: Asking the User Inside Functions — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Level 5: Asking the User Inside Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html" class="active" aria-current="page"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Level 5: Asking the User Inside Functions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-35-ask-an-integer">Exercise 35 — Ask an integer</a></li><li><a href="#exercise-36-ask-until-positive">Exercise 36 — Ask until positive</a></li><li><a href="#exercise-37-sum-until-stop">Exercise 37 — Sum until stop</a></li><li><a href="#exercise-38-average-until-stop">Exercise 38 — Average until stop</a></li><li><a href="#exercise-39-password-with-attempts">Exercise 39 — Password with attempts</a></li><li><a href="#exercise-40-yes-or-no">Exercise 40 — Yes or no</a></li></ul></nav><p>Your functions now <strong>talk to the user</strong> with <code>input()</code>. You review the <code>while</code> loop with a stop condition, conversions with <code>int()</code>, and the "read a sequence of data" pattern.</p>
+<h2 id="exercise-35-ask-an-integer">Exercise 35 — Ask an integer</h2>
+<p><em>S4 review: input() · int() · return</em></p>
+<p>Define a function <code>ask_integer(question)</code> that shows the question, reads the answer, converts it to an integer and <strong>returns</strong> it. The main program uses it twice to ask two numbers and prints their sum.</p>
+<p>Example run (the user typed <code>3</code>, <code>4</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>First number: 3
+Second number: 4
+7</code></pre></div>
+<h2 id="exercise-36-ask-until-positive">Exercise 36 — Ask until positive</h2>
+<p><em>S4 review: while · input()</em></p>
+<p>Define a function <code>ask_positive()</code> that keeps asking for a number until the user gives one <strong>greater than 0</strong>, then returns it. If the number is not positive, print <code>That is not positive. Try again.</code></p>
+<p>Example run (the user typed <code>-5</code>, <code>0</code>, <code>8</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a positive number: -5
+That is not positive. Try again.
+Give me a positive number: 0
+That is not positive. Try again.
+Give me a positive number: 8
+Thanks! You gave me 8</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> Ask once <strong>before</strong> the loop, and ask again at the end of the loop body (the "change" part).</div>
+<h2 id="exercise-37-sum-until-stop">Exercise 37 — Sum until stop</h2>
+<p><em>S4 review: while · accumulator · input()</em></p>
+<p>Define a function <code>sum_until_stop()</code> that asks for numbers until the user writes <code>stop</code>, and returns the total. Remember that <code>input()</code> returns a string: convert it only when it is not <code>stop</code>.</p>
+<p>Example run (the user typed <code>4</code>, <code>6</code>, <code>10</code>, <code>stop</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a number or write stop: 4
+Give me a number or write stop: 6
+Give me a number or write stop: 10
+Give me a number or write stop: stop
+Total: 20</code></pre></div>
+<h2 id="exercise-38-average-until-stop">Exercise 38 — Average until stop</h2>
+<p><em>S4 review: while · counter and accumulator · if / else</em></p>
+<p>Define a function <code>average_until_stop()</code> that asks for numbers until the user writes <code>stop</code> and returns their average. If the user writes <code>stop</code> immediately, return <code>0</code> (you cannot divide by zero).</p>
+<p>Example run (the user typed <code>4</code>, <code>6</code>, <code>11</code>, <code>stop</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a number or write stop: 4
+Give me a number or write stop: 6
+Give me a number or write stop: 11
+Give me a number or write stop: stop
+Average: 7.0</code></pre></div>
+<h2 id="exercise-39-password-with-attempts">Exercise 39 — Password with attempts</h2>
+<p><em>S4 review: while · counter · comparison</em></p>
+<p>Define a function <code>ask_password(correct)</code> that keeps asking for the password until it matches <code>correct</code>, and returns the <strong>number of attempts</strong> it took. The main program prints how many attempts were needed.</p>
+<p>Example run (the user typed <code>abc</code>, <code>123</code>, <code>python</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Password: abc
+Wrong password
+Password: 123
+Wrong password
+Password: python
+Welcome! It took you 3 attempt(s).</code></pre></div>
+<h2 id="exercise-40-yes-or-no">Exercise 40 — Yes or no</h2>
+<p><em>S4 review: while · and · booleans</em></p>
+<p>Define a function <code>yes_or_no(question)</code> that asks the question followed by <code>(yes/no)</code> and keeps asking until the user answers exactly <code>yes</code> or <code>no</code>. It returns <code>True</code> for <code>yes</code> and <code>False</code> for <code>no</code>.</p>
+<p>Example run (the user typed <code>maybe</code>, <code>yes</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Do you like Python? (yes/no) maybe
+Please answer yes or no.
+Do you like Python? (yes/no) yes
+Great!</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> Careful: to refuse both words you need <code>and</code>, not <code>or</code>.</div>
+<div class="pager"><a class="prev" href="04-level-4-loops-inside-functions.html" rel="prev"><small>← Previous</small>Level 4: Loops Inside Functions</a><a class="next" href="06-level-6-random-numbers-and-games.html" rel="next"><small>Next →</small>Level 6: Random Numbers and Games</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

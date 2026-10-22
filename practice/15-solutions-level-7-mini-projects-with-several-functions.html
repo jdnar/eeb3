@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions: Level 7 — Mini-projects with Several Functions — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Solutions: Level 7 — Mini-projects with Several Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html" class="active" aria-current="page"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Solutions: Level 7 — Mini-projects with Several Functions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#mini-project-1-guess-the-number-with-functions">Mini-project 1: Guess the number (with functions)</a></li><li><a href="#mini-project-2-a-calculator">Mini-project 2: A calculator</a></li><li><a href="#mini-project-3-times-table-quiz">Mini-project 3: Times-table quiz</a></li><li><a href="#mini-project-4-rock-paper-scissors">Mini-project 4: Rock, Paper, Scissors</a></li><li><a href="#mini-project-5-temperature-table">Mini-project 5: Temperature table</a></li></ul></nav><h2 id="mini-project-1-guess-the-number-with-functions">Mini-project 1: Guess the number (with functions)</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> ask_guess():
+    <span class="tk">return</span> <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Guess a number between 1 and 10: "</span>))
+
+<span class="tk">def</span> check_guess(secret, guess):
+    <span class="tk">if</span> guess &lt; secret:
+        <span class="tk">return</span> <span class="ts">"too low"</span>
+    <span class="tk">elif</span> guess &gt; secret:
+        <span class="tk">return</span> <span class="ts">"too high"</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"correct"</span>
+
+<span class="tk">def</span> play():
+    secret = random.randint(<span class="tn">1</span>, <span class="tn">10</span>)
+    attempts = <span class="tn">3</span>
+    found = <span class="tk">False</span>
+    <span class="tk">while</span> found == <span class="tk">False</span> <span class="tk">and</span> attempts &gt; <span class="tn">0</span>:
+        result = check_guess(secret, ask_guess())
+        <span class="tk">if</span> result == <span class="ts">"correct"</span>:
+            <span class="tb">print</span>(<span class="ts">"Congratulations, you found the number!"</span>)
+            found = <span class="tk">True</span>
+        <span class="tk">else</span>:
+            <span class="tb">print</span>(<span class="ts">"Wrong: that is"</span>, result)
+            attempts -= <span class="tn">1</span>
+    <span class="tk">if</span> found == <span class="tk">False</span>:
+        <span class="tb">print</span>(<span class="ts">"You have no attempts left. The number was"</span>, secret)
+
+<span class="tc"># Main program</span>
+play()</code></pre></div>
+<h2 id="mini-project-2-a-calculator">Mini-project 2: A calculator</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> calculate(a, operator, b):
+    <span class="tk">if</span> operator == <span class="ts">"+"</span>:
+        <span class="tk">return</span> a + b
+    <span class="tk">elif</span> operator == <span class="ts">"-"</span>:
+        <span class="tk">return</span> a - b
+    <span class="tk">elif</span> operator == <span class="ts">"*"</span>:
+        <span class="tk">return</span> a * b
+    <span class="tk">elif</span> operator == <span class="ts">"/"</span>:
+        <span class="tk">if</span> b == <span class="tn">0</span>:
+            <span class="tk">return</span> <span class="tk">None</span>
+        <span class="tk">return</span> a / b
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="tk">None</span>
+
+<span class="tc"># Main program</span>
+again = <span class="ts">"yes"</span>
+<span class="tk">while</span> again == <span class="ts">"yes"</span>:
+    a = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"First number: "</span>))
+    operator = <span class="tb">input</span>(<span class="ts">"Operator (+ - * /): "</span>)
+    b = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"Second number: "</span>))
+    result = calculate(a, operator, b)
+    <span class="tk">if</span> result == <span class="tk">None</span>:
+        <span class="tb">print</span>(<span class="ts">"Invalid operation"</span>)
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"Result:"</span>, result)
+    again = <span class="tb">input</span>(<span class="ts">"Another one? (yes/no) "</span>)</code></pre></div>
+<h2 id="mini-project-3-times-table-quiz">Mini-project 3: Times-table quiz</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> ask_question():
+    a = random.randint(<span class="tn">1</span>, <span class="tn">10</span>)
+    b = random.randint(<span class="tn">1</span>, <span class="tn">10</span>)
+    answer = <span class="tb">int</span>(<span class="tb">input</span>(<span class="tb">str</span>(a) + <span class="ts">" x "</span> + <span class="tb">str</span>(b) + <span class="ts">" = "</span>))
+    <span class="tk">if</span> answer == a * b:
+        <span class="tb">print</span>(<span class="ts">"Correct!"</span>)
+        <span class="tk">return</span> <span class="tk">True</span>
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"Wrong, the answer was"</span>, a * b)
+        <span class="tk">return</span> <span class="tk">False</span>
+
+<span class="tk">def</span> quiz(n):
+    score = <span class="tn">0</span>
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(n):
+        <span class="tk">if</span> ask_question():
+            score += <span class="tn">1</span>
+    <span class="tk">return</span> score
+
+<span class="tc"># Main program</span>
+n = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"How many questions? "</span>))
+score = quiz(n)
+<span class="tb">print</span>(<span class="ts">"Score:"</span>, score, <span class="ts">"/"</span>, n)</code></pre></div>
+<h2 id="mini-project-4-rock-paper-scissors">Mini-project 4: Rock, Paper, Scissors</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> random_move():
+    <span class="tk">return</span> random.choice([<span class="ts">"rock"</span>, <span class="ts">"paper"</span>, <span class="ts">"scissors"</span>])
+
+<span class="tk">def</span> winner(player, computer):
+    <span class="tk">if</span> player == computer:
+        <span class="tk">return</span> <span class="ts">"draw"</span>
+    <span class="tk">elif</span> (player == <span class="ts">"rock"</span> <span class="tk">and</span> computer == <span class="ts">"scissors"</span>) <span class="tk">or</span> (player == <span class="ts">"scissors"</span> <span class="tk">and</span> computer == <span class="ts">"paper"</span>) <span class="tk">or</span> (player == <span class="ts">"paper"</span> <span class="tk">and</span> computer == <span class="ts">"rock"</span>):
+        <span class="tk">return</span> <span class="ts">"player"</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"computer"</span>
+
+<span class="tk">def</span> play_round():
+    player = <span class="tb">input</span>(<span class="ts">"Rock, paper or scissors? "</span>)
+    computer = random_move()
+    <span class="tb">print</span>(<span class="ts">"The computer chose"</span>, computer)
+    result = winner(player, computer)
+    <span class="tk">if</span> result == <span class="ts">"draw"</span>:
+        <span class="tb">print</span>(<span class="ts">"It's a draw!"</span>)
+    <span class="tk">elif</span> result == <span class="ts">"player"</span>:
+        <span class="tb">print</span>(<span class="ts">"You win!"</span>)
+    <span class="tk">else</span>:
+        <span class="tb">print</span>(<span class="ts">"The computer wins!"</span>)
+    <span class="tk">return</span> result
+
+<span class="tc"># Main program</span>
+player_score = <span class="tn">0</span>
+computer_score = <span class="tn">0</span>
+play = <span class="ts">"yes"</span>
+<span class="tk">while</span> play == <span class="ts">"yes"</span>:
+    result = play_round()
+    <span class="tk">if</span> result == <span class="ts">"player"</span>:
+        player_score += <span class="tn">1</span>
+    <span class="tk">elif</span> result == <span class="ts">"computer"</span>:
+        computer_score += <span class="tn">1</span>
+    <span class="tb">print</span>(<span class="ts">"Score - You:"</span>, player_score, <span class="ts">"Computer:"</span>, computer_score)
+    play = <span class="tb">input</span>(<span class="ts">"Play again? (yes/no) "</span>)</code></pre></div>
+<h2 id="mini-project-5-temperature-table">Mini-project 5: Temperature table</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> celsius_to_fahrenheit(celsius):
+    <span class="tk">return</span> celsius * <span class="tn">9</span> / <span class="tn">5</span> + <span class="tn">32</span>
+
+<span class="tk">def</span> print_temperature_table(start, stop, step):
+    <span class="tk">for</span> celsius <span class="tk">in</span> <span class="tb">range</span>(start, stop + <span class="tn">1</span>, step):
+        <span class="tb">print</span>(celsius, <span class="ts">"C ="</span>, celsius_to_fahrenheit(celsius), <span class="ts">"F"</span>)
+
+<span class="tc"># Main program</span>
+print_temperature_table(<span class="tn">0</span>, <span class="tn">100</span>, <span class="tn">20</span>)</code></pre></div>
+<div class="pager"><a class="prev" href="14-solutions-level-6-random-numbers-and-games.html" rel="prev"><small>← Previous</small>Solutions: Level 6 — Random Numbers and Games</a><span class="gap"></span></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

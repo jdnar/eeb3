@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 7: Mini-projects with Several Functions — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Level 7: Mini-projects with Several Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html" class="active" aria-current="page"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Level 7: Mini-projects with Several Functions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#mini-project-1-guess-the-number-with-functions">Mini-project 1: Guess the number (with functions)</a></li><li><a href="#mini-project-2-a-calculator">Mini-project 2: A calculator</a></li><li><a href="#mini-project-3-times-table-quiz">Mini-project 3: Times-table quiz</a></li><li><a href="#mini-project-4-rock-paper-scissors">Mini-project 4: Rock, Paper, Scissors</a></li><li><a href="#mini-project-5-temperature-table">Mini-project 5: Temperature table</a></li></ul></nav><p>Time to combine everything. Each mini-project is split into <strong>small functions that cooperate</strong>. First design the functions on paper (name, parameters, what they return), then code them one by one and test each one before moving on.</p>
+<h2 id="mini-project-1-guess-the-number-with-functions">Mini-project 1: Guess the number (with functions)</h2>
+<p><em>S4 review: functions · while · random · conditionals</em></p>
+<p>Rewrite the game of the S4 projects using functions. Write: <code>ask_guess()</code> that asks an integer between 1 and 10 and returns it; <code>check_guess(secret, guess)</code> (from Level 6); and <code>play()</code> that picks a secret number, gives the player <strong>three attempts</strong>, prints <code>too low</code> or <code>too high</code> after each wrong guess, congratulates the player if they find the number, and tells the secret number if they run out of attempts.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<div class="callout tip"><strong>Tip:</strong> <code>play()</code> can call <code>ask_guess()</code> and <code>check_guess()</code> from the same line: <code>check_guess(secret, ask_guess())</code>.</div>
+<h2 id="mini-project-2-a-calculator">Mini-project 2: A calculator</h2>
+<p><em>S4 review: functions · if / elif / else · while · input()</em></p>
+<p>Write a function <code>calculate(a, operator, b)</code> that receives two numbers and one of the texts <code>"+"</code>, <code>"-"</code>, <code>"*"</code> or <code>"/"</code>, and returns the result. If the operator is unknown, or if the program would divide by zero, it returns <code>None</code> (the "empty" value). The main program asks two numbers and an operator, prints the result or <code>Invalid operation</code>, and asks <code>Another one? (yes/no)</code> until the user answers something other than <code>yes</code>.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>calculate(<span class="tn">8</span>, <span class="ts">"+"</span>, <span class="tn">2</span>)
+<span class="tn">10</span>
+<span class="tp">&gt;&gt;&gt; </span>calculate(<span class="tn">9</span>, <span class="ts">"/"</span>, <span class="tn">0</span>)
+<span class="tk">None</span>
+<span class="tp">&gt;&gt;&gt; </span>calculate(<span class="tn">6</span>, <span class="ts">"*"</span>, <span class="tn">7</span>)
+<span class="tn">42</span>
+<span class="tp">&gt;&gt;&gt; </span>calculate(<span class="tn">1</span>, <span class="ts">"x"</span>, <span class="tn">2</span>)
+<span class="tk">None</span></code></pre></div>
+<p>Example run (the user typed <code>8</code>, <code>+</code>, <code>2</code>, <code>yes</code>, <code>9</code>, <code>/</code>, <code>0</code>, <code>yes</code>, <code>7</code>, <code>*</code>, <code>6</code>, <code>no</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>First number: 8
+Operator (+ - * /): +
+Second number: 2
+Result: 10.0
+Another one? (yes/no) yes
+First number: 9
+Operator (+ - * /): /
+Second number: 0
+Invalid operation
+Another one? (yes/no) yes
+First number: 7
+Operator (+ - * /): *
+Second number: 6
+Result: 42.0
+Another one? (yes/no) no</code></pre></div>
+<h2 id="mini-project-3-times-table-quiz">Mini-project 3: Times-table quiz</h2>
+<p><em>S4 review: functions · for · random · counter</em></p>
+<p>Write <code>ask_question()</code>: it picks two random integers between 1 and 10, asks <code>a x b = </code> and returns <code>True</code> if the answer is correct and <code>False</code> otherwise (printing the right answer when it is wrong). Then write <code>quiz(n)</code>: it asks <code>n</code> questions and returns the number of correct answers. The main program asks the user how many questions they want and prints <code>Score: x / n</code>.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<div class="callout tip"><strong>Tip:</strong> An <code>if</code> can test a function that returns a boolean directly: <code>if ask_question():</code>.</div>
+<h2 id="mini-project-4-rock-paper-scissors">Mini-project 4: Rock, Paper, Scissors</h2>
+<p><em>S4 review: functions · random · while · conditionals</em></p>
+<p>Rebuild your Rock-Paper-Scissors game from the S4 projects with functions. Reuse <code>winner</code> and <code>random_move</code> from Level 6 and add <code>play_round()</code>: it asks the player’s move, gets the computer’s move, prints both and who won, and returns <code>"player"</code>, <code>"computer"</code> or <code>"draw"</code>. The main program keeps the score and asks <code>Play again? (yes/no)</code> after each round.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<h2 id="mini-project-5-temperature-table">Mini-project 5: Temperature table</h2>
+<p><em>S4 review: functions calling functions · for · range() with a step · print()</em></p>
+<p>Reuse <code>celsius_to_fahrenheit</code> from Level 2. Define <code>print_temperature_table(start, stop, step)</code> that prints one line per Celsius value from <code>start</code> to <code>stop</code> (both included), going up by <code>step</code>, in the format shown. Call it with <code>0</code>, <code>100</code> and <code>20</code>.</p>
+<p>Expected output:</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>0 C = 32.0 F
+20 C = 68.0 F
+40 C = 104.0 F
+60 C = 140.0 F
+80 C = 176.0 F
+100 C = 212.0 F</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> The end value of <code>range</code> is not included, so use <code>stop + 1</code>.</div>
+<div class="pager"><a class="prev" href="06-level-6-random-numbers-and-games.html" rel="prev"><small>← Previous</small>Level 6: Random Numbers and Games</a><a class="next" href="08-solutions.html" rel="next"><small>Next →</small>Solutions</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

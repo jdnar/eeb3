@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions: Level 3 — Booleans and Conditionals — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Solutions: Level 3 — Booleans and Conditionals">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html" class="active" aria-current="page"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Solutions: Level 3 — Booleans and Conditionals</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-15-even-or-odd">Exercise 15 — Even or odd?</a></li><li><a href="#exercise-16-is-it-an-adult">Exercise 16 — Is it an adult?</a></li><li><a href="#exercise-17-the-larger-number">Exercise 17 — The larger number</a></li><li><a href="#exercise-18-positive-negative-or-zero">Exercise 18 — Positive, negative or zero</a></li><li><a href="#exercise-19-school-grade">Exercise 19 — School grade</a></li><li><a href="#exercise-20-is-it-in-the-range">Exercise 20 — Is it in the range?</a></li><li><a href="#exercise-21-leap-year">Exercise 21 — Leap year</a></li><li><a href="#exercise-22-can-i-buy-it">Exercise 22 — Can I buy it?</a></li><li><a href="#exercise-23-the-thermostat">Exercise 23 — The thermostat</a></li><li><a href="#exercise-24-ticket-price">Exercise 24 — Ticket price</a></li></ul></nav><h2 id="exercise-15-even-or-odd">Exercise 15 — Even or odd?</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> is_even(n):
+    <span class="tk">return</span> n % <span class="tn">2</span> == <span class="tn">0</span></code></pre></div>
+<h2 id="exercise-16-is-it-an-adult">Exercise 16 — Is it an adult?</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> is_adult(age):
+    <span class="tk">return</span> age &gt;= <span class="tn">18</span></code></pre></div>
+<h2 id="exercise-17-the-larger-number">Exercise 17 — The larger number</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> maximum(a, b):
+    <span class="tk">if</span> a &gt; b:
+        <span class="tk">return</span> a
+    <span class="tk">else</span>:
+        <span class="tk">return</span> b</code></pre></div>
+<h2 id="exercise-18-positive-negative-or-zero">Exercise 18 — Positive, negative or zero</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> sign(n):
+    <span class="tk">if</span> n &gt; <span class="tn">0</span>:
+        <span class="tk">return</span> <span class="ts">"positive"</span>
+    <span class="tk">elif</span> n &lt; <span class="tn">0</span>:
+        <span class="tk">return</span> <span class="ts">"negative"</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"zero"</span></code></pre></div>
+<h2 id="exercise-19-school-grade">Exercise 19 — School grade</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> grade(score):
+    <span class="tk">if</span> score &gt;= <span class="tn">16</span>:
+        <span class="tk">return</span> <span class="ts">"Excellent"</span>
+    <span class="tk">elif</span> score &gt;= <span class="tn">10</span>:
+        <span class="tk">return</span> <span class="ts">"Pass"</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"Fail"</span></code></pre></div>
+<h2 id="exercise-20-is-it-in-the-range">Exercise 20 — Is it in the range?</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> in_range(n, low, high):
+    <span class="tk">return</span> n &gt;= low <span class="tk">and</span> n &lt;= high</code></pre></div>
+<h2 id="exercise-21-leap-year">Exercise 21 — Leap year</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> is_leap_year(year):
+    <span class="tk">return</span> (year % <span class="tn">4</span> == <span class="tn">0</span> <span class="tk">and</span> year % <span class="tn">100</span> != <span class="tn">0</span>) <span class="tk">or</span> year % <span class="tn">400</span> == <span class="tn">0</span></code></pre></div>
+<h2 id="exercise-22-can-i-buy-it">Exercise 22 — Can I buy it?</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> can_buy(money, price):
+    <span class="tk">return</span> money &gt;= price
+
+<span class="tc"># Main program</span>
+money = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"How much money do you have? "</span>))
+price = <span class="tb">float</span>(<span class="tb">input</span>(<span class="ts">"How much does it cost? "</span>))
+<span class="tk">if</span> can_buy(money, price):
+    <span class="tb">print</span>(<span class="ts">"You can buy it!"</span>)
+<span class="tk">else</span>:
+    <span class="tb">print</span>(<span class="ts">"You need"</span>, price - money, <span class="ts">"more."</span>)</code></pre></div>
+<h2 id="exercise-23-the-thermostat">Exercise 23 — The thermostat</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> thermostat(current, ideal):
+    <span class="tk">if</span> current &gt; ideal:
+        <span class="tk">return</span> <span class="ts">"Decrease the temperature."</span>
+    <span class="tk">elif</span> current &lt; ideal:
+        <span class="tk">return</span> <span class="ts">"Increase the temperature."</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"Perfect!"</span></code></pre></div>
+<h2 id="exercise-24-ticket-price">Exercise 24 — Ticket price</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> ticket_price(age):
+    <span class="tk">if</span> age &lt; <span class="tn">12</span>:
+        <span class="tk">return</span> <span class="tn">5</span>
+    <span class="tk">elif</span> age &lt; <span class="tn">18</span>:
+        <span class="tk">return</span> <span class="tn">8</span>
+    <span class="tk">elif</span> age &lt; <span class="tn">65</span>:
+        <span class="tk">return</span> <span class="tn">10</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="tn">6</span></code></pre></div>
+<div class="pager"><a class="prev" href="10-solutions-level-2-functions-that-return-values.html" rel="prev"><small>← Previous</small>Solutions: Level 2 — Functions that Return Values</a><a class="next" href="12-solutions-level-4-loops-inside-functions.html" rel="next"><small>Next →</small>Solutions: Level 4 — Loops Inside Functions</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

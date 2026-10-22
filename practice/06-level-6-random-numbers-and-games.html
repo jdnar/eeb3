@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 6: Random Numbers and Games — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Level 6: Random Numbers and Games">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html" class="active" aria-current="page"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Level 6: Random Numbers and Games</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-41-roll-a-die">Exercise 41 — Roll a die</a></li><li><a href="#exercise-42-flip-a-coin">Exercise 42 — Flip a coin</a></li><li><a href="#exercise-43-roll-several-dice">Exercise 43 — Roll several dice</a></li><li><a href="#exercise-44-too-low-too-high">Exercise 44 — Too low, too high</a></li><li><a href="#exercise-45-who-wins">Exercise 45 — Who wins?</a></li><li><a href="#exercise-46-the-computer-s-move">Exercise 46 — The computer’s move</a></li></ul></nav><p>You use the <code>random</code> module inside functions. Because the results are random, <strong>run your program several times</strong> to check it. You also write the building blocks of small games.</p>
+<h2 id="exercise-41-roll-a-die">Exercise 41 — Roll a die</h2>
+<p><em>S4 review: import random · randint</em></p>
+<p>Define a function <code>roll_die()</code> that returns a random integer between 1 and 6 (both included). The main program prints <code>You rolled</code> followed by the result.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<div class="callout tip"><strong>Tip:</strong> Put <code>import random</code> at the very top of your file.</div>
+<h2 id="exercise-42-flip-a-coin">Exercise 42 — Flip a coin</h2>
+<p><em>S4 review: random.choice</em></p>
+<p>Define a function <code>flip_coin()</code> that returns <code>"heads"</code> or <code>"tails"</code> at random.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<h2 id="exercise-43-roll-several-dice">Exercise 43 — Roll several dice</h2>
+<p><em>S4 review: for · accumulator · randint · functions calling functions</em></p>
+<p>Define a function <code>roll_dice(n)</code> that rolls <code>n</code> dice and returns the <strong>sum</strong> of the results. Reuse <code>roll_die()</code>.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<h2 id="exercise-44-too-low-too-high">Exercise 44 — Too low, too high</h2>
+<p><em>S4 review: if / elif / else · strings</em></p>
+<p>Define a function <code>check_guess(secret, guess)</code> that returns <code>"too low"</code> if the guess is smaller than the secret number, <code>"too high"</code> if it is larger, and <code>"correct"</code> if they are equal. (You will use it in the first mini-project.)</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>check_guess(<span class="tn">5</span>, <span class="tn">3</span>)
+<span class="ts">'too low'</span>
+<span class="tp">&gt;&gt;&gt; </span>check_guess(<span class="tn">5</span>, <span class="tn">8</span>)
+<span class="ts">'too high'</span>
+<span class="tp">&gt;&gt;&gt; </span>check_guess(<span class="tn">5</span>, <span class="tn">5</span>)
+<span class="ts">'correct'</span></code></pre></div>
+<h2 id="exercise-45-who-wins">Exercise 45 — Who wins?</h2>
+<p><em>S4 review: if / elif / else · and · or</em></p>
+<p>In Rock-Paper-Scissors, rock beats scissors, scissors beats paper and paper beats rock. Define a function <code>winner(player, computer)</code> that receives two moves (<code>"rock"</code>, <code>"paper"</code> or <code>"scissors"</code>) and returns <code>"player"</code>, <code>"computer"</code> or <code>"draw"</code>.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>winner(<span class="ts">"rock"</span>, <span class="ts">"scissors"</span>)
+<span class="ts">'player'</span>
+<span class="tp">&gt;&gt;&gt; </span>winner(<span class="ts">"paper"</span>, <span class="ts">"rock"</span>)
+<span class="ts">'player'</span>
+<span class="tp">&gt;&gt;&gt; </span>winner(<span class="ts">"rock"</span>, <span class="ts">"paper"</span>)
+<span class="ts">'computer'</span>
+<span class="tp">&gt;&gt;&gt; </span>winner(<span class="ts">"paper"</span>, <span class="ts">"paper"</span>)
+<span class="ts">'draw'</span></code></pre></div>
+<h2 id="exercise-46-the-computer-s-move">Exercise 46 — The computer’s move</h2>
+<p><em>S4 review: random.choice · return</em></p>
+<p>Define a function <code>random_move()</code> that returns <code>"rock"</code>, <code>"paper"</code> or <code>"scissors"</code> at random.</p>
+<p>The output is random, so it changes every time you run the program.</p>
+<div class="pager"><a class="prev" href="05-level-5-asking-the-user-inside-functions.html" rel="prev"><small>← Previous</small>Level 5: Asking the User Inside Functions</a><a class="next" href="07-level-7-mini-projects-with-several-functions.html" rel="next"><small>Next →</small>Level 7: Mini-projects with Several Functions</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

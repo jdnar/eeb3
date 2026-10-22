@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions: Level 1 — Functions that Print — Functions Practice</title>
+<meta name="description" content="Python — Practising Functions with S4 Content — Solutions: Level 1 — Functions that Print">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Practising Functions with S4 Content</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-level"><a href="01-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="02-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="03-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="04-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="05-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="06-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="07-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-appendix"><a href="08-solutions.html"><span class="badge">Appendix</span><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="09-solutions-level-1-functions-that-print.html" class="active" aria-current="page"><span>Solutions: Level 1 — Functions that Print</span></a></li>
+<li class="k-solutions"><a href="10-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2 — Functions that Return Values</span></a></li>
+<li class="k-solutions"><a href="11-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3 — Booleans and Conditionals</span></a></li>
+<li class="k-solutions"><a href="12-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4 — Loops Inside Functions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5 — Asking the User Inside Functions</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6 — Random Numbers and Games</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7 — Mini-projects with Several Functions</span></a></li>
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Solutions: Level 1 — Functions that Print</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-1-the-welcome-function">Exercise 1 — The welcome function</a></li><li><a href="#exercise-2-a-separator-line">Exercise 2 — A separator line</a></li><li><a href="#exercise-3-greet-the-user">Exercise 3 — Greet the user</a></li><li><a href="#exercise-4-introduce-a-person">Exercise 4 — Introduce a person</a></li><li><a href="#exercise-5-repeat-a-text">Exercise 5 — Repeat a text</a></li></ul></nav><h2 id="exercise-1-the-welcome-function">Exercise 1 — The welcome function</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> welcome():
+    <span class="tb">print</span>(<span class="ts">"Welcome to my program!"</span>)
+    <span class="tb">print</span>(<span class="ts">"Let's start."</span>)
+
+<span class="tc"># Main program</span>
+welcome()
+welcome()</code></pre></div>
+<h2 id="exercise-2-a-separator-line">Exercise 2 — A separator line</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> separator():
+    <span class="tb">print</span>(<span class="ts">"="</span> * <span class="tn">30</span>)
+
+<span class="tc"># Main program</span>
+separator()
+<span class="tb">print</span>(<span class="ts">"Python Practice"</span>)
+separator()</code></pre></div>
+<h2 id="exercise-3-greet-the-user">Exercise 3 — Greet the user</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> greet(name):
+    <span class="tb">print</span>(<span class="ts">"Hello, "</span> + name + <span class="ts">"!"</span>)
+    <span class="tb">print</span>(<span class="ts">"Nice to meet you."</span>)
+
+<span class="tc"># Main program</span>
+name = <span class="tb">input</span>(<span class="ts">"What is your name? "</span>)
+greet(name)</code></pre></div>
+<h2 id="exercise-4-introduce-a-person">Exercise 4 — Introduce a person</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> introduce(name, age):
+    <span class="tb">print</span>(name, <span class="ts">"is"</span>, age, <span class="ts">"years old and will be"</span>, age + <span class="tn">1</span>, <span class="ts">"next year."</span>)
+
+<span class="tc"># Main program</span>
+person = <span class="tb">input</span>(<span class="ts">"Name: "</span>)
+years = <span class="tb">int</span>(<span class="tb">input</span>(<span class="ts">"Age: "</span>))
+introduce(person, years)</code></pre></div>
+<h2 id="exercise-5-repeat-a-text">Exercise 5 — Repeat a text</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> repeat(text, times):
+    <span class="tb">print</span>(text * times)
+
+<span class="tc"># Main program</span>
+repeat(<span class="ts">"ha"</span>, <span class="tn">3</span>)
+repeat(<span class="ts">"*"</span>, <span class="tn">10</span>)</code></pre></div>
+<div class="pager"><a class="prev" href="08-solutions.html" rel="prev"><small>← Previous</small>Solutions</a><a class="next" href="10-solutions-level-2-functions-that-return-values.html" rel="next"><small>Next →</small>Solutions: Level 2 — Functions that Return Values</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
