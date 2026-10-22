@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Solutions: Level 6 — Random Numbers and Games — Python S5 (private)</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Solutions: Level 6 — Random Numbers and Games">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">EEB3 ICT · Private solutions</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="privbar">PRIVATE — teacher solutions. Do not publish this folder.</div>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All solutions</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="group"><details open><summary>Functions Practice</summary><ol><li class="k-solutions"><a href="01-solutions.html"><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="02-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1</span></a></li>
+<li class="k-solutions"><a href="03-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2</span></a></li>
+<li class="k-solutions"><a href="04-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3</span></a></li>
+<li class="k-solutions"><a href="05-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4</span></a></li>
+<li class="k-solutions"><a href="06-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5</span></a></li>
+<li class="k-solutions"><a href="07-solutions-level-6-random-numbers-and-games.html" class="active" aria-current="page"><span>Solutions: Level 6</span></a></li>
+<li class="k-solutions"><a href="08-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7</span></a></li></ol></details></li>
+<li class="k-appendix"><a href="09-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="10-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+
+  </ol>
+</aside>
+<main class="content">
+<article>
+<p class="crumb">1. Functions › Functions Practice</p><h1>Solutions: Level 6 — Random Numbers and Games</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-41-roll-a-die">Exercise 41 — Roll a die</a></li><li><a href="#exercise-42-flip-a-coin">Exercise 42 — Flip a coin</a></li><li><a href="#exercise-43-roll-several-dice">Exercise 43 — Roll several dice</a></li><li><a href="#exercise-44-too-low-too-high">Exercise 44 — Too low, too high</a></li><li><a href="#exercise-45-who-wins">Exercise 45 — Who wins?</a></li><li><a href="#exercise-46-the-computer-s-move">Exercise 46 — The computer’s move</a></li></ul></nav><h2 id="exercise-41-roll-a-die">Exercise 41 — Roll a die</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> roll_die():
+    <span class="tk">return</span> random.randint(<span class="tn">1</span>, <span class="tn">6</span>)
+
+<span class="tc"># Main program</span>
+<span class="tb">print</span>(<span class="ts">"You rolled"</span>, roll_die())</code></pre></div>
+<h2 id="exercise-42-flip-a-coin">Exercise 42 — Flip a coin</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> flip_coin():
+    <span class="tk">return</span> random.choice([<span class="ts">"heads"</span>, <span class="ts">"tails"</span>])
+
+<span class="tc"># Main program</span>
+<span class="tb">print</span>(flip_coin())</code></pre></div>
+<h2 id="exercise-43-roll-several-dice">Exercise 43 — Roll several dice</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> roll_die():
+    <span class="tk">return</span> random.randint(<span class="tn">1</span>, <span class="tn">6</span>)
+
+<span class="tk">def</span> roll_dice(n):
+    total = <span class="tn">0</span>
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(n):
+        total += roll_die()
+    <span class="tk">return</span> total
+
+<span class="tc"># Main program</span>
+<span class="tb">print</span>(<span class="ts">"Two dice:"</span>, roll_dice(<span class="tn">2</span>))</code></pre></div>
+<h2 id="exercise-44-too-low-too-high">Exercise 44 — Too low, too high</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> check_guess(secret, guess):
+    <span class="tk">if</span> guess &lt; secret:
+        <span class="tk">return</span> <span class="ts">"too low"</span>
+    <span class="tk">elif</span> guess &gt; secret:
+        <span class="tk">return</span> <span class="ts">"too high"</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"correct"</span></code></pre></div>
+<h2 id="exercise-45-who-wins">Exercise 45 — Who wins?</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> winner(player, computer):
+    <span class="tk">if</span> player == computer:
+        <span class="tk">return</span> <span class="ts">"draw"</span>
+    <span class="tk">elif</span> (player == <span class="ts">"rock"</span> <span class="tk">and</span> computer == <span class="ts">"scissors"</span>) <span class="tk">or</span> (player == <span class="ts">"scissors"</span> <span class="tk">and</span> computer == <span class="ts">"paper"</span>) <span class="tk">or</span> (player == <span class="ts">"paper"</span> <span class="tk">and</span> computer == <span class="ts">"rock"</span>):
+        <span class="tk">return</span> <span class="ts">"player"</span>
+    <span class="tk">else</span>:
+        <span class="tk">return</span> <span class="ts">"computer"</span></code></pre></div>
+<h2 id="exercise-46-the-computer-s-move">Exercise 46 — The computer’s move</h2>
+<div class="codeblock"><pre><code><span class="tk">import</span> random
+
+<span class="tk">def</span> random_move():
+    <span class="tk">return</span> random.choice([<span class="ts">"rock"</span>, <span class="ts">"paper"</span>, <span class="ts">"scissors"</span>])
+
+<span class="tc"># Main program</span>
+<span class="tb">print</span>(<span class="ts">"The computer chose"</span>, random_move())</code></pre></div>
+<div class="pager"><a class="prev" href="06-solutions-level-5-asking-the-user-inside-functions.html" rel="prev"><small>← Previous</small>Solutions: Level 5 — Asking the User Inside Functions</a><a class="next" href="08-solutions-level-7-mini-projects-with-several-functions.html" rel="next"><small>Next →</small>Solutions: Level 7 — Mini-projects with Several Functions</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

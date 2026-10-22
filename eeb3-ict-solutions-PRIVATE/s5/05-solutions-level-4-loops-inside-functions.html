@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Solutions: Level 4 — Loops Inside Functions — Python S5 (private)</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Solutions: Level 4 — Loops Inside Functions">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">EEB3 ICT · Private solutions</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="privbar">PRIVATE — teacher solutions. Do not publish this folder.</div>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All solutions</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="group"><details open><summary>Functions Practice</summary><ol><li class="k-solutions"><a href="01-solutions.html"><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="02-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1</span></a></li>
+<li class="k-solutions"><a href="03-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2</span></a></li>
+<li class="k-solutions"><a href="04-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3</span></a></li>
+<li class="k-solutions"><a href="05-solutions-level-4-loops-inside-functions.html" class="active" aria-current="page"><span>Solutions: Level 4</span></a></li>
+<li class="k-solutions"><a href="06-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5</span></a></li>
+<li class="k-solutions"><a href="07-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6</span></a></li>
+<li class="k-solutions"><a href="08-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7</span></a></li></ol></details></li>
+<li class="k-appendix"><a href="09-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="10-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+
+  </ol>
+</aside>
+<main class="content">
+<article>
+<p class="crumb">1. Functions › Functions Practice</p><h1>Solutions: Level 4 — Loops Inside Functions</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-25-print-the-numbers">Exercise 25 — Print the numbers</a></li><li><a href="#exercise-26-countdown">Exercise 26 — Countdown</a></li><li><a href="#exercise-27-sum-from-1-to-n">Exercise 27 — Sum from 1 to n</a></li><li><a href="#exercise-28-multiplication-table">Exercise 28 — Multiplication table</a></li><li><a href="#exercise-29-factorial">Exercise 29 — Factorial</a></li><li><a href="#exercise-30-draw-a-rectangle">Exercise 30 — Draw a rectangle</a></li><li><a href="#exercise-31-count-the-divisors">Exercise 31 — Count the divisors</a></li><li><a href="#exercise-32-prime-numbers">Exercise 32 — Prime numbers</a></li><li><a href="#exercise-33-sum-of-the-even-numbers">Exercise 33 — Sum of the even numbers</a></li><li><a href="#exercise-34-power-without">Exercise 34 — Power without **</a></li></ul></nav><h2 id="exercise-25-print-the-numbers">Exercise 25 — Print the numbers</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> print_numbers(n):
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, n + <span class="tn">1</span>):
+        <span class="tb">print</span>(i)
+
+<span class="tc"># Main program</span>
+print_numbers(<span class="tn">5</span>)</code></pre></div>
+<h2 id="exercise-26-countdown">Exercise 26 — Countdown</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> countdown(n):
+    <span class="tk">while</span> n &gt;= <span class="tn">1</span>:
+        <span class="tb">print</span>(n)
+        n -= <span class="tn">1</span>
+    <span class="tb">print</span>(<span class="ts">"Liftoff!"</span>)
+
+<span class="tc"># Main program</span>
+countdown(<span class="tn">5</span>)</code></pre></div>
+<h2 id="exercise-27-sum-from-1-to-n">Exercise 27 — Sum from 1 to n</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> sum_to(n):
+    total = <span class="tn">0</span>
+    <span class="tk">for</span> number <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, n + <span class="tn">1</span>):
+        total += number
+    <span class="tk">return</span> total</code></pre></div>
+<h2 id="exercise-28-multiplication-table">Exercise 28 — Multiplication table</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> multiplication_table(n):
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, <span class="tn">11</span>):
+        <span class="tb">print</span>(n, <span class="ts">"x"</span>, i, <span class="ts">"="</span>, n * i)
+
+<span class="tc"># Main program</span>
+multiplication_table(<span class="tn">7</span>)</code></pre></div>
+<h2 id="exercise-29-factorial">Exercise 29 — Factorial</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> factorial(n):
+    result = <span class="tn">1</span>
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, n + <span class="tn">1</span>):
+        result *= i
+    <span class="tk">return</span> result</code></pre></div>
+<h2 id="exercise-30-draw-a-rectangle">Exercise 30 — Draw a rectangle</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> draw_rectangle(width, height):
+    <span class="tk">for</span> row <span class="tk">in</span> <span class="tb">range</span>(height):
+        <span class="tb">print</span>(<span class="ts">"X"</span> * width)
+
+<span class="tc"># Main program</span>
+draw_rectangle(<span class="tn">6</span>, <span class="tn">3</span>)</code></pre></div>
+<h2 id="exercise-31-count-the-divisors">Exercise 31 — Count the divisors</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> count_divisors(n):
+    count = <span class="tn">0</span>
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, n + <span class="tn">1</span>):
+        <span class="tk">if</span> n % i == <span class="tn">0</span>:
+            count += <span class="tn">1</span>
+    <span class="tk">return</span> count</code></pre></div>
+<h2 id="exercise-32-prime-numbers">Exercise 32 — Prime numbers</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> count_divisors(n):
+    count = <span class="tn">0</span>
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">1</span>, n + <span class="tn">1</span>):
+        <span class="tk">if</span> n % i == <span class="tn">0</span>:
+            count += <span class="tn">1</span>
+    <span class="tk">return</span> count
+
+<span class="tk">def</span> is_prime(n):
+    <span class="tk">return</span> count_divisors(n) == <span class="tn">2</span></code></pre></div>
+<h2 id="exercise-33-sum-of-the-even-numbers">Exercise 33 — Sum of the even numbers</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> sum_of_evens(n):
+    total = <span class="tn">0</span>
+    <span class="tk">for</span> number <span class="tk">in</span> <span class="tb">range</span>(<span class="tn">2</span>, n + <span class="tn">1</span>, <span class="tn">2</span>):
+        total += number
+    <span class="tk">return</span> total</code></pre></div>
+<h2 id="exercise-34-power-without">Exercise 34 — Power without **</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> power(base, exponent):
+    result = <span class="tn">1</span>
+    <span class="tk">for</span> i <span class="tk">in</span> <span class="tb">range</span>(exponent):
+        result *= base
+    <span class="tk">return</span> result</code></pre></div>
+<div class="pager"><a class="prev" href="04-solutions-level-3-booleans-and-conditionals.html" rel="prev"><small>← Previous</small>Solutions: Level 3 — Booleans and Conditionals</a><a class="next" href="06-solutions-level-5-asking-the-user-inside-functions.html" rel="next"><small>Next →</small>Solutions: Level 5 — Asking the User Inside Functions</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
