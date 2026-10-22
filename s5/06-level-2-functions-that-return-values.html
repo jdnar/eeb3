@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 2: Functions that Return Values — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Level 2: Functions that Return Values">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="group"><details open><summary>Functions Practice</summary><ol><li class="k-theory"><a href="04-functions-practice.html"><span>Overview</span></a></li>
+<li class="k-level"><a href="05-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="06-level-2-functions-that-return-values.html" class="active" aria-current="page"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="07-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="08-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="09-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="10-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="11-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-solutions"><a href="12-solutions.html"><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3</span></a></li>
+<li class="k-solutions"><a href="16-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4</span></a></li>
+<li class="k-solutions"><a href="17-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5</span></a></li>
+<li class="k-solutions"><a href="18-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6</span></a></li>
+<li class="k-solutions"><a href="19-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7</span></a></li></ol></details></li>
+<li class="k-theory"><a href="20-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="22-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="23-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="25-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="26-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="27-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="28-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="29-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="30-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="31-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="32-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="33-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="34-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="35-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="36-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="37-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="38-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+
+  </ol>
+</aside>
+<main class="content">
+<article>
+<p class="crumb">1. Functions › Functions Practice</p><h1>Level 2: Functions that Return Values</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#exercise-6-add-two-numbers">Exercise 6 — Add two numbers</a></li><li><a href="#exercise-7-the-square">Exercise 7 — The square</a></li><li><a href="#exercise-8-perimeter-and-area">Exercise 8 — Perimeter and area</a></li><li><a href="#exercise-9-the-average">Exercise 9 — The average</a></li><li><a href="#exercise-10-celsius-to-fahrenheit">Exercise 10 — Celsius to Fahrenheit</a></li><li><a href="#exercise-11-area-of-a-circle">Exercise 11 — Area of a circle</a></li><li><a href="#exercise-12-quotient-and-remainder">Exercise 12 — Quotient and remainder</a></li><li><a href="#exercise-13-price-with-tax">Exercise 13 — Price with tax</a></li><li><a href="#exercise-14-hours-and-minutes">Exercise 14 — Hours and minutes</a></li></ul></nav><p>Now your functions <strong>return</strong> a result with <code>return</code>, and the main program decides what to do with it. You review operators (<code>+ - * / ** % //</code>), <code>int</code>/<code>float</code> and the difference between printing and returning.</p>
+<h2 id="exercise-6-add-two-numbers">Exercise 6 — Add two numbers</h2>
+<p><em>S4 review: operators · return · input()</em></p>
+<p>Define a function <code>add(a, b)</code> that <strong>returns</strong> the sum of its two parameters. The main program asks two integers and prints <code>The sum is</code> followed by the result.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>add(<span class="tn">2</span>, <span class="tn">3</span>)
+<span class="tn">5</span>
+<span class="tp">&gt;&gt;&gt; </span>add(-<span class="tn">4</span>, <span class="tn">10</span>)
+<span class="tn">6</span>
+<span class="tp">&gt;&gt;&gt; </span>add(<span class="tn">0.5</span>, <span class="tn">0.25</span>)
+<span class="tn">0.75</span></code></pre></div>
+<p>Example run (the user typed <code>7</code>, <code>8</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>First number: 7
+Second number: 8
+The sum is 15</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> <code>return</code> sends the value back: the call <code>add(7, 8)</code> is replaced by <code>15</code>.</div>
+<h2 id="exercise-7-the-square">Exercise 7 — The square</h2>
+<p><em>S4 review: operators (</em><em>) · return</em></p>
+<p>Define a function <code>square(n)</code> that returns <code>n</code> to the power of 2.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>square(<span class="tn">4</span>)
+<span class="tn">16</span>
+<span class="tp">&gt;&gt;&gt; </span>square(-<span class="tn">3</span>)
+<span class="tn">9</span>
+<span class="tp">&gt;&gt;&gt; </span>square(<span class="tn">1.5</span>)
+<span class="tn">2.25</span></code></pre></div>
+<h2 id="exercise-8-perimeter-and-area">Exercise 8 — Perimeter and area</h2>
+<p><em>S4 review: variables · operators · float()</em></p>
+<p>Define two functions, <code>rectangle_perimeter(length, width)</code> and <code>rectangle_area(length, width)</code>, that <strong>return</strong> the perimeter and the area of a rectangle. The main program asks the length and the width (floats) and prints both results on one line.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>rectangle_perimeter(<span class="tn">5</span>, <span class="tn">3</span>)
+<span class="tn">16</span>
+<span class="tp">&gt;&gt;&gt; </span>rectangle_area(<span class="tn">5</span>, <span class="tn">3</span>)
+<span class="tn">15</span></code></pre></div>
+<p>Example run (the user typed <code>8</code>, <code>9</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a length: 8
+Give me a width: 9
+Area: 72.0 Perimeter: 34.0</code></pre></div>
+<h2 id="exercise-9-the-average">Exercise 9 — The average</h2>
+<p><em>S4 review: operators · order of operations</em></p>
+<p>Define a function <code>average(a, b, c)</code> that returns the average of three numbers.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>average(<span class="tn">10</span>, <span class="tn">20</span>, <span class="tn">30</span>)
+<span class="tn">20.0</span>
+<span class="tp">&gt;&gt;&gt; </span>average(<span class="tn">5</span>, <span class="tn">5</span>, <span class="tn">5</span>)
+<span class="tn">5.0</span>
+<span class="tp">&gt;&gt;&gt; </span>average(<span class="tn">0</span>, <span class="tn">0</span>, <span class="tn">9</span>)
+<span class="tn">3.0</span></code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> Parentheses matter: <code>a + b + c / 3</code> is <strong>not</strong> the average.</div>
+<h2 id="exercise-10-celsius-to-fahrenheit">Exercise 10 — Celsius to Fahrenheit</h2>
+<p><em>S4 review: operators · float</em></p>
+<p>Define a function <code>celsius_to_fahrenheit(celsius)</code> that returns the temperature in Fahrenheit using the formula <code>F = C × 9 / 5 + 32</code>.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>celsius_to_fahrenheit(<span class="tn">0</span>)
+<span class="tn">32.0</span>
+<span class="tp">&gt;&gt;&gt; </span>celsius_to_fahrenheit(<span class="tn">100</span>)
+<span class="tn">212.0</span>
+<span class="tp">&gt;&gt;&gt; </span>celsius_to_fahrenheit(-<span class="tn">40</span>)
+-<span class="tn">40.0</span></code></pre></div>
+<h2 id="exercise-11-area-of-a-circle">Exercise 11 — Area of a circle</h2>
+<p><em>S4 review: variables · operators</em></p>
+<p>Define a function <code>circle_area(radius)</code> that returns the area of a circle, using <code>pi = 3.14159</code> stored in a variable <strong>inside</strong> the function (area = pi × radius²).</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>circle_area(<span class="tn">1</span>)
+<span class="tn">3.14159</span>
+<span class="tp">&gt;&gt;&gt; </span>circle_area(<span class="tn">2</span>)
+<span class="tn">12.56636</span>
+<span class="tp">&gt;&gt;&gt; </span>circle_area(<span class="tn">0</span>)
+<span class="tn">0.0</span></code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> Variables created inside a function are local: they exist only while the function runs.</div>
+<h2 id="exercise-12-quotient-and-remainder">Exercise 12 — Quotient and remainder</h2>
+<p><em>S4 review: operators // and % · returning two values</em></p>
+<p>Define a function <code>quotient_and_remainder(a, b)</code> that returns <strong>two values</strong>: the truncated quotient and the remainder of <code>a</code> divided by <code>b</code>. The main program asks two integers and prints the result in the format shown.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>quotient_and_remainder(<span class="tn">9</span>, <span class="tn">4</span>)
+(<span class="tn">2</span>, <span class="tn">1</span>)
+<span class="tp">&gt;&gt;&gt; </span>quotient_and_remainder(<span class="tn">20</span>, <span class="tn">5</span>)
+(<span class="tn">4</span>, <span class="tn">0</span>)</code></pre></div>
+<p>Example run (the user typed <code>9</code>, <code>4</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>Give me a first number: 9
+Give me a second number: 4
+9 : 4 = quotient 2 and remainder 1</code></pre></div>
+<div class="callout tip"><strong>Tip:</strong> Return two values with <code>return (value1, value2)</code>, and read them with <code>result[0]</code> and <code>result[1]</code>.</div>
+<h2 id="exercise-13-price-with-tax">Exercise 13 — Price with tax</h2>
+<p><em>S4 review: operators · float</em></p>
+<p>Define a function <code>price_with_tax(price, tax)</code> that returns the price after adding a tax given in percent. For example, 100 with a 21% tax is 121.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>price_with_tax(<span class="tn">100</span>, <span class="tn">21</span>)
+<span class="tn">121.0</span>
+<span class="tp">&gt;&gt;&gt; </span>price_with_tax(<span class="tn">50</span>, <span class="tn">10</span>)
+<span class="tn">55.0</span>
+<span class="tp">&gt;&gt;&gt; </span>price_with_tax(<span class="tn">80</span>, <span class="tn">0</span>)
+<span class="tn">80.0</span></code></pre></div>
+<h2 id="exercise-14-hours-and-minutes">Exercise 14 — Hours and minutes</h2>
+<p><em>S4 review: operators // and % · returning two values</em></p>
+<p>Define a function <code>to_hours_minutes(total_minutes)</code> that converts a number of minutes into hours and minutes and returns both values. The main program asks the number of minutes and prints it like <code>135 minutes = 2 h 15 min</code>.</p>
+<p>Examples (type the calls in the Thonny shell after running your file):</p>
+<div class="codeblock"><pre><code><span class="tp">&gt;&gt;&gt; </span>to_hours_minutes(<span class="tn">135</span>)
+(<span class="tn">2</span>, <span class="tn">15</span>)
+<span class="tp">&gt;&gt;&gt; </span>to_hours_minutes(<span class="tn">60</span>)
+(<span class="tn">1</span>, <span class="tn">0</span>)
+<span class="tp">&gt;&gt;&gt; </span>to_hours_minutes(<span class="tn">45</span>)
+(<span class="tn">0</span>, <span class="tn">45</span>)</code></pre></div>
+<p>Example run (the user typed <code>135</code>):</p>
+<div class="codeblock output"><span class="lbl">Output</span><pre><code>How many minutes? 135
+135 minutes = 2 h 15 min</code></pre></div>
+<div class="pager"><a class="prev" href="05-level-1-functions-that-print.html" rel="prev"><small>← Previous</small>Level 1: Functions that Print</a><a class="next" href="07-level-3-booleans-and-conditionals.html" rel="next"><small>Next →</small>Level 3: Booleans and Conditionals</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

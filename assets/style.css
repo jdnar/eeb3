@@ -41,9 +41,9 @@ a:hover { text-decoration: underline; }
 .sidebar li a { display: flex; align-items: baseline; gap: 6px; padding: 5px 8px; border-radius: 6px; color: var(--text); line-height: 1.35; }
 .sidebar li a:hover { background: var(--border); text-decoration: none; }
 .sidebar li a.active { background: var(--accent); color: #fff; font-weight: 600; }
-.sidebar li.k-warmup a, .sidebar li.k-exercises a, .sidebar li.k-project a { padding-left: 20px; font-size: 0.88rem; color: var(--muted); }
-.sidebar li.k-warmup a.active, .sidebar li.k-exercises a.active, .sidebar li.k-project a.active { color: #fff; }
-.sidebar li.k-appendix a, .sidebar li.k-summary a { font-weight: 600; }
+.sidebar li.k-warmup a, .sidebar li.k-exercises a, .sidebar li.k-project a, .sidebar li.k-solutions a { padding-left: 20px; font-size: 0.88rem; color: var(--muted); }
+.sidebar li.k-warmup a.active, .sidebar li.k-exercises a.active, .sidebar li.k-project a.active, .sidebar li.k-solutions a.active { color: #fff; }
+.sidebar li.k-appendix a, .sidebar li.k-summary a, .sidebar li.k-level a { font-weight: 600; }
 .badge { flex: 0 0 auto; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 1px 6px; border-radius: 999px; background: var(--border); color: var(--muted); }
 a.active .badge { background: rgba(255,255,255,.25); color: #fff; }
 .content { flex: 1; min-width: 0; padding: 28px 40px 60px; }
@@ -112,3 +112,13 @@ footer.site { margin-top: 2.5rem; font-size: .82rem; color: var(--muted); }
   body { font-size: 11pt; }
   .codeblock pre code { white-space: pre-wrap; }
 }
+
+/* sidebar groups (sub-sections) and breadcrumb */
+.sidebar li.group { margin: 2px 0; }
+.sidebar li.group details > summary { cursor: pointer; padding: 5px 8px 5px 20px; border-radius: 6px; font-weight: 600; font-size: .88rem; color: var(--text); list-style-position: inside; }
+.sidebar li.group details > summary:hover { background: var(--border); }
+.sidebar li.group details[open] > summary { color: var(--accent-strong); }
+.sidebar li.group ol { margin: 2px 0 4px 18px; padding-left: 10px; border-left: 2px solid var(--border); }
+.sidebar li.group ol li a { padding-left: 8px; font-size: .86rem; font-weight: 500; color: var(--muted); }
+.sidebar li.group ol li a.active { color: #fff; }
+.crumb { margin: 0 0 6px; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }

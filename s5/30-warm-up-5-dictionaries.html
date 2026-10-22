@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warm-up 5: Dictionaries — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Warm-up 5: Dictionaries">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="group"><details><summary>Functions Practice</summary><ol><li class="k-theory"><a href="04-functions-practice.html"><span>Overview</span></a></li>
+<li class="k-level"><a href="05-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="06-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="07-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="08-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="09-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="10-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="11-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-solutions"><a href="12-solutions.html"><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3</span></a></li>
+<li class="k-solutions"><a href="16-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4</span></a></li>
+<li class="k-solutions"><a href="17-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5</span></a></li>
+<li class="k-solutions"><a href="18-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6</span></a></li>
+<li class="k-solutions"><a href="19-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7</span></a></li></ol></details></li>
+<li class="k-theory"><a href="20-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="22-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="23-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="25-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="26-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="27-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="28-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="29-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="30-warm-up-5-dictionaries.html" class="active" aria-current="page"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="31-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="32-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="33-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="34-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="35-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="36-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="37-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="38-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+
+  </ol>
+</aside>
+<main class="content">
+<article>
+<h1>Warm-up 5: Dictionaries</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#step-5-1-create-and-read">Step 5.1 — Create and read</a></li><li><a href="#step-5-2-modify-add-and-remove">Step 5.2 — Modify, add and remove</a></li><li><a href="#step-5-3-check-a-key">Step 5.3 — Check a key</a></li><li><a href="#step-5-4-loop-over-a-dictionary">Step 5.4 — Loop over a dictionary</a></li></ul></nav><p>Practice each dictionary operation of Chapter 5 on a very small dictionary.</p>
+<div class="callout tip"><strong>Tip:</strong> Type every example yourself instead of copying it, and run it after each step. Solutions: <a class="appref" href="38-appendix-b-solutions-to-the-warm-up-practice.html#b-5">Appendix B.5</a>.</div>
+<h2 id="step-5-1-create-and-read">Step 5.1 — Create and read</h2>
+<p>Create a dictionary <code>pet</code> with the keys <code>"name"</code> (value <code>"Rex"</code>) and <code>"age"</code> (value <code>3</code>). Print the value of <code>"name"</code>.</p>
+<h2 id="step-5-2-modify-add-and-remove">Step 5.2 — Modify, add and remove</h2>
+<p>Change the age to <code>4</code>, add a new key <code>"color"</code> with the value <code>"brown"</code>, then delete the key <code>"age"</code>. Print the dictionary.</p>
+<h2 id="step-5-3-check-a-key">Step 5.3 — Check a key</h2>
+<p>Print <code>True</code> or <code>False</code> depending on whether the key <code>"color"</code> is in <code>pet</code>, using <code>in</code>.</p>
+<h2 id="step-5-4-loop-over-a-dictionary">Step 5.4 — Loop over a dictionary</h2>
+<p>Use a <code>for</code> loop to print each key followed by its value.</p>
+<div class="pager"><a class="prev" href="29-5-dictionaries.html" rel="prev"><small>← Previous</small>5. Dictionaries</a><a class="next" href="31-exercises-dictionaries-14-15.html" rel="next"><small>Next →</small>Exercises: Dictionaries (14–15)</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

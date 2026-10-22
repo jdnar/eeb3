@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Functions Practice — Python S5</title>
+<meta name="description" content="Python — Functions, Strings, Lists, Dictionaries and Files — Functions Practice">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button>
+  <a class="brand" href="../index.html">Python Course</a>
+  <span class="spacer"></span>
+  <button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+</header>
+<div class="layout">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="back" href="../index.html">← All courses</a>
+  <p class="course-name">Python — Functions, Strings, Lists, Dictionaries and Files</p>
+  <ol>
+<li class="k-theory"><a href="index.html"><span>Start here</span></a></li>
+<li class="k-theory"><a href="01-1-functions.html"><span>1. Functions</span></a></li>
+<li class="k-warmup"><a href="02-warm-up-1-functions.html"><span>Warm-up 1: Functions</span></a></li>
+<li class="k-exercises"><a href="03-exercises-functions-1-4.html"><span>Exercises: Functions (1–4)</span></a></li>
+<li class="group"><details open><summary>Functions Practice</summary><ol><li class="k-theory"><a href="04-functions-practice.html" class="active" aria-current="page"><span>Overview</span></a></li>
+<li class="k-level"><a href="05-level-1-functions-that-print.html"><span>Level 1: Functions that Print</span></a></li>
+<li class="k-level"><a href="06-level-2-functions-that-return-values.html"><span>Level 2: Functions that Return Values</span></a></li>
+<li class="k-level"><a href="07-level-3-booleans-and-conditionals.html"><span>Level 3: Booleans and Conditionals</span></a></li>
+<li class="k-level"><a href="08-level-4-loops-inside-functions.html"><span>Level 4: Loops Inside Functions</span></a></li>
+<li class="k-level"><a href="09-level-5-asking-the-user-inside-functions.html"><span>Level 5: Asking the User Inside Functions</span></a></li>
+<li class="k-level"><a href="10-level-6-random-numbers-and-games.html"><span>Level 6: Random Numbers and Games</span></a></li>
+<li class="k-level"><a href="11-level-7-mini-projects-with-several-functions.html"><span>Level 7: Mini-projects with Several Functions</span></a></li>
+<li class="k-solutions"><a href="12-solutions.html"><span>Solutions</span></a></li>
+<li class="k-solutions"><a href="13-solutions-level-1-functions-that-print.html"><span>Solutions: Level 1</span></a></li>
+<li class="k-solutions"><a href="14-solutions-level-2-functions-that-return-values.html"><span>Solutions: Level 2</span></a></li>
+<li class="k-solutions"><a href="15-solutions-level-3-booleans-and-conditionals.html"><span>Solutions: Level 3</span></a></li>
+<li class="k-solutions"><a href="16-solutions-level-4-loops-inside-functions.html"><span>Solutions: Level 4</span></a></li>
+<li class="k-solutions"><a href="17-solutions-level-5-asking-the-user-inside-functions.html"><span>Solutions: Level 5</span></a></li>
+<li class="k-solutions"><a href="18-solutions-level-6-random-numbers-and-games.html"><span>Solutions: Level 6</span></a></li>
+<li class="k-solutions"><a href="19-solutions-level-7-mini-projects-with-several-functions.html"><span>Solutions: Level 7</span></a></li></ol></details></li>
+<li class="k-theory"><a href="20-2-strings.html"><span>2. Strings</span></a></li>
+<li class="k-warmup"><a href="21-warm-up-2-strings.html"><span>Warm-up 2: Strings</span></a></li>
+<li class="k-exercises"><a href="22-exercises-strings-5-6.html"><span>Exercises: Strings (5–6)</span></a></li>
+<li class="k-theory"><a href="23-3-lists.html"><span>3. Lists</span></a></li>
+<li class="k-warmup"><a href="24-warm-up-3-lists.html"><span>Warm-up 3: Lists</span></a></li>
+<li class="k-exercises"><a href="25-exercises-lists-7-12.html"><span>Exercises: Lists (7–12)</span></a></li>
+<li class="k-theory"><a href="26-4-split-and-join.html"><span>4. Split &amp; Join</span></a></li>
+<li class="k-warmup"><a href="27-warm-up-4-split-and-join.html"><span>Warm-up 4: Split &amp; Join</span></a></li>
+<li class="k-exercises"><a href="28-exercise-13-split-and-join.html"><span>Exercise 13: Split and Join</span></a></li>
+<li class="k-theory"><a href="29-5-dictionaries.html"><span>5. Dictionaries</span></a></li>
+<li class="k-warmup"><a href="30-warm-up-5-dictionaries.html"><span>Warm-up 5: Dictionaries</span></a></li>
+<li class="k-exercises"><a href="31-exercises-dictionaries-14-15.html"><span>Exercises: Dictionaries (14–15)</span></a></li>
+<li class="k-theory"><a href="32-6-files.html"><span>6. Files</span></a></li>
+<li class="k-warmup"><a href="33-warm-up-6-files.html"><span>Warm-up 6: Files</span></a></li>
+<li class="k-exercises"><a href="34-exercises-files-16-18.html"><span>Exercises: Files (16–18)</span></a></li>
+<li class="k-project"><a href="35-project-the-hangman.html"><span class="badge">Project</span><span>Project: The Hangman</span></a></li>
+<li class="k-summary"><a href="36-summary.html"><span class="badge">Summary</span><span>Summary</span></a></li>
+<li class="k-appendix"><a href="37-appendix-a-solutions-to-the-exercises.html"><span class="badge">Appendix</span><span>Appendix A: Solutions to the Exercises</span></a></li>
+<li class="k-appendix"><a href="38-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Appendix</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li>
+
+  </ol>
+</aside>
+<main class="content">
+<article>
+<p class="crumb">1. Functions › Functions Practice</p><h1>Functions Practice</h1>
+<nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#how-the-exercises-work">How the exercises work</a></li><li><a href="#levels">Levels</a></li><li><a href="#quick-reminder-functions">Quick reminder: functions</a></li><li><a href="#rules-of-the-game">Rules of the game</a></li></ul></nav><p>You learned the fundamentals of Python in S4 (variables, input/output, conditionals, loops and <code>random</code>), and you have just met <strong>functions</strong>. This sheet makes the two meet: every exercise asks you to write one or more <strong>functions</strong> whose insides use something you already learned in S4. You practise the new skill and review the old one at the same time.</p>
+<h2 id="how-the-exercises-work">How the exercises work</h2>
+<ol><li>Read the exercise and the <strong>S4 review</strong> line, which tells you which concepts you are practising.</li><li>Write the function(s) in a file saved in your <code>Python</code> folder (for example <code>exercise1.py</code>).</li><li>Below the function(s), write a short <strong>main program</strong> that calls them. Functions must be defined <strong>before</strong> the line that calls them.</li><li>Compare your results with the <strong>Examples</strong> and <strong>Example runs</strong>. For functions that return a value, you can test the examples directly in the Thonny shell after running your file.</li><li>Only then look at the solution at the end. There are many correct solutions: yours only needs to give the expected results.</li></ol>
+<h2 id="levels">Levels</h2>
+<div class="tablewrap"><table><thead><tr><th>Level</th><th>Topic</th><th>Exercises</th><th>Reviews (S4 chapters)</th></tr></thead><tbody><tr><td>1</td><td>Functions that print</td><td>Exercises 1–5</td><td>Variables, <code>print()</code>, <code>input()</code>, strings</td></tr><tr><td>2</td><td>Functions that return values</td><td>Exercises 6–14</td><td>Operators, <code>int</code> / <code>float</code>, <code>input()</code></td></tr><tr><td>3</td><td>Booleans and conditionals</td><td>Exercises 15–24</td><td>Booleans, <code>if</code> / <code>elif</code> / <code>else</code></td></tr><tr><td>4</td><td>Loops inside functions</td><td>Exercises 25–34</td><td><code>while</code>, <code>for</code>, <code>range()</code></td></tr><tr><td>5</td><td>Asking the user inside functions</td><td>Exercises 35–40</td><td><code>input()</code>, <code>while</code> with a stop condition</td></tr><tr><td>6</td><td>Random numbers and games</td><td>Exercises 41–46</td><td><code>random</code>, conditionals</td></tr><tr><td>7</td><td>Mini-projects</td><td>Mini-projects 1–5</td><td>Everything together</td></tr></tbody></table></div>
+<h2 id="quick-reminder-functions">Quick reminder: functions</h2>
+<div class="codeblock"><pre><code><span class="tk">def</span> function_name(parameter1, parameter2):
+    instructions          <span class="tc"># indented</span>
+    <span class="tk">return</span> result         <span class="tc"># optional</span>
+
+value = function_name(argument1, argument2)   <span class="tc"># the call is replaced by the result</span></code></pre></div>
+<ul><li><strong>Parameters</strong> are the inputs of the function; the values you give when calling it are the <strong>arguments</strong>.</li><li><code>print()</code> only <strong>shows</strong> something on the screen. <code>return</code> <strong>sends a value back</strong> to the program that called the function. They are not the same thing!</li><li>As soon as <code>return</code> runs, the function ends.</li><li>Variables created inside a function are <strong>local</strong>: they do not exist outside of it.</li><li>To return several values, separate them with commas: <code>return (a, b)</code>. Read them with <code>result[0]</code> and <code>result[1]</code>.</li><li>A function can call other functions.</li></ul>
+<h2 id="rules-of-the-game">Rules of the game</h2>
+<ul><li>Use only what you know from S4 plus functions: <code>print</code>, <code>input</code>, <code>int</code>, <code>float</code>, <code>str</code>, <code>range</code>, operators, conditionals, loops and the <code>random</code> module.</li><li>Do not use built-in shortcuts that hide the exercise (for example <code>max()</code>, <code>sum()</code> or <code>**</code> when the exercise says to use a loop).</li><li>Give your functions and variables clear names, exactly as written in each exercise.</li></ul>
+<div class="callout tip"><strong>Tip:</strong> Not sure where to start? Write the <strong>first line</strong> of the function (<code>def ...:</code>) from the exercise text, add <code>return 0</code> or <code>pass</code>-like placeholders, and improve it step by step, testing after every change.</div>
+<div class="pager"><a class="prev" href="03-exercises-functions-1-4.html" rel="prev"><small>← Previous</small>Exercises: Functions (1–4)</a><a class="next" href="05-level-1-functions-that-print.html" rel="next"><small>Next →</small>Level 1: Functions that Print</a></div>
+
+</article>
+</main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
