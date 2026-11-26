@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Appendix A: Solutions to the Projects and Exercises — SQL</title><meta name="description" content="SQL — From Zero to Multi-Table Queries — Appendix A: Solutions to the Projects and Exercises"><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button><a class="brand" href="../index.html">EEB3 ICT</a><span class="spacer"></span><button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button></header>
+<div class="layout"><aside class="sidebar" aria-label="Course navigation"><a class="back" href="../index.html">← All courses</a><p class="course-name">SQL — From Zero to Multi-Table Queries</p><ol><li class="k-theory"><a href="index.html"><span>Start here</span></a></li><li class="k-theory"><a href="01-1-introduction-to-sql.html"><span>1. Introduction to SQL</span></a></li><li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li><li class="k-theory"><a href="03-2-manipulation.html"><span>2. Manipulation</span></a></li><li class="k-warmup"><a href="04-warm-up-2-manipulation.html"><span>Warm-up 2: Manipulation</span></a></li><li class="k-project"><a href="05-project-1-celebrities.html"><span class="badge">Project</span><span>Project 1: Celebrities</span></a></li><li class="k-project"><a href="06-project-2-friends.html"><span class="badge">Project</span><span>Project 2: Friends</span></a></li><li class="k-theory"><a href="07-3-queries.html"><span>3. Queries</span></a></li><li class="k-warmup"><a href="08-warm-up-3-queries.html"><span>Warm-up 3: Queries</span></a></li><li class="k-project"><a href="09-project-3-movies.html"><span class="badge">Project</span><span>Project 3: Movies</span></a></li><li class="k-project"><a href="10-project-4-restaurants-nomnom.html"><span class="badge">Project</span><span>Project 4: Restaurants (nomnom)</span></a></li><li class="k-theory"><a href="11-4-aggregate-functions.html"><span>4. Aggregate Functions</span></a></li><li class="k-warmup"><a href="12-warm-up-4-aggregate-functions.html"><span>Warm-up 4: Aggregate Functions</span></a></li><li class="k-exercises"><a href="13-exercises-aggregate-functions-1-3.html"><span>Exercises: Aggregate Functions (1–3)</span></a></li><li class="k-project"><a href="14-project-5-startups.html"><span class="badge">Project</span><span>Project 5: Startups</span></a></li><li class="k-project"><a href="15-project-6-hacker-news.html"><span class="badge">Project</span><span>Project 6: Hacker News</span></a></li><li class="k-theory"><a href="16-5-multiple-tables.html"><span>5. Multiple Tables</span></a></li><li class="k-warmup"><a href="17-warm-up-5-multiple-tables.html"><span>Warm-up 5: Multiple Tables</span></a></li><li class="k-project"><a href="18-project-7-lyft.html"><span class="badge">Project</span><span>Project 7: Lyft</span></a></li><li class="k-summary"><a href="19-6-summary.html"><span class="badge">Summary</span><span>6. Summary</span></a></li><li class="k-appendix"><a href="20-appendix-a-solutions-to-the-projects-and-exercises.html" class="active" aria-current="page"><span class="badge">Solutions</span><span>Appendix A: Solutions to the Projects and Exercises</span></a></li><li class="k-appendix"><a href="21-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Solutions</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li></ol></aside><main class="content"><article><h1>Appendix A: Solutions to the Projects and Exercises</h1><nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#a-1-project-1">A.1 Project 1</a></li><li><a href="#a-2-project-2">A.2 Project 2</a></li><li><a href="#a-3-project-3">A.3 Project 3</a></li><li><a href="#a-4-project-4">A.4 Project 4</a></li><li><a href="#a-5-aggregate-functions-exercises-1-3">A.5 Aggregate functions: Exercises 1–3</a></li><li><a href="#a-6-project-5">A.6 Project 5</a></li><li><a href="#a-7-project-6">A.7 Project 6</a></li><li><a href="#a-8-multiple-tables-exercises-1-8">A.8 Multiple tables: Exercises 1–8</a></li><li><a href="#a-9-project-7">A.9 Project 7</a></li></ul></nav>
+<p>Try every exercise before reading its solution. There is usually more than one correct way to write a query. Where a solution relies on a column name that is not given in the original exercise text (for example in Project 7), it is marked as an assumption — check the real column names with <code>SELECT * FROM table_name;</code>.</p>
+<h2 id="a-1-project-1">A.1 Project 1</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 1</span>
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> celebs (
+   id <span class="tk">INTEGER</span>,
+   name <span class="tk">TEXT</span>,
+   age <span class="tk">INTEGER</span>
+);
+
+<span class="tc">-- 2</span>
+<span class="tk">INSERT</span> <span class="tk">INTO</span> celebs (id, name, age) <span class="tk">VALUES</span> (<span class="tn">1</span>, <span class="ts">&#x27;Justin Bieber&#x27;</span>, <span class="tn">23</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> celebs (id, name, age) <span class="tk">VALUES</span> (<span class="tn">2</span>, <span class="ts">&#x27;Beyonce Knowles&#x27;</span>, <span class="tn">34</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> celebs (id, name, age) <span class="tk">VALUES</span> (<span class="tn">3</span>, <span class="ts">&#x27;Jeremy Lin&#x27;</span>, <span class="tn">27</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> celebs (id, name, age) <span class="tk">VALUES</span> (<span class="tn">4</span>, <span class="ts">&#x27;Taylor Swift&#x27;</span>, <span class="tn">27</span>);
+
+<span class="tc">-- 3</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> celebs;
+
+<span class="tc">-- 4</span>
+<span class="tk">ALTER</span> <span class="tk">TABLE</span> celebs
+<span class="tk">ADD</span> <span class="tk">COLUMN</span> twitter_handle <span class="tk">TEXT</span>;
+
+<span class="tc">-- 5</span>
+<span class="tk">UPDATE</span> celebs
+<span class="tk">SET</span> twitter_handle = <span class="ts">&#x27;@taylorswift13&#x27;</span>
+<span class="tk">WHERE</span> id = <span class="tn">4</span>;
+
+<span class="tc">-- 6</span>
+<span class="tk">DELETE</span> <span class="tk">FROM</span> celebs
+<span class="tk">WHERE</span> twitter_handle <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tc">-- 7</span>
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> awards (
+   id <span class="tk">INTEGER</span> <span class="tk">PRIMARY</span> <span class="tk">KEY</span>,
+   recipient <span class="tk">TEXT</span> <span class="tk">NOT</span> <span class="tk">NULL</span>,
+   award_name <span class="tk">TEXT</span> <span class="tk">DEFAULT</span> <span class="ts">&#x27;Grammy&#x27;</span>
+);</code></pre></div>
+<h2 id="a-2-project-2">A.2 Project 2</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 1</span>
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> friends (
+   id <span class="tk">INTEGER</span>,
+   name <span class="tk">TEXT</span>,
+   birthday <span class="tk">DATE</span>
+);
+
+<span class="tc">-- 2</span>
+<span class="tk">INSERT</span> <span class="tk">INTO</span> friends (id, name, birthday)
+<span class="tk">VALUES</span> (<span class="tn">1</span>, <span class="ts">&#x27;Ororo Munroe&#x27;</span>, <span class="ts">&#x27;1940-05-30&#x27;</span>);
+
+<span class="tc">-- 3 (use your own friends&#x27; data)</span>
+<span class="tk">INSERT</span> <span class="tk">INTO</span> friends (id, name, birthday)
+<span class="tk">VALUES</span> (<span class="tn">2</span>, <span class="ts">&#x27;Alex Martin&#x27;</span>, <span class="ts">&#x27;1999-03-14&#x27;</span>),
+       (<span class="tn">3</span>, <span class="ts">&#x27;Sam Lee&#x27;</span>, <span class="ts">&#x27;2000-11-02&#x27;</span>);
+
+<span class="tc">-- 4</span>
+<span class="tk">UPDATE</span> friends
+<span class="tk">SET</span> name = <span class="ts">&#x27;Storm&#x27;</span>
+<span class="tk">WHERE</span> id = <span class="tn">1</span>;
+
+<span class="tc">-- 5</span>
+<span class="tk">ALTER</span> <span class="tk">TABLE</span> friends
+<span class="tk">ADD</span> <span class="tk">COLUMN</span> email <span class="tk">TEXT</span>;
+
+<span class="tc">-- 6</span>
+<span class="tk">UPDATE</span> friends <span class="tk">SET</span> email = <span class="ts">&#x27;storm@eursc.eu&#x27;</span>   <span class="tk">WHERE</span> id = <span class="tn">1</span>;
+<span class="tk">UPDATE</span> friends <span class="tk">SET</span> email = <span class="ts">&#x27;alex@example.com&#x27;</span> <span class="tk">WHERE</span> id = <span class="tn">2</span>;
+<span class="tk">UPDATE</span> friends <span class="tk">SET</span> email = <span class="ts">&#x27;sam@example.com&#x27;</span>  <span class="tk">WHERE</span> id = <span class="tn">3</span>;
+
+<span class="tc">-- 7</span>
+<span class="tk">DELETE</span> <span class="tk">FROM</span> friends
+<span class="tk">WHERE</span> id = <span class="tn">1</span>;
+
+<span class="tc">-- 8</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> friends;</code></pre></div>
+<h2 id="a-3-project-3">A.3 Project 3</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 1</span>
+<span class="tk">SELECT</span> <span class="tk">DISTINCT</span> year <span class="tk">FROM</span> movie;
+
+<span class="tc">-- 2</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> movie <span class="tk">WHERE</span> year &gt; <span class="tn">2014</span>;
+
+<span class="tc">-- 3</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> movie <span class="tk">WHERE</span> name <span class="tk">LIKE</span> <span class="ts">&#x27;The %&#x27;</span>;
+
+<span class="tc">-- 4</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> movie <span class="tk">WHERE</span> imdb_rating <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tc">-- 5</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> movie <span class="tk">WHERE</span> year <span class="tk">BETWEEN</span> <span class="tn">1970</span> <span class="tk">AND</span> <span class="tn">1979</span>;
+
+<span class="tc">-- 6</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> movie
+<span class="tk">WHERE</span> year &lt; <span class="tn">1985</span> <span class="tk">AND</span> genre = <span class="ts">&#x27;horror&#x27;</span>;
+
+<span class="tc">-- 7</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> movie
+<span class="tk">WHERE</span> genre = <span class="ts">&#x27;romance&#x27;</span> <span class="tk">OR</span> genre = <span class="ts">&#x27;comedy&#x27;</span>;
+
+<span class="tc">-- 8</span>
+<span class="tk">SELECT</span> name, year, imdb_rating
+<span class="tk">FROM</span> movie
+<span class="tk">ORDER</span> <span class="tk">BY</span> imdb_rating <span class="tk">DESC</span>;
+
+<span class="tc">-- 9</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> movie
+<span class="tk">ORDER</span> <span class="tk">BY</span> imdb_rating <span class="tk">DESC</span>
+<span class="tk">LIMIT</span> <span class="tn">3</span>;
+
+<span class="tc">-- 10</span>
+<span class="tk">SELECT</span> name,
+<span class="tk">CASE</span>
+  <span class="tk">WHEN</span> genre = <span class="ts">&#x27;romance&#x27;</span> <span class="tk">THEN</span> <span class="ts">&#x27;Chill&#x27;</span>
+  <span class="tk">WHEN</span> genre = <span class="ts">&#x27;comedy&#x27;</span>  <span class="tk">THEN</span> <span class="ts">&#x27;Chill&#x27;</span>
+  <span class="tk">ELSE</span> <span class="ts">&#x27;Intense&#x27;</span>
+<span class="tk">END</span> <span class="tk">AS</span> <span class="ts">&#x27;Mood&#x27;</span>
+<span class="tk">FROM</span> movie;</code></pre></div>
+<h2 id="a-4-project-4">A.4 Project 4</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 1</span>
+<span class="tk">SELECT</span> <span class="tk">DISTINCT</span> neighborhood <span class="tk">FROM</span> nomnom;
+
+<span class="tc">-- 2</span>
+<span class="tk">SELECT</span> <span class="tk">DISTINCT</span> cuisine <span class="tk">FROM</span> nomnom;
+
+<span class="tc">-- 3</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom <span class="tk">WHERE</span> cuisine = <span class="ts">&#x27;Chinese&#x27;</span>;
+
+<span class="tc">-- 4</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom <span class="tk">WHERE</span> review &gt;= <span class="tn">4</span>;
+
+<span class="tc">-- 5</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom
+<span class="tk">WHERE</span> cuisine = <span class="ts">&#x27;Italian&#x27;</span> <span class="tk">AND</span> price = <span class="ts">&#x27;$$$&#x27;</span>;
+
+<span class="tc">-- 6</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom <span class="tk">WHERE</span> name <span class="tk">LIKE</span> <span class="ts">&#x27;%meatball%&#x27;</span>;
+
+<span class="tc">-- 7</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom
+<span class="tk">WHERE</span> neighborhood = <span class="ts">&#x27;Midtown&#x27;</span>
+   <span class="tk">OR</span> neighborhood = <span class="ts">&#x27;Downtown&#x27;</span>
+   <span class="tk">OR</span> neighborhood = <span class="ts">&#x27;Chinatown&#x27;</span>;
+
+<span class="tc">-- 8</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom <span class="tk">WHERE</span> health <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tc">-- 9</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> nomnom
+<span class="tk">ORDER</span> <span class="tk">BY</span> review <span class="tk">DESC</span>
+<span class="tk">LIMIT</span> <span class="tn">10</span>;
+
+<span class="tc">-- 10</span>
+<span class="tk">SELECT</span> name,
+<span class="tk">CASE</span>
+  <span class="tk">WHEN</span> review &gt; <span class="tn">4.5</span> <span class="tk">THEN</span> <span class="ts">&#x27;Extraordinary&#x27;</span>
+  <span class="tk">WHEN</span> review &gt; <span class="tn">4</span>   <span class="tk">THEN</span> <span class="ts">&#x27;Excellent&#x27;</span>
+  <span class="tk">WHEN</span> review &gt; <span class="tn">3</span>   <span class="tk">THEN</span> <span class="ts">&#x27;Good&#x27;</span>
+  <span class="tk">WHEN</span> review &gt; <span class="tn">2</span>   <span class="tk">THEN</span> <span class="ts">&#x27;Fair&#x27;</span>
+  <span class="tk">ELSE</span> <span class="ts">&#x27;Poor&#x27;</span>
+<span class="tk">END</span> <span class="tk">AS</span> <span class="ts">&#x27;Rating&#x27;</span>
+<span class="tk">FROM</span> nomnom;</code></pre></div>
+<h2 id="a-5-aggregate-functions-exercises-1-3">A.5 Aggregate functions: Exercises 1–3</h2>
+<div class="codeblock"><pre><code><span class="tc">-- Exercise 1: one row per price with the number of apps at that price</span>
+<span class="tk">SELECT</span> price, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> fake_apps
+<span class="tk">GROUP</span> <span class="tk">BY</span> price;
+
+<span class="tc">-- ...only apps downloaded more than 20,000 times</span>
+<span class="tk">SELECT</span> price, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> fake_apps
+<span class="tk">WHERE</span> downloads &gt; <span class="tn">20000</span>
+<span class="tk">GROUP</span> <span class="tk">BY</span> price;
+
+<span class="tc">-- ...total downloads per category</span>
+<span class="tk">SELECT</span> category, <span class="tk">SUM</span>(downloads)
+<span class="tk">FROM</span> fake_apps
+<span class="tk">GROUP</span> <span class="tk">BY</span> category;
+
+<span class="tc">-- Exercise 2</span>
+<span class="tk">SELECT</span> category,
+   price,
+   <span class="tk">AVG</span>(downloads)
+<span class="tk">FROM</span> fake_apps
+<span class="tk">GROUP</span> <span class="tk">BY</span> <span class="tn">1</span>, <span class="tn">2</span>;
+
+<span class="tc">-- Exercise 3</span>
+<span class="tk">SELECT</span> price,
+   <span class="tk">ROUND</span>(<span class="tk">AVG</span>(downloads)),
+   <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> fake_apps
+<span class="tk">GROUP</span> <span class="tk">BY</span> price
+<span class="tk">HAVING</span> <span class="tk">COUNT</span>(*) &gt; <span class="tn">10</span>;</code></pre></div>
+<h2 id="a-6-project-5">A.6 Project 5</h2>
+<div class="callout note"><strong>Note: </strong>The exercise text calls the table <code>startups</code>, but the table in the database file is named <code>startup</code>.</div>
+<div class="codeblock"><pre><code><span class="tc">-- Warm-up</span>
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*) <span class="tk">FROM</span> startup;
+<span class="tk">SELECT</span> <span class="tk">SUM</span>(valuation) <span class="tk">FROM</span> startup;
+<span class="tk">SELECT</span> <span class="tk">MAX</span>(raised) <span class="tk">FROM</span> startup;
+<span class="tk">SELECT</span> <span class="tk">MAX</span>(raised) <span class="tk">FROM</span> startup <span class="tk">WHERE</span> stage = <span class="ts">&#x27;Seed&#x27;</span>;
+<span class="tk">SELECT</span> <span class="tk">MIN</span>(founded) <span class="tk">FROM</span> startup;
+
+<span class="tc">-- Valuations among sectors</span>
+<span class="tk">SELECT</span> <span class="tk">AVG</span>(valuation) <span class="tk">FROM</span> startup;
+
+<span class="tk">SELECT</span> category, <span class="tk">AVG</span>(valuation)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> category;
+
+<span class="tk">SELECT</span> category, <span class="tk">ROUND</span>(<span class="tk">AVG</span>(valuation), <span class="tn">2</span>)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> category;
+
+<span class="tk">SELECT</span> category, <span class="tk">ROUND</span>(<span class="tk">AVG</span>(valuation), <span class="tn">2</span>)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> category
+<span class="tk">ORDER</span> <span class="tk">BY</span> <span class="tn">2</span> <span class="tk">DESC</span>;
+
+<span class="tc">-- Most competitive markets</span>
+<span class="tk">SELECT</span> category, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> category;
+
+<span class="tk">SELECT</span> category, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> category
+<span class="tk">HAVING</span> <span class="tk">COUNT</span>(*) &gt; <span class="tn">3</span>;
+
+<span class="tc">-- Size by location</span>
+<span class="tk">SELECT</span> location, <span class="tk">AVG</span>(employees)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> location;
+
+<span class="tk">SELECT</span> location, <span class="tk">AVG</span>(employees)
+<span class="tk">FROM</span> startup
+<span class="tk">GROUP</span> <span class="tk">BY</span> location
+<span class="tk">HAVING</span> <span class="tk">AVG</span>(employees) &gt; <span class="tn">500</span>;</code></pre></div>
+<h2 id="a-7-project-6">A.7 Project 6</h2>
+<div class="codeblock"><pre><code><span class="tc">-- Top five stories</span>
+<span class="tk">SELECT</span> title, score
+<span class="tk">FROM</span> hacker_news
+<span class="tk">ORDER</span> <span class="tk">BY</span> score <span class="tk">DESC</span>
+<span class="tk">LIMIT</span> <span class="tn">5</span>;
+
+<span class="tc">-- Total score of all stories</span>
+<span class="tk">SELECT</span> <span class="tk">SUM</span>(score) <span class="tk">FROM</span> hacker_news;
+
+<span class="tc">-- Users with a combined score above 200</span>
+<span class="tk">SELECT</span> user, <span class="tk">SUM</span>(score)
+<span class="tk">FROM</span> hacker_news
+<span class="tk">GROUP</span> <span class="tk">BY</span> user
+<span class="tk">HAVING</span> <span class="tk">SUM</span>(score) &gt; <span class="tn">200</span>
+<span class="tk">ORDER</span> <span class="tk">BY</span> <span class="tn">2</span> <span class="tk">DESC</span>;
+
+<span class="tc">-- Rickroll offenders</span>
+<span class="tk">SELECT</span> user, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> hacker_news
+<span class="tk">WHERE</span> url <span class="tk">LIKE</span> <span class="ts">&#x27;%watch?v=dQw4w9WgXcQ%&#x27;</span>
+<span class="tk">GROUP</span> <span class="tk">BY</span> user
+<span class="tk">ORDER</span> <span class="tk">BY</span> <span class="tn">2</span> <span class="tk">DESC</span>;
+
+<span class="tc">-- Which sites feed Hacker News?</span>
+<span class="tk">SELECT</span> <span class="tk">CASE</span>
+   <span class="tk">WHEN</span> url <span class="tk">LIKE</span> <span class="ts">&#x27;%github.com%&#x27;</span>  <span class="tk">THEN</span> <span class="ts">&#x27;GitHub&#x27;</span>
+   <span class="tk">WHEN</span> url <span class="tk">LIKE</span> <span class="ts">&#x27;%medium.com%&#x27;</span>  <span class="tk">THEN</span> <span class="ts">&#x27;Medium&#x27;</span>
+   <span class="tk">WHEN</span> url <span class="tk">LIKE</span> <span class="ts">&#x27;%nytimes.com%&#x27;</span> <span class="tk">THEN</span> <span class="ts">&#x27;New York Times&#x27;</span>
+   <span class="tk">ELSE</span> <span class="ts">&#x27;Other&#x27;</span>
+  <span class="tk">END</span> <span class="tk">AS</span> <span class="ts">&#x27;Source&#x27;</span>,
+  <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> hacker_news
+<span class="tk">GROUP</span> <span class="tk">BY</span> <span class="tn">1</span>;
+
+<span class="tc">-- Hour of the day, average score, number of stories</span>
+<span class="tk">SELECT</span> strftime(<span class="ts">&#x27;%H&#x27;</span>, timestamp),
+   <span class="tk">AVG</span>(score),
+   <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> hacker_news
+<span class="tk">GROUP</span> <span class="tk">BY</span> <span class="tn">1</span>;
+
+<span class="tc">-- Cleaner version</span>
+<span class="tk">SELECT</span> strftime(<span class="ts">&#x27;%H&#x27;</span>, timestamp) <span class="tk">AS</span> <span class="ts">&#x27;Hour&#x27;</span>,
+   <span class="tk">ROUND</span>(<span class="tk">AVG</span>(score), <span class="tn">1</span>) <span class="tk">AS</span> <span class="ts">&#x27;Average Score&#x27;</span>,
+   <span class="tk">COUNT</span>(*) <span class="tk">AS</span> <span class="ts">&#x27;Number of Stories&#x27;</span>
+<span class="tk">FROM</span> hacker_news
+<span class="tk">WHERE</span> timestamp <span class="tk">IS</span> <span class="tk">NOT</span> <span class="tk">NULL</span>
+<span class="tk">GROUP</span> <span class="tk">BY</span> <span class="tn">1</span>
+<span class="tk">ORDER</span> <span class="tk">BY</span> <span class="tn">2</span> <span class="tk">DESC</span>;</code></pre></div>
+<h2 id="a-8-multiple-tables-exercises-1-8">A.8 Multiple tables: Exercises 1–8</h2>
+<div class="codeblock"><pre><code><span class="tc">-- Exercise 1: look at the tables, then find the answers by reading them</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> orders <span class="tk">LIMIT</span> <span class="tn">5</span>;
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> subscriptions <span class="tk">LIMIT</span> <span class="tn">5</span>;
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> customers <span class="tk">LIMIT</span> <span class="tn">5</span>;
+
+<span class="tc">-- Exercise 2</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> orders
+<span class="tk">JOIN</span> subscriptions
+  <span class="tk">ON</span> orders.subscription_id = subscriptions.subscription_id;
+
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> orders
+<span class="tk">JOIN</span> subscriptions
+  <span class="tk">ON</span> orders.subscription_id = subscriptions.subscription_id
+<span class="tk">WHERE</span> subscriptions.description = <span class="ts">&#x27;Fashion Magazine&#x27;</span>;
+
+<span class="tc">-- Exercise 3</span>
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*) <span class="tk">FROM</span> online;
+
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> newspaper
+<span class="tk">JOIN</span> online
+  <span class="tk">ON</span> newspaper.id = online.id;
+
+<span class="tc">-- Exercise 4</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> newspaper
+<span class="tk">LEFT</span> <span class="tk">JOIN</span> online
+  <span class="tk">ON</span> newspaper.id = online.id;
+
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> newspaper
+<span class="tk">LEFT</span> <span class="tk">JOIN</span> online
+  <span class="tk">ON</span> newspaper.id = online.id
+<span class="tk">WHERE</span> online.id <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tc">-- Exercise 5</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> classes
+<span class="tk">JOIN</span> students
+  <span class="tk">ON</span> classes.id = students.class_id;
+
+<span class="tc">-- Exercise 6</span>
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> newspaper
+<span class="tk">WHERE</span> start_month &lt;= <span class="tn">3</span>
+  <span class="tk">AND</span> end_month &gt;= <span class="tn">3</span>;
+
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> newspaper
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> months;
+
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> newspaper
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> months
+<span class="tk">WHERE</span> start_month &lt;= month
+  <span class="tk">AND</span> end_month &gt;= month;
+
+<span class="tk">SELECT</span> month,
+  <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> newspaper
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> months
+<span class="tk">WHERE</span> start_month &lt;= month <span class="tk">AND</span> end_month &gt;= month
+<span class="tk">GROUP</span> <span class="tk">BY</span> month;
+
+<span class="tc">-- Exercise 7</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> newspaper
+<span class="tk">UNION</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> online;
+
+<span class="tc">-- Exercise 8</span>
+<span class="tk">WITH</span> previous_query <span class="tk">AS</span> (
+   <span class="tk">SELECT</span> customer_id,
+      <span class="tk">COUNT</span>(subscription_id) <span class="tk">AS</span> <span class="ts">&#x27;subscriptions&#x27;</span>
+   <span class="tk">FROM</span> orders
+   <span class="tk">GROUP</span> <span class="tk">BY</span> customer_id
+)
+<span class="tk">SELECT</span> customers.customer_name,
+   previous_query.subscriptions
+<span class="tk">FROM</span> previous_query
+<span class="tk">JOIN</span> customers
+  <span class="tk">ON</span> previous_query.customer_id = customers.customer_id;</code></pre></div>
+<h2 id="a-9-project-7">A.9 Project 7</h2>
+<div class="callout note"><strong>Note: </strong>Assumption: the foreign keys are named <code>rider_id</code> and <code>car_id</code> in <code>trips</code>, and the other columns are named <code>cost</code>, <code>total_trips</code>, <code>status</code> and <code>trips_completed</code>. Verify the real names with <code>SELECT * FROM table_name;</code> and adapt the queries if needed.</div>
+<div class="codeblock"><pre><code><span class="tc">-- 1 and 2: look at the tables (primary key is id in all three)</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> trips;
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> riders;
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> cars;
+
+<span class="tc">-- 3: every rider paired with every car (not useful: no real relationship)</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> riders
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> cars;
+
+<span class="tc">-- 4: trip log (trips is the left table)</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> trips
+<span class="tk">LEFT</span> <span class="tk">JOIN</span> riders
+  <span class="tk">ON</span> trips.rider_id = riders.id;
+
+<span class="tc">-- 5: trips linked to the cars used</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> trips
+<span class="tk">JOIN</span> cars
+  <span class="tk">ON</span> trips.car_id = cars.id;
+
+<span class="tc">-- 6: stack riders on top of riders2</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> riders
+<span class="tk">UNION</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> riders2;
+
+<span class="tc">-- 7: average cost of a trip</span>
+<span class="tk">SELECT</span> <span class="tk">ROUND</span>(<span class="tk">AVG</span>(cost), <span class="tn">2</span>) <span class="tk">FROM</span> trips;
+
+<span class="tc">-- 8: irregular users</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> riders
+<span class="tk">WHERE</span> total_trips &lt; <span class="tn">500</span>;
+
+<span class="tc">-- 9: number of active cars</span>
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*) <span class="tk">FROM</span> cars
+<span class="tk">WHERE</span> status = <span class="ts">&#x27;active&#x27;</span>;
+
+<span class="tc">-- 10: the two cars with the most trips completed</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> cars
+<span class="tk">ORDER</span> <span class="tk">BY</span> trips_completed <span class="tk">DESC</span>
+<span class="tk">LIMIT</span> <span class="tn">2</span>;</code></pre></div><div class="pager"><a class="prev" href="19-6-summary.html" rel="prev"><small>← Previous</small>6. Summary</a><a class="next" href="21-appendix-b-solutions-to-the-warm-up-practice.html" rel="next"><small>Next →</small>Appendix B: Solutions to the Warm-up Practice</a></div></article></main></div><script src="../assets/app.js"></script></body></html>

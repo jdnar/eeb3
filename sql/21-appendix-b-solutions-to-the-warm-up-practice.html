@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Appendix B: Solutions to the Warm-up Practice — SQL</title><meta name="description" content="SQL — From Zero to Multi-Table Queries — Appendix B: Solutions to the Warm-up Practice"><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button><a class="brand" href="../index.html">EEB3 ICT</a><span class="spacer"></span><button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button></header>
+<div class="layout"><aside class="sidebar" aria-label="Course navigation"><a class="back" href="../index.html">← All courses</a><p class="course-name">SQL — From Zero to Multi-Table Queries</p><ol><li class="k-theory"><a href="index.html"><span>Start here</span></a></li><li class="k-theory"><a href="01-1-introduction-to-sql.html"><span>1. Introduction to SQL</span></a></li><li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li><li class="k-theory"><a href="03-2-manipulation.html"><span>2. Manipulation</span></a></li><li class="k-warmup"><a href="04-warm-up-2-manipulation.html"><span>Warm-up 2: Manipulation</span></a></li><li class="k-project"><a href="05-project-1-celebrities.html"><span class="badge">Project</span><span>Project 1: Celebrities</span></a></li><li class="k-project"><a href="06-project-2-friends.html"><span class="badge">Project</span><span>Project 2: Friends</span></a></li><li class="k-theory"><a href="07-3-queries.html"><span>3. Queries</span></a></li><li class="k-warmup"><a href="08-warm-up-3-queries.html"><span>Warm-up 3: Queries</span></a></li><li class="k-project"><a href="09-project-3-movies.html"><span class="badge">Project</span><span>Project 3: Movies</span></a></li><li class="k-project"><a href="10-project-4-restaurants-nomnom.html"><span class="badge">Project</span><span>Project 4: Restaurants (nomnom)</span></a></li><li class="k-theory"><a href="11-4-aggregate-functions.html"><span>4. Aggregate Functions</span></a></li><li class="k-warmup"><a href="12-warm-up-4-aggregate-functions.html"><span>Warm-up 4: Aggregate Functions</span></a></li><li class="k-exercises"><a href="13-exercises-aggregate-functions-1-3.html"><span>Exercises: Aggregate Functions (1–3)</span></a></li><li class="k-project"><a href="14-project-5-startups.html"><span class="badge">Project</span><span>Project 5: Startups</span></a></li><li class="k-project"><a href="15-project-6-hacker-news.html"><span class="badge">Project</span><span>Project 6: Hacker News</span></a></li><li class="k-theory"><a href="16-5-multiple-tables.html"><span>5. Multiple Tables</span></a></li><li class="k-warmup"><a href="17-warm-up-5-multiple-tables.html"><span>Warm-up 5: Multiple Tables</span></a></li><li class="k-project"><a href="18-project-7-lyft.html"><span class="badge">Project</span><span>Project 7: Lyft</span></a></li><li class="k-summary"><a href="19-6-summary.html"><span class="badge">Summary</span><span>6. Summary</span></a></li><li class="k-appendix"><a href="20-appendix-a-solutions-to-the-projects-and-exercises.html"><span class="badge">Solutions</span><span>Appendix A: Solutions to the Projects and Exercises</span></a></li><li class="k-appendix"><a href="21-appendix-b-solutions-to-the-warm-up-practice.html" class="active" aria-current="page"><span class="badge">Solutions</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li></ol></aside><main class="content"><article><h1>Appendix B: Solutions to the Warm-up Practice</h1><nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#b-1-introduction">B.1 Introduction</a></li><li><a href="#b-2-manipulation">B.2 Manipulation</a></li><li><a href="#b-3-queries">B.3 Queries</a></li><li><a href="#b-4-aggregate-functions">B.4 Aggregate Functions</a></li><li><a href="#b-5-multiple-tables">B.5 Multiple Tables</a></li></ul></nav>
+<p>Short model answers to the warm-up steps. Run them and compare with your own queries; there is usually more than one correct way to write a query.</p>
+<h2 id="b-1-introduction">B.1 Introduction</h2>
+<ul><li><strong>1.1</strong> The table has 3 columns (<code>id</code>, <code>name</code>, <code>age</code>) and 2 rows. Suitable types: <code>id</code> INTEGER, <code>name</code> TEXT, <code>age</code> INTEGER.</li><li><strong>1.2</strong> The clause is <code>CREATE TABLE</code>. The table name is <code>cars</code>. The parameter is the list of columns and types in parentheses: <code>(brand TEXT, year INTEGER)</code>. The semicolon marks the end of the statement.</li><li><strong>1.3</strong> Price: <code>REAL</code>. Birthday: <code>DATE</code>. Number of children: <code>INTEGER</code>. City: <code>TEXT</code>.</li></ul>
+<h2 id="b-2-manipulation">B.2 Manipulation</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 2.1</span>
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> books (
+   id <span class="tk">INTEGER</span>,
+   title <span class="tk">TEXT</span>,
+   author <span class="tk">TEXT</span>,
+   year <span class="tk">INTEGER</span>
+);
+
+<span class="tc">-- 2.2</span>
+<span class="tk">INSERT</span> <span class="tk">INTO</span> books (id, title, author, year) <span class="tk">VALUES</span> (<span class="tn">1</span>, <span class="ts">&#x27;Dune&#x27;</span>, <span class="ts">&#x27;Frank Herbert&#x27;</span>, <span class="tn">1965</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> books (id, title, author, year) <span class="tk">VALUES</span> (<span class="tn">2</span>, <span class="ts">&#x27;Emma&#x27;</span>, <span class="ts">&#x27;Jane Austen&#x27;</span>, <span class="tn">1815</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> books (id, title, author, year) <span class="tk">VALUES</span> (<span class="tn">3</span>, <span class="ts">&#x27;Ulysses&#x27;</span>, <span class="ts">&#x27;James Joyce&#x27;</span>, <span class="tn">1922</span>);
+
+<span class="tc">-- 2.3</span>
+<span class="tk">SELECT</span> title <span class="tk">FROM</span> books;
+
+<span class="tc">-- and all the columns:</span>
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> books;
+
+<span class="tc">-- 2.4</span>
+<span class="tk">ALTER</span> <span class="tk">TABLE</span> books
+<span class="tk">ADD</span> <span class="tk">COLUMN</span> rating <span class="tk">REAL</span>;
+
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> books;
+
+<span class="tc">-- 2.5</span>
+<span class="tk">UPDATE</span> books
+<span class="tk">SET</span> rating = <span class="tn">4.5</span>
+<span class="tk">WHERE</span> id = <span class="tn">2</span>;
+
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> books;
+
+<span class="tc">-- 2.6</span>
+<span class="tk">DELETE</span> <span class="tk">FROM</span> books
+<span class="tk">WHERE</span> rating <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> books;
+
+<span class="tc">-- 2.7</span>
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> members (
+   id <span class="tk">INTEGER</span> <span class="tk">PRIMARY</span> <span class="tk">KEY</span>,
+   email <span class="tk">TEXT</span> <span class="tk">UNIQUE</span>,
+   name <span class="tk">TEXT</span> <span class="tk">NOT</span> <span class="tk">NULL</span>,
+   country <span class="tk">TEXT</span> <span class="tk">DEFAULT</span> <span class="ts">&#x27;Belgium&#x27;</span>
+);
+
+<span class="tk">INSERT</span> <span class="tk">INTO</span> members (id, email, name)
+<span class="tk">VALUES</span> (<span class="tn">1</span>, <span class="ts">&#x27;ana@example.com&#x27;</span>, <span class="ts">&#x27;Ana&#x27;</span>);
+
+<span class="tk">SELECT</span> * <span class="tk">FROM</span> members;
+
+<span class="tc">-- These two are rejected by the constraints:</span>
+<span class="tc">-- INSERT INTO members (id, email, name) VALUES (1, &#x27;b@example.com&#x27;, &#x27;Ben&#x27;);   (PRIMARY KEY violated)</span>
+<span class="tc">-- INSERT INTO members (id, email) VALUES (2, &#x27;c@example.com&#x27;);               (NOT NULL violated)</span></code></pre></div>
+<h2 id="b-3-queries">B.3 Queries</h2>
+<div class="callout note"><strong>Note: </strong>Warm-ups 3, 4 and 5 use the practice database created at the start of Warm-up 3.</div>
+<div class="codeblock"><pre><code><span class="tc">-- 3.1</span>
+<span class="tk">SELECT</span> name, species <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 3.2</span>
+<span class="tk">SELECT</span> name <span class="tk">AS</span> <span class="ts">&#x27;Pet name&#x27;</span> <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 3.3</span>
+<span class="tk">SELECT</span> <span class="tk">DISTINCT</span> species <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 3.4</span>
+<span class="tk">SELECT</span> name, age <span class="tk">FROM</span> pets <span class="tk">WHERE</span> age &gt; <span class="tn">5</span>;
+
+<span class="tc">-- 3.5</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> pets <span class="tk">WHERE</span> name <span class="tk">LIKE</span> <span class="ts">&#x27;M%&#x27;</span>;
+
+<span class="tc">-- second part:</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> pets <span class="tk">WHERE</span> name <span class="tk">LIKE</span> <span class="ts">&#x27;R_x&#x27;</span>;
+
+<span class="tc">-- 3.6</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> pets <span class="tk">WHERE</span> owner_id <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tc">-- 3.7</span>
+<span class="tk">SELECT</span> name, age <span class="tk">FROM</span> pets <span class="tk">WHERE</span> age <span class="tk">BETWEEN</span> <span class="tn">2</span> <span class="tk">AND</span> <span class="tn">4</span>;
+
+<span class="tc">-- 3.8</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> pets <span class="tk">WHERE</span> species = <span class="ts">&#x27;dog&#x27;</span> <span class="tk">AND</span> age &lt; <span class="tn">5</span>;
+
+<span class="tc">-- 3.9</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> pets <span class="tk">WHERE</span> species = <span class="ts">&#x27;fish&#x27;</span> <span class="tk">OR</span> species = <span class="ts">&#x27;bird&#x27;</span>;
+
+<span class="tc">-- 3.10</span>
+<span class="tk">SELECT</span> name, weight <span class="tk">FROM</span> pets <span class="tk">ORDER</span> <span class="tk">BY</span> weight <span class="tk">DESC</span>;
+
+<span class="tc">-- 3.11</span>
+<span class="tk">SELECT</span> name, age <span class="tk">FROM</span> pets <span class="tk">ORDER</span> <span class="tk">BY</span> age <span class="tk">DESC</span> <span class="tk">LIMIT</span> <span class="tn">3</span>;
+
+<span class="tc">-- 3.12</span>
+<span class="tk">SELECT</span> name,
+<span class="tk">CASE</span>
+  <span class="tk">WHEN</span> weight &gt; <span class="tn">15</span> <span class="tk">THEN</span> <span class="ts">&#x27;Large&#x27;</span>
+  <span class="tk">WHEN</span> weight &gt; <span class="tn">3</span>  <span class="tk">THEN</span> <span class="ts">&#x27;Medium&#x27;</span>
+  <span class="tk">ELSE</span> <span class="ts">&#x27;Small&#x27;</span>
+<span class="tk">END</span> <span class="tk">AS</span> <span class="ts">&#x27;size&#x27;</span>
+<span class="tk">FROM</span> pets;</code></pre></div>
+<h2 id="b-4-aggregate-functions">B.4 Aggregate Functions</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 4.1</span>
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*) <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 4.2</span>
+<span class="tk">SELECT</span> <span class="tk">SUM</span>(age) <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 4.3</span>
+<span class="tk">SELECT</span> <span class="tk">MAX</span>(age), <span class="tk">MIN</span>(age) <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 4.4</span>
+<span class="tk">SELECT</span> <span class="tk">AVG</span>(age) <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 4.5</span>
+<span class="tk">SELECT</span> <span class="tk">ROUND</span>(<span class="tk">AVG</span>(weight), <span class="tn">1</span>) <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 4.6</span>
+<span class="tk">SELECT</span> species, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> pets
+<span class="tk">GROUP</span> <span class="tk">BY</span> species;
+
+<span class="tc">-- 4.7</span>
+<span class="tk">SELECT</span> species, <span class="tk">ROUND</span>(<span class="tk">AVG</span>(age), <span class="tn">1</span>)
+<span class="tk">FROM</span> pets
+<span class="tk">GROUP</span> <span class="tk">BY</span> <span class="tn">1</span>
+<span class="tk">ORDER</span> <span class="tk">BY</span> <span class="tn">2</span> <span class="tk">DESC</span>;
+
+<span class="tc">-- 4.8</span>
+<span class="tk">SELECT</span> species, <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> pets
+<span class="tk">GROUP</span> <span class="tk">BY</span> species
+<span class="tk">HAVING</span> <span class="tk">COUNT</span>(*) &gt; <span class="tn">1</span>;</code></pre></div>
+<h2 id="b-5-multiple-tables">B.5 Multiple Tables</h2>
+<div class="codeblock"><pre><code><span class="tc">-- 5.1</span>
+<span class="tk">SELECT</span> pets.name <span class="tk">AS</span> pet, owners.name <span class="tk">AS</span> owner
+<span class="tk">FROM</span> pets
+<span class="tk">JOIN</span> owners
+  <span class="tk">ON</span> pets.owner_id = owners.id
+<span class="tk">ORDER</span> <span class="tk">BY</span> pets.id;
+
+<span class="tc">-- 5.2</span>
+<span class="tk">SELECT</span> <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> pets
+<span class="tk">JOIN</span> owners
+  <span class="tk">ON</span> pets.owner_id = owners.id;
+
+<span class="tc">-- 5.3</span>
+<span class="tk">SELECT</span> pets.name <span class="tk">AS</span> pet, owners.name <span class="tk">AS</span> owner
+<span class="tk">FROM</span> pets
+<span class="tk">LEFT</span> <span class="tk">JOIN</span> owners
+  <span class="tk">ON</span> pets.owner_id = owners.id
+<span class="tk">ORDER</span> <span class="tk">BY</span> pets.id;
+
+<span class="tc">-- 5.4</span>
+<span class="tk">SELECT</span> pets.name
+<span class="tk">FROM</span> pets
+<span class="tk">LEFT</span> <span class="tk">JOIN</span> owners
+  <span class="tk">ON</span> pets.owner_id = owners.id
+<span class="tk">WHERE</span> owners.id <span class="tk">IS</span> <span class="tk">NULL</span>;
+
+<span class="tc">-- 5.5</span>
+<span class="tc">-- Primary key of owners: id</span>
+<span class="tc">-- Foreign key in pets: owner_id (it refers to owners.id)</span>
+
+<span class="tc">-- 5.6</span>
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> days (day <span class="tk">TEXT</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> days (day) <span class="tk">VALUES</span> (<span class="ts">&#x27;Mon&#x27;</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> days (day) <span class="tk">VALUES</span> (<span class="ts">&#x27;Tue&#x27;</span>);
+
+<span class="tk">SELECT</span> owners.name, days.day
+<span class="tk">FROM</span> owners
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> days
+<span class="tk">ORDER</span> <span class="tk">BY</span> owners.id, days.day;
+
+<span class="tc">-- 5.7</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> owners
+<span class="tk">UNION</span>
+<span class="tk">SELECT</span> name <span class="tk">FROM</span> pets;
+
+<span class="tc">-- 5.8</span>
+<span class="tk">WITH</span> pet_counts <span class="tk">AS</span> (
+   <span class="tk">SELECT</span> owner_id, <span class="tk">COUNT</span>(*) <span class="tk">AS</span> pets
+   <span class="tk">FROM</span> pets
+   <span class="tk">GROUP</span> <span class="tk">BY</span> owner_id
+)
+<span class="tk">SELECT</span> owners.name, pet_counts.pets
+<span class="tk">FROM</span> pet_counts
+<span class="tk">JOIN</span> owners
+  <span class="tk">ON</span> pet_counts.owner_id = owners.id
+<span class="tk">ORDER</span> <span class="tk">BY</span> owners.name;</code></pre></div>
+<p><em>Congratulations — you have completed the course! Keep practicing with your own data: the best way to learn SQL is to ask your own questions.</em></p><div class="pager"><a class="prev" href="20-appendix-a-solutions-to-the-projects-and-exercises.html" rel="prev"><small>← Previous</small>Appendix A: Solutions to the Projects and Exercises</a><span class="gap"></span></div></article></main></div><script src="../assets/app.js"></script></body></html>

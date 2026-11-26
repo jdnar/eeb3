@@ -1,14 +1,17 @@
-# EEB3 ICT — Python course (S4 + S5)
+# EEB3 ICT — Python and SQL courses
 
-A beginner-friendly Python course in English, as a static website (plain HTML, CSS and a little JavaScript — no build step, no dependencies).
+Beginner-friendly Python and SQL courses in English, as a static website (plain HTML, CSS and a little JavaScript — no build step, no dependencies).
 
 | Section | Folder | Pages |
 |---|---|---|
 | **Python — The Fundamentals** | [`s4/`](s4/index.html) | 27 |
 | **Python — Functions, Strings, Lists, Dictionaries and Files** | [`s5/`](s5/index.html) | 29 |
+| **SQL — From Zero to Multi-Table Queries** | [`sql/`](sql/index.html) | 22 |
 
 - **S4** — variables, input/output, conditionals, loops, random.
 - **S5** — functions, strings, lists, split & join, dictionaries, files, Hangman project. Inside the Functions chapter there is a **Functions Practice** sub-section (46 graded exercises and 5 mini-projects that review S4).
+
+- **SQL** — SQLite, manipulation, queries, aggregate functions, multiple tables, five warm-ups, seven projects and solutions. The `sql/datasets/` folder contains an empty database and the pets/owners practice database from the source document. Other original teacher-provided databases are not included.
 
 Each chapter, warm-up, exercise set and project is its own page, with a sidebar, previous/next buttons, copy buttons on code blocks, and light/dark mode.
 
@@ -16,13 +19,14 @@ Each chapter, warm-up, exercise set and project is its own page, with a sidebar,
 
 ```
 .
-├── index.html            # landing page "EEB3 ICT" (choose S4 or S5)
+├── index.html            # landing page "EEB3 ICT" (choose S4, S5 or SQL)
 ├── .nojekyll             # tells GitHub Pages to serve the files as they are
 ├── assets/
 │   ├── style.css
 │   └── app.js
 ├── s4/                   # index.html = "Start here", then one file per chapter
-└── s5/
+├── s5/
+└── sql/                  # course pages and datasets
 ```
 
 All links are **relative**, so the site works from any folder, from a GitHub Pages project URL, or just by double-clicking `index.html` on your computer.
@@ -30,7 +34,7 @@ All links are **relative**, so the site works from any folder, from a GitHub Pag
 ## Publish on GitHub Pages
 
 1. Create a new repository on GitHub (for example `eeb3-ict`).
-2. Upload the **contents** of this folder (`index.html`, `assets/`, `s4/`, `s5/`, `.nojekyll`, `README.md`) to the root of the repository.
+2. Upload the **contents** of this folder (`index.html`, `assets/`, `s4/`, `s5/`, `sql/`, `.nojekyll`, `README.md`) to the root of the repository.
 3. Go to **Settings → Pages**, choose **Deploy from a branch**, select the `main` branch and the `/ (root)` folder, and save.
 4. After a minute the course is live at `https://<your-username>.github.io/eeb3-ict/`.
 

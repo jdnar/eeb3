@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Warm-up 3: Queries — SQL</title><meta name="description" content="SQL — From Zero to Multi-Table Queries — Warm-up 3: Queries"><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button><a class="brand" href="../index.html">EEB3 ICT</a><span class="spacer"></span><button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button></header>
+<div class="layout"><aside class="sidebar" aria-label="Course navigation"><a class="back" href="../index.html">← All courses</a><p class="course-name">SQL — From Zero to Multi-Table Queries</p><ol><li class="k-theory"><a href="index.html"><span>Start here</span></a></li><li class="k-theory"><a href="01-1-introduction-to-sql.html"><span>1. Introduction to SQL</span></a></li><li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li><li class="k-theory"><a href="03-2-manipulation.html"><span>2. Manipulation</span></a></li><li class="k-warmup"><a href="04-warm-up-2-manipulation.html"><span>Warm-up 2: Manipulation</span></a></li><li class="k-project"><a href="05-project-1-celebrities.html"><span class="badge">Project</span><span>Project 1: Celebrities</span></a></li><li class="k-project"><a href="06-project-2-friends.html"><span class="badge">Project</span><span>Project 2: Friends</span></a></li><li class="k-theory"><a href="07-3-queries.html"><span>3. Queries</span></a></li><li class="k-warmup"><a href="08-warm-up-3-queries.html" class="active" aria-current="page"><span>Warm-up 3: Queries</span></a></li><li class="k-project"><a href="09-project-3-movies.html"><span class="badge">Project</span><span>Project 3: Movies</span></a></li><li class="k-project"><a href="10-project-4-restaurants-nomnom.html"><span class="badge">Project</span><span>Project 4: Restaurants (nomnom)</span></a></li><li class="k-theory"><a href="11-4-aggregate-functions.html"><span>4. Aggregate Functions</span></a></li><li class="k-warmup"><a href="12-warm-up-4-aggregate-functions.html"><span>Warm-up 4: Aggregate Functions</span></a></li><li class="k-exercises"><a href="13-exercises-aggregate-functions-1-3.html"><span>Exercises: Aggregate Functions (1–3)</span></a></li><li class="k-project"><a href="14-project-5-startups.html"><span class="badge">Project</span><span>Project 5: Startups</span></a></li><li class="k-project"><a href="15-project-6-hacker-news.html"><span class="badge">Project</span><span>Project 6: Hacker News</span></a></li><li class="k-theory"><a href="16-5-multiple-tables.html"><span>5. Multiple Tables</span></a></li><li class="k-warmup"><a href="17-warm-up-5-multiple-tables.html"><span>Warm-up 5: Multiple Tables</span></a></li><li class="k-project"><a href="18-project-7-lyft.html"><span class="badge">Project</span><span>Project 7: Lyft</span></a></li><li class="k-summary"><a href="19-6-summary.html"><span class="badge">Summary</span><span>6. Summary</span></a></li><li class="k-appendix"><a href="20-appendix-a-solutions-to-the-projects-and-exercises.html"><span class="badge">Solutions</span><span>Appendix A: Solutions to the Projects and Exercises</span></a></li><li class="k-appendix"><a href="21-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Solutions</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li></ol></aside><main class="content"><article><h1>Warm-up 3: Queries</h1><div class="callout note"><strong>Practice database:</strong> <a href="datasets/pets-owners.db" download>Download pets-owners.db</a> or <a href="datasets/pets-owners.sql" download>the SQL setup script</a>. If you open the prebuilt database, skip the setup script.</div><nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#set-up-your-practice-database">Set up your practice database</a></li><li><a href="#step-3-1-select-columns">Step 3.1 — SELECT columns</a></li><li><a href="#step-3-2-as">Step 3.2 — AS</a></li><li><a href="#step-3-3-distinct">Step 3.3 — DISTINCT</a></li><li><a href="#step-3-4-where">Step 3.4 — WHERE</a></li><li><a href="#step-3-5-like">Step 3.5 — LIKE</a></li><li><a href="#step-3-6-is-null">Step 3.6 — IS NULL</a></li><li><a href="#step-3-7-between">Step 3.7 — BETWEEN</a></li><li><a href="#step-3-8-and">Step 3.8 — AND</a></li><li><a href="#step-3-9-or">Step 3.9 — OR</a></li><li><a href="#step-3-10-order-by">Step 3.10 — ORDER BY</a></li><li><a href="#step-3-11-limit">Step 3.11 — LIMIT</a></li><li><a href="#step-3-12-case">Step 3.12 — CASE</a></li></ul></nav>
+<p>One tiny query for each idea of Chapter 3, on the <code>pets</code> table.</p>
+<div class="callout tip"><strong>Tip: </strong>Type every statement yourself and run it after each step. Solutions: <a href="21-appendix-b-solutions-to-the-warm-up-practice.html#b-3-queries">Appendix B.3</a>.</div>
+<h2 id="set-up-your-practice-database">Set up your practice database</h2>
+<p>The next three warm-ups (Chapters 3, 4 and 5) use two small tables, <code>pets</code> and <code>owners</code>, so you do not need any external file. In a <strong>new empty database</strong>, run this script once:</p>
+<div class="codeblock"><pre><code><span class="tk">CREATE</span> <span class="tk">TABLE</span> pets (id <span class="tk">INTEGER</span> <span class="tk">PRIMARY</span> <span class="tk">KEY</span>, name <span class="tk">TEXT</span>, species <span class="tk">TEXT</span>, age <span class="tk">INTEGER</span>, weight <span class="tk">REAL</span>, owner_id <span class="tk">INTEGER</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">1</span>, <span class="ts">&#x27;Rex&#x27;</span>, <span class="ts">&#x27;dog&#x27;</span>, <span class="tn">4</span>, <span class="tn">18.5</span>, <span class="tn">1</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">2</span>, <span class="ts">&#x27;Mia&#x27;</span>, <span class="ts">&#x27;cat&#x27;</span>, <span class="tn">2</span>, <span class="tn">4.1</span>, <span class="tn">2</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">3</span>, <span class="ts">&#x27;Bubbles&#x27;</span>, <span class="ts">&#x27;fish&#x27;</span>, <span class="tn">1</span>, <span class="tn">0.1</span>, <span class="tk">NULL</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">4</span>, <span class="ts">&#x27;Luna&#x27;</span>, <span class="ts">&#x27;cat&#x27;</span>, <span class="tn">7</span>, <span class="tn">5.0</span>, <span class="tn">1</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">5</span>, <span class="ts">&#x27;Max&#x27;</span>, <span class="ts">&#x27;dog&#x27;</span>, <span class="tn">9</span>, <span class="tn">25.2</span>, <span class="tn">3</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">6</span>, <span class="ts">&#x27;Coco&#x27;</span>, <span class="ts">&#x27;bird&#x27;</span>, <span class="tn">3</span>, <span class="tn">0.4</span>, <span class="tn">2</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">7</span>, <span class="ts">&#x27;Rocky&#x27;</span>, <span class="ts">&#x27;dog&#x27;</span>, <span class="tn">2</span>, <span class="tn">12.0</span>, <span class="tk">NULL</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> pets <span class="tk">VALUES</span> (<span class="tn">8</span>, <span class="ts">&#x27;Tom&#x27;</span>, <span class="ts">&#x27;cat&#x27;</span>, <span class="tn">5</span>, <span class="tn">4.8</span>, <span class="tn">3</span>);
+
+<span class="tk">CREATE</span> <span class="tk">TABLE</span> owners (id <span class="tk">INTEGER</span> <span class="tk">PRIMARY</span> <span class="tk">KEY</span>, name <span class="tk">TEXT</span>, city <span class="tk">TEXT</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> owners <span class="tk">VALUES</span> (<span class="tn">1</span>, <span class="ts">&#x27;Ana&#x27;</span>, <span class="ts">&#x27;Brussels&#x27;</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> owners <span class="tk">VALUES</span> (<span class="tn">2</span>, <span class="ts">&#x27;Luis&#x27;</span>, <span class="ts">&#x27;Madrid&#x27;</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> owners <span class="tk">VALUES</span> (<span class="tn">3</span>, <span class="ts">&#x27;Sofia&#x27;</span>, <span class="ts">&#x27;Brussels&#x27;</span>);
+<span class="tk">INSERT</span> <span class="tk">INTO</span> owners <span class="tk">VALUES</span> (<span class="tn">4</span>, <span class="ts">&#x27;Omar&#x27;</span>, <span class="ts">&#x27;Paris&#x27;</span>);</code></pre></div>
+<div class="callout note"><strong>Note: </strong><code>pets.owner_id</code> points to <code>owners.id</code>. Two pets (Bubbles and Rocky) have no owner, and one owner (Omar) has no pet — this will be useful in Chapter 5.</div>
+<p>Run <code>SELECT * FROM pets;</code> to see the 8 pets and <code>SELECT * FROM owners;</code> to see the 4 owners.</p>
+<h2 id="step-3-1-select-columns">Step 3.1 — SELECT columns</h2>
+<p>Select only the <code>name</code> and <code>species</code> columns of all pets.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name | species
+Rex | dog
+Mia | cat
+Bubbles | fish
+Luna | cat
+Max | dog
+Coco | bird
+Rocky | dog
+Tom | cat</code></pre></div>
+<h2 id="step-3-2-as">Step 3.2 — AS</h2>
+<p>Select the <code>name</code> column but display it with the heading <code>Pet name</code>.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>Pet name
+Rex
+Mia
+Bubbles
+Luna
+Max
+Coco
+Rocky
+Tom</code></pre></div>
+<h2 id="step-3-3-distinct">Step 3.3 — DISTINCT</h2>
+<p>List each species only once.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>species
+dog
+cat
+fish
+bird</code></pre></div>
+<h2 id="step-3-4-where">Step 3.4 — WHERE</h2>
+<p>Show the name and age of the pets older than 5.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name | age
+Luna | 7
+Max | 9</code></pre></div>
+<h2 id="step-3-5-like">Step 3.5 — LIKE</h2>
+<p>Show the pets whose name starts with the letter M. Then try <code>&#x27;R_x&#x27;</code> as a pattern: which pet matches?</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name
+Mia
+Max</code></pre></div>
+<h2 id="step-3-6-is-null">Step 3.6 — IS NULL</h2>
+<p>Show the names of the pets that have no owner.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name
+Bubbles
+Rocky</code></pre></div>
+<h2 id="step-3-7-between">Step 3.7 — BETWEEN</h2>
+<p>Show the name and age of the pets aged between 2 and 4 years (both included).</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name | age
+Rex | 4
+Mia | 2
+Coco | 3
+Rocky | 2</code></pre></div>
+<h2 id="step-3-8-and">Step 3.8 — AND</h2>
+<p>Show the names of the dogs younger than 5.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name
+Rex
+Rocky</code></pre></div>
+<h2 id="step-3-9-or">Step 3.9 — OR</h2>
+<p>Show the names of the pets that are fish or birds.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name
+Bubbles
+Coco</code></pre></div>
+<h2 id="step-3-10-order-by">Step 3.10 — ORDER BY</h2>
+<p>Show the name and weight of all pets, from the heaviest to the lightest.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name | weight
+Max | 25.2
+Rex | 18.5
+Rocky | 12.0
+Luna | 5.0
+Tom | 4.8
+Mia | 4.1
+Coco | 0.4
+Bubbles | 0.1</code></pre></div>
+<h2 id="step-3-11-limit">Step 3.11 — LIMIT</h2>
+<p>Show the three oldest pets (name and age).</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name | age
+Max | 9
+Luna | 7
+Tom | 5</code></pre></div>
+<h2 id="step-3-12-case">Step 3.12 — CASE</h2>
+<p>Show each pet&#x27;s name and a column <code>size</code>: &#x27;Large&#x27; if the weight is above 15, &#x27;Medium&#x27; if it is above 3, and &#x27;Small&#x27; in all other cases.</p>
+<p>Expected result:</p>
+<div class="codeblock output"><pre><code>name | size
+Rex | Large
+Mia | Medium
+Bubbles | Small
+Luna | Medium
+Max | Large
+Coco | Small
+Rocky | Medium
+Tom | Medium</code></pre></div><div class="pager"><a class="prev" href="07-3-queries.html" rel="prev"><small>← Previous</small>3. Queries</a><a class="next" href="09-project-3-movies.html" rel="next"><small>Next →</small>Project 3: Movies</a></div></article></main></div><script src="../assets/app.js"></script></body></html>

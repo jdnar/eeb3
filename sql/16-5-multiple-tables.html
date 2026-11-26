@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>5. Multiple Tables — SQL</title><meta name="description" content="SQL — From Zero to Multi-Table Queries — 5. Multiple Tables"><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><button id="menubtn" class="iconbtn" type="button" aria-label="Open menu">☰ Menu</button><a class="brand" href="../index.html">EEB3 ICT</a><span class="spacer"></span><button id="themebtn" class="iconbtn" type="button" aria-label="Toggle dark mode">☾ Dark</button></header>
+<div class="layout"><aside class="sidebar" aria-label="Course navigation"><a class="back" href="../index.html">← All courses</a><p class="course-name">SQL — From Zero to Multi-Table Queries</p><ol><li class="k-theory"><a href="index.html"><span>Start here</span></a></li><li class="k-theory"><a href="01-1-introduction-to-sql.html"><span>1. Introduction to SQL</span></a></li><li class="k-warmup"><a href="02-warm-up-1-introduction.html"><span>Warm-up 1: Introduction</span></a></li><li class="k-theory"><a href="03-2-manipulation.html"><span>2. Manipulation</span></a></li><li class="k-warmup"><a href="04-warm-up-2-manipulation.html"><span>Warm-up 2: Manipulation</span></a></li><li class="k-project"><a href="05-project-1-celebrities.html"><span class="badge">Project</span><span>Project 1: Celebrities</span></a></li><li class="k-project"><a href="06-project-2-friends.html"><span class="badge">Project</span><span>Project 2: Friends</span></a></li><li class="k-theory"><a href="07-3-queries.html"><span>3. Queries</span></a></li><li class="k-warmup"><a href="08-warm-up-3-queries.html"><span>Warm-up 3: Queries</span></a></li><li class="k-project"><a href="09-project-3-movies.html"><span class="badge">Project</span><span>Project 3: Movies</span></a></li><li class="k-project"><a href="10-project-4-restaurants-nomnom.html"><span class="badge">Project</span><span>Project 4: Restaurants (nomnom)</span></a></li><li class="k-theory"><a href="11-4-aggregate-functions.html"><span>4. Aggregate Functions</span></a></li><li class="k-warmup"><a href="12-warm-up-4-aggregate-functions.html"><span>Warm-up 4: Aggregate Functions</span></a></li><li class="k-exercises"><a href="13-exercises-aggregate-functions-1-3.html"><span>Exercises: Aggregate Functions (1–3)</span></a></li><li class="k-project"><a href="14-project-5-startups.html"><span class="badge">Project</span><span>Project 5: Startups</span></a></li><li class="k-project"><a href="15-project-6-hacker-news.html"><span class="badge">Project</span><span>Project 6: Hacker News</span></a></li><li class="k-theory"><a href="16-5-multiple-tables.html" class="active" aria-current="page"><span>5. Multiple Tables</span></a></li><li class="k-warmup"><a href="17-warm-up-5-multiple-tables.html"><span>Warm-up 5: Multiple Tables</span></a></li><li class="k-project"><a href="18-project-7-lyft.html"><span class="badge">Project</span><span>Project 7: Lyft</span></a></li><li class="k-summary"><a href="19-6-summary.html"><span class="badge">Summary</span><span>6. Summary</span></a></li><li class="k-appendix"><a href="20-appendix-a-solutions-to-the-projects-and-exercises.html"><span class="badge">Solutions</span><span>Appendix A: Solutions to the Projects and Exercises</span></a></li><li class="k-appendix"><a href="21-appendix-b-solutions-to-the-warm-up-practice.html"><span class="badge">Solutions</span><span>Appendix B: Solutions to the Warm-up Practice</span></a></li></ol></aside><main class="content"><article><h1>5. Multiple Tables</h1><nav class="onpage" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#5-1-why-several-tables">5.1 Why several tables?</a></li><li><a href="#5-2-combining-tables-manually">5.2 Combining tables manually</a></li><li><a href="#exercise-1">Exercise 1</a></li><li><a href="#5-3-combining-tables-with-sql-join">5.3 Combining tables with SQL: JOIN</a></li><li><a href="#exercise-2">Exercise 2</a></li><li><a href="#5-4-inner-joins">5.4 Inner joins</a></li><li><a href="#exercise-3">Exercise 3</a></li><li><a href="#5-5-left-joins">5.5 Left joins</a></li><li><a href="#exercise-4">Exercise 4</a></li><li><a href="#5-6-primary-key-vs-foreign-key">5.6 Primary key vs foreign key</a></li><li><a href="#exercise-5">Exercise 5</a></li><li><a href="#5-7-cross-join">5.7 CROSS JOIN</a></li><li><a href="#exercise-6">Exercise 6</a></li><li><a href="#5-8-union">5.8 UNION</a></li><li><a href="#exercise-7">Exercise 7</a></li><li><a href="#5-9-with">5.9 WITH</a></li><li><a href="#exercise-8">Exercise 8</a></li></ul></nav>
+<h2 id="5-1-why-several-tables">5.1 Why several tables?</h2>
+<p>To store data efficiently, related information is often spread across multiple tables. Imagine a magazine company where customers have different subscriptions. One huge table could hold: <code>order_id</code>, <code>customer_id</code>, <code>customer_name</code>, <code>customer_address</code>, <code>subscription_id</code>, <code>subscription_description</code>, <code>subscription_monthly_price</code>, <code>subscription_length</code> and <code>purchase_date</code>.</p>
+<p>But much of that information would be repeated: a customer with several subscriptions would repeat their name and address every time, and a popular subscription would repeat its price and description for every order. The table becomes big and unmanageable. Instead we split the data into three tables:</p>
+<div class="tablewrap"><table><thead><tr><th scope="col"><strong>Table</strong></th><th scope="col"><strong>Columns</strong></th></tr></thead><tbody><tr><td><code>orders</code></td><td><code>order_id</code>, <code>customer_id</code>, <code>subscription_id</code>, <code>purchase_date</code></td></tr><tr><td><code>subscriptions</code></td><td><code>subscription_id</code>, <code>description</code>, <code>price_per_month</code>, <code>subscription_length</code></td></tr><tr><td><code>customers</code></td><td><code>customer_id</code>, <code>customer_name</code>, <code>address</code></td></tr></tbody></table></div>
+<h2 id="5-2-combining-tables-manually">5.2 Combining tables manually</h2>
+<p>Looking only at <code>orders</code>, you cannot tell what happened in each order. Consult the other tables and the picture is complete. Take the order with <code>order_id</code> 2, bought by the customer with <code>customer_id</code> 2: to find the name, look in <code>customers</code> for <code>customer_id</code> 2 — Jane Doe, who lives at 456 Park Ave. This matching process is called <strong>joining two tables</strong>.</p>
+<h3 id="exercise-1">Exercise 1</h3>
+<ol><li>Open <code>multiples.db</code> in the online editor.</li><li>Examine the three tables, for example: <code>SELECT * FROM orders LIMIT 5;</code> (and likewise for <code>subscriptions</code> and <code>customers</code>).</li><li>What is the <code>description</code> of the magazine ordered in <code>order_id</code> 1?</li><li>What is the <code>customer_name</code> of the customer in <code>order_id</code> 3?</li></ol>
+<h2 id="5-3-combining-tables-with-sql-join">5.3 Combining tables with SQL: JOIN</h2>
+<p>Matching by hand is slow. SQL does it with <code>JOIN</code>. To combine <code>orders</code> and <code>customers</code>:</p>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> *
+<span class="tk">FROM</span> orders
+<span class="tk">JOIN</span> customers
+  <span class="tk">ON</span> orders.customer_id = customers.customer_id;</code></pre></div>
+<ol><li>The first line selects all columns of the combined table (you may pick specific ones instead).</li><li>The second line names the first table, <code>orders</code>.</li><li>The third line uses <code>JOIN</code> to say we want to combine <code>orders</code> with <code>customers</code>.</li><li>The fourth line says <strong>how</strong> to combine them: match <code>customer_id</code> in <code>orders</code> with <code>customer_id</code> in <code>customers</code>.</li></ol>
+<div class="callout important"><strong>Important: </strong>Column names are often repeated across tables, so write <code>table_name.column_name</code> to keep requests unambiguous — in <code>ON</code>, in <code>SELECT</code>, and anywhere else you refer to a column.</div>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> orders.order_id,
+   customers.customer_name
+<span class="tk">FROM</span> orders
+<span class="tk">JOIN</span> customers
+  <span class="tk">ON</span> orders.customer_id = customers.customer_id;</code></pre></div>
+<h3 id="exercise-2">Exercise 2</h3>
+<ol><li>Join <code>orders</code> and <code>subscriptions</code> on the <code>subscription_id</code> column and select all columns.</li><li>Add a second query that keeps only the rows of the join where <code>description</code> is equal to <code>&#x27;Fashion Magazine&#x27;</code>.</li></ol>
+<h2 id="5-4-inner-joins">5.4 Inner joins</h2>
+<p>A simple <code>JOIN</code> is often called an <strong>inner join</strong>: the result includes only the rows that match the <code>ON</code> condition. If the <code>customers</code> table were out of date and lacked customer 11, any order from customer 11 would simply disappear from the joined result.</p>
+<p>Picture an inner join of two tables on <code>table1.c2 = table2.c2</code>: the rows with matching <code>c2</code> values appear in the result; the non-matching rows do not.</p>
+<h3 id="exercise-3">Exercise 3</h3>
+<p>You work for a newspaper with two kinds of subscriptions: the print newspaper (<code>newspaper</code> table) and online articles (<code>online</code> table). Some users subscribe to one, some to both.</p>
+<ol><li>Count the number of subscribers who get an online newspaper using <code>COUNT()</code>.</li><li>Join <code>newspaper</code> and <code>online</code> on their <code>id</code> columns (the unique ID of the subscriber). How many rows does the result have?</li></ol>
+<h2 id="5-5-left-joins">5.5 Left joins</h2>
+<p>What if we want to combine two tables and <strong>keep</strong> the rows that have no match? <code>LEFT JOIN</code> keeps every row of the first (left) table, whether or not a matching row exists in the second (right) table. Where there is no match, the columns from the right table are filled with <code>NULL</code>.</p>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> *
+<span class="tk">FROM</span> table1
+<span class="tk">LEFT</span> <span class="tk">JOIN</span> table2
+  <span class="tk">ON</span> table1.c2 = table2.c2;</code></pre></div>
+<ol><li>The first line selects all columns from both tables.</li><li>The second line names table1, the &quot;left&quot; table.</li><li>The third line performs a <code>LEFT JOIN</code> on table2, the &quot;right&quot; table.</li><li>The fourth line says how to match: values in column <code>c2</code>.</li></ol>
+<h3 id="exercise-4">Exercise 4</h3>
+<p>How many users subscribe to the print newspaper but <strong>not</strong> to the online edition?</p>
+<ol><li>Perform a left join of <code>newspaper</code> and <code>online</code> on their <code>id</code> columns, selecting all columns.</li><li>Add a second query with this <code>WHERE</code> clause, which selects rows where there was no corresponding row in <code>online</code>:</li></ol>
+<div class="codeblock output"><pre><code>WHERE online.id IS NULL</code></pre></div>
+<h2 id="5-6-primary-key-vs-foreign-key">5.6 Primary key vs foreign key</h2>
+<p>In the magazine example, each table has a column that uniquely identifies its rows: <code>order_id</code> in <code>orders</code>, <code>subscription_id</code> in <code>subscriptions</code> and <code>customer_id</code> in <code>customers</code>. These are <strong>primary keys</strong>. A primary key has these requirements:</p>
+<ul><li>None of its values can be <code>NULL</code>.</li><li>Each value must be unique (no two customers can share a <code>customer_id</code>).</li><li>A table cannot have more than one primary key column.</li></ul>
+<p>Look again at <code>orders</code>: it contains <code>customer_id</code> (the primary key of <code>customers</code>) and <code>subscription_id</code> (the primary key of <code>subscriptions</code>). When the primary key of one table appears in another table, it is called a <strong>foreign key</strong>. So <code>customer_id</code> is a primary key in <code>customers</code> but a foreign key in <code>orders</code>.</p>
+<p>In practice the primary key is usually just called <code>id</code>, while foreign keys get more descriptive names. The most common kind of join links a foreign key in one table with the primary key of another — for instance joining <code>orders</code> and <code>customers</code> on <code>customer_id</code>.</p>
+<h3 id="exercise-5">Exercise 5</h3>
+<p>A university has two tables. <code>classes</code> has primary key <code>id</code>. <code>students</code> has primary key <code>id</code> and the foreign key <code>class_id</code>, which corresponds to the primary key of <code>classes</code>. Perform an inner join of <code>classes</code> and <code>students</code> using these keys and select all columns.</p>
+<h2 id="5-7-cross-join">5.7 CROSS JOIN</h2>
+<p>So far we matched rows that share information. Sometimes we just want to combine <strong>every</strong> row of one table with <strong>every</strong> row of another — for instance, all possible outfits from a table of shirts and a table of pants:</p>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> shirts.shirt_color,
+   pants.pants_color
+<span class="tk">FROM</span> shirts
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> pants;</code></pre></div>
+<p>Notice that a cross join needs no <code>ON</code> clause: you are not joining on any column. With 3 shirts (white, grey, olive) and 2 pants (light denim, black) you get 3 × 2 = 6 combinations. A more common use is comparing each row of a table to a list of values.</p>
+<h3 id="exercise-6">Exercise 6</h3>
+<p>The <code>newspaper</code> table has two more columns: <code>start_month</code> (first month the customer subscribed to the print newspaper, e.g. 2 for February) and <code>end_month</code> (the last month). How many users were subscribed during each month of the year?</p>
+<ol><li>Start with a simpler problem: count the customers subscribed during March. Use <code>COUNT(*)</code> and a <code>WHERE</code> with two conditions: <code>start_month &lt;= 3</code> and <code>end_month &gt;= 3</code>.</li><li>To check every month, use a cross join. The database has a table <code>months</code> with the numbers 1 to 12. Select all columns from the cross join of <code>newspaper</code> and <code>months</code>.</li><li>Add a <code>WHERE</code> to the cross join with two conditions, <code>start_month &lt;= month</code> and <code>end_month &gt;= month</code>. This selects all months in which a user was subscribed.</li><li>Aggregate over each month to count subscribers. Fill in the blanks:</li></ol>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> month,
+  <span class="tk">COUNT</span>(*)
+<span class="tk">FROM</span> ____
+<span class="tk">CROSS</span> <span class="tk">JOIN</span> ____
+<span class="tk">WHERE</span> ____ <span class="tk">AND</span> ____
+<span class="tk">GROUP</span> <span class="tk">BY</span> ____;</code></pre></div>
+<h2 id="5-8-union">5.8 UNION</h2>
+<p>Sometimes we want to stack one dataset on top of another. <code>UNION</code> does exactly that, provided both tables have the same columns.</p>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> *
+<span class="tk">FROM</span> table1
+<span class="tk">UNION</span>
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> table2;</code></pre></div>
+<div class="callout important"><strong>Important: </strong>SQL has strict rules for appending data: the tables must have the <strong>same number of columns</strong>, and the columns must have the <strong>same data types in the same order</strong> as in the first table.</div>
+<h3 id="exercise-7">Exercise 7</h3>
+<p>Create one big table with both the newspaper and online subscribers: use <code>UNION</code> to stack <code>newspaper</code> on top of <code>online</code>.</p>
+<h2 id="5-9-with">5.9 WITH</h2>
+<p>Often we want to combine two tables when one of them is the result of another calculation. Suppose marketing wants to know how many magazines each customer subscribes to. Easy with <code>orders</code>:</p>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> customer_id,
+   <span class="tk">COUNT</span>(subscription_id) <span class="tk">AS</span> <span class="ts">&#x27;subscriptions&#x27;</span>
+<span class="tk">FROM</span> orders
+<span class="tk">GROUP</span> <span class="tk">BY</span> customer_id;</code></pre></div>
+<p>But a <code>customer_id</code> is not very useful to marketing — they want the <strong>name</strong>. We need to join this result with <code>customers</code>. A <code>WITH</code> clause lets us do that:</p>
+<div class="codeblock"><pre><code><span class="tk">WITH</span> previous_results <span class="tk">AS</span> (
+   <span class="tk">SELECT</span> ...
+   ...
+)
+<span class="tk">SELECT</span> *
+<span class="tk">FROM</span> previous_results
+<span class="tk">JOIN</span> customers
+  <span class="tk">ON</span> _____ = _____;</code></pre></div>
+<ul><li><code>WITH</code> lets us run a separate query first (here, counting each customer&#x27;s subscriptions).</li><li><code>previous_results</code> is the alias used to refer to the columns produced by the query inside the parentheses.</li><li>We can then use that temporary table like any other — for example, joining it with another table.</li></ul>
+<p>In short: you put a whole first query inside parentheses, give it a name, and then use that name as if it were a table in a new query.</p>
+<h3 id="exercise-8">Exercise 8</h3>
+<p>Place the query below inside a <code>WITH</code> statement (in parentheses) named <code>previous_query</code>. Then join the temporary table with <code>customers</code> and select <code>customers.customer_name</code> and <code>previous_query.subscriptions</code>.</p>
+<div class="codeblock"><pre><code><span class="tk">SELECT</span> customer_id,
+   <span class="tk">COUNT</span>(subscription_id) <span class="tk">AS</span> <span class="ts">&#x27;subscriptions&#x27;</span>
+<span class="tk">FROM</span> orders
+<span class="tk">GROUP</span> <span class="tk">BY</span> customer_id</code></pre></div>
+<p><em>Solutions: <a href="20-appendix-a-solutions-to-the-projects-and-exercises.html#a-8-multiple-tables-exercises-1-8">Appendix A.8</a></em></p><div class="pager"><a class="prev" href="15-project-6-hacker-news.html" rel="prev"><small>← Previous</small>Project 6: Hacker News</a><a class="next" href="17-warm-up-5-multiple-tables.html" rel="next"><small>Next →</small>Warm-up 5: Multiple Tables</a></div></article></main></div><script src="../assets/app.js"></script></body></html>
