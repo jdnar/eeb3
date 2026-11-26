@@ -6,12 +6,12 @@ Beginner-friendly Python and SQL courses in English, as a static website (plain 
 |---|---|---|
 | **Python — The Fundamentals** | [`s4/`](s4/index.html) | 27 |
 | **Python — Functions, Strings, Lists, Dictionaries and Files** | [`s5/`](s5/index.html) | 29 |
-| **SQL — From Zero to Multi-Table Queries** | [`sql/`](sql/index.html) | 22 |
+| **SQL — From Zero to Multi-Table Queries** | [`sql/`](sql/index.html) | 20 |
 
 - **S4** — variables, input/output, conditionals, loops, random.
 - **S5** — functions, strings, lists, split & join, dictionaries, files, Hangman project. Inside the Functions chapter there is a **Functions Practice** sub-section (46 graded exercises and 5 mini-projects that review S4).
 
-- **SQL** — SQLite, manipulation, queries, aggregate functions, multiple tables, five warm-ups, seven projects and solutions. The `sql/datasets/` folder contains an empty database and the pets/owners practice database from the source document. Other original teacher-provided databases are not included.
+- **SQL** — SQLite, manipulation, queries, aggregate functions, multiple tables, five warm-ups and seven projects. The `sql/datasets/` folder contains an empty database and the pets/owners practice database from the source document. Other original teacher-provided databases are not included.
 
 Each chapter, warm-up, exercise set and project is its own page, with a sidebar, previous/next buttons, copy buttons on code blocks, and light/dark mode.
 
